@@ -2,11 +2,11 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "cacheDirectories": [".next/cache"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
