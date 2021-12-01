@@ -1,0 +1,71 @@
+.header {
+    /* width: 90%; */
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    /* position: flex; */
+    justify-content: space-between;
+    /* background-color: rgba(255, 255, 255, 0.747); */
+    /* background-color: rgba(83, 83, 83, 0.11); */
+    padding: 0 5%;
+  }
+
+  .header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .header li {
+    margin-left: 3rem;
+  }
+  
+  /* .header Link:hover {
+    color: #00FF0A;
+
+  } */
+
+  .header a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: black;
+    font-family: 'Technik-200';
+    /* padding: 0; */
+  }
+  
+  .header a:hover,
+  .header a:active,
+  .header a.active {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #00FF0A
+  }
+
+.logo {
+    color: black;
+    font-weight: bold;
+}
+.header i{
+  color: black;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu{
+  background-color: white;
+  display: none;
+  position: relative;
+  /* left: 0; */
+  top: calc(100% + .25rem);
+  padding: .75rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.2);
+  
+}
+
+.dropdown > a:focus + .dropdownMenu{
+  display: block;
+}
