@@ -11,7 +11,7 @@ import uspesni_abs from '../../../public/images/uspesni_absolventi.png';
 import Image from 'next/image';
 
 export async function getStaticProps() {
-    const res = await fetch('http://localhost:1337/absolvents');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/absolvents');
     const data = await res.json();
 
     return {
@@ -95,7 +95,7 @@ export default function Absolventi({ absolventi }) {
                                                 Zobraziť profil
                                             </Button>
                                         </div>
-                                        <img src={'http://localhost:1337' + absolvent.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                                        <img src={'https://katedra-dizajnu.herokuapp.com' + absolvent.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
                                     </div>
                                     <h3 style={{ textAlign: 'center' }}>
                                         {absolvent.name}
@@ -137,7 +137,7 @@ export default function Absolventi({ absolventi }) {
                                                 Zobraziť profil
                                             </Button>
                                         </div>
-                                        <img src={'http://localhost:1337' + absolvent.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                                        <img src={'https://katedra-dizajnu.herokuapp.com' + absolvent.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
                                     </div>
                                     <h3 style={{ textAlign: 'center' }}>
                                         {absolvent.name}

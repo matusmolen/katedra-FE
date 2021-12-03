@@ -14,7 +14,7 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:1337/works');
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/works');
   const data = await res.json();
 
   return {

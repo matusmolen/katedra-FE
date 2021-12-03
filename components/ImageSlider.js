@@ -57,7 +57,7 @@ export default function ImageSlider({ galery }) {
         open={open}
         onClose={handleClose}>
 
-        <img src={'http://localhost:1337' + galery[Current].url} width="550" />
+        <img src={'https://katedra-dizajnu.herokuapp.com' + galery[Current].url} width="550" />
 
         <Fab
           onClick={prevSlide}

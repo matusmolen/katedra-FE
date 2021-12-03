@@ -3,7 +3,7 @@ import React from 'react';
 import obrazok from '../../public/images/aktuality.png';
 
 export const getStaticPaths = async () => {
-  const res = await fetch('http://localhost:1337/news');
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/news');
   const data = await res.json();
 
   const paths = data.map((aktualita) => {
@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch('http://localhost:1337/news/' + id);
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/news/' + id);
 
   const data = await res.json();
 
@@ -46,17 +46,17 @@ export default function AktDetail({ aktualita }) {
                     </div>
                     <div style={{ position: 'absolute', top: 60 }}>
                         {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-                        <img src={'http://localhost:1337' + aktualita.pic1.url} />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + aktualita.pic1.url} />
 
                     </div>
                     <div style={{ position: 'absolute', top: 225, right: 0 }}>
                         {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-                        <img src={'http://localhost:1337' + aktualita.pic2.url} />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + aktualita.pic2.url} />
                     </div>
 
                     <div style={{ position: 'absolute', top: 650, left: 88 }}>
                         {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                        <img src={'http://localhost:1337' + aktualita.pic3.url} />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + aktualita.pic3.url} />
                     </div>
                     <div
                         style={{

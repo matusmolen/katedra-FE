@@ -10,7 +10,7 @@ import React from 'react';
 import ImageSlider from '../../../components/ImageSlider';
 
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:1337/absolvents');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/absolvents');
     const data = await res.json();
 
     const paths = data.map(absolvent => {
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     const id = context.params.id;
-    const res = await fetch('http://localhost:1337/absolvents/' + id);
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/absolvents/' + id);
     const data = await res.json();
 
     return {
@@ -81,7 +81,7 @@ export default function MenoAbsolventa({ absolvent }) {
                         </div>
                     </Grid>
                     <Grid item xs={6} style={{ marginTop: 100 }}>
-                        <img src={'http://localhost:1337' + absolvent.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + absolvent.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
                     </Grid>
                 </Grid>
             </Container>
@@ -93,7 +93,7 @@ export default function MenoAbsolventa({ absolvent }) {
                     style={{ marginTop: 48 }}
                 >
                     <Grid item xs={6}>
-                        <img src={'http://localhost:1337' + absolvent.desc_picture.url} alt="doplnujuci obrazok" />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + absolvent.desc_picture.url} alt="doplnujuci obrazok" />
                         <Grid
                             container
                             direction="row"

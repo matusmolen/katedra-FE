@@ -10,7 +10,7 @@ import axios from 'axios';
 import sipka from '../../public/images/zelenasipka.png';
 
 export async function getStaticProps() {
-  const harmonogramRes = await axios.get('http://localhost:1337/harmonogramy');
+  const harmonogramRes = await axios.get('https://katedra-dizajnu.herokuapp.com/harmonogramy');
 
   return {
     props: {
@@ -32,7 +32,7 @@ export default function student({ harmonogram }) {
         </Breadcrumbs>
 
         <a
-          href={'http://localhost:1337' + harmonogram.studium.url}
+          href={'https://katedra-dizajnu.herokuapp.com' + harmonogram.studium.url}
           color="#000000"
         >
           <h5>Časový harmonogram štúdia {harmonogram.rok}</h5>
@@ -40,13 +40,13 @@ export default function student({ harmonogram }) {
         <Grid container>
           <Grid item xs={6}>
             <Link
-              href={'http://localhost:1337' + harmonogram.bc_1rocnik.url}
+              href={'https://katedra-dizajnu.herokuapp.com' + harmonogram.bc_1rocnik.url}
               color="#000000"
             >
               <h5>Bc. 1. ročník Rozvrh hodín ZS {harmonogram.rok}</h5>
             </Link>
             <Link
-              href={'http://localhost:1337' + harmonogram.bc_2_4rocnik.url}
+              href={'https://katedra-dizajnu.herokuapp.com' + harmonogram.bc_2_4rocnik.url}
               color="#000000"
             >
               <h5>Bc. 2. - 4. ročník Rozvrh hodín ZS {harmonogram.rok}</h5>
@@ -54,7 +54,7 @@ export default function student({ harmonogram }) {
           </Grid>
           <Grid item xs={6}>
             <Link
-              href={'http://localhost:1337' + harmonogram.mgr.url}
+              href={'https://katedra-dizajnu.herokuapp.com' + harmonogram.mgr.url}
               color="#000000"
             >
               <h5> Mgr. 1. - 2. ročník Rozvrh hodín ZS {harmonogram.rok}</h5>

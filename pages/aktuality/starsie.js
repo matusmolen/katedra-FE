@@ -10,7 +10,7 @@ import React from 'react';
 import useStyles from '../../utils/styles';
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:1337/news');
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/news');
   const data = await res.json();
 
   return {
@@ -75,7 +75,7 @@ export default function starsieAktuality({ aktuality }) {
                       </Button>
                     </div>
                     <img
-                      src={'http://localhost:1337' + aktualita.preview_img.url}
+                      src={'https://katedra-dizajnu.herokuapp.com' + aktualita.preview_img.url}
                       alt="obrazok"
                       height="270"
                       width="550"
@@ -119,7 +119,7 @@ export default function starsieAktuality({ aktuality }) {
                       </div>
                       <img
                         src={
-                          'http://localhost:1337' + aktualita.preview_img.url
+                          'https://katedra-dizajnu.herokuapp.com' + aktualita.preview_img.url
                         }
                         alt="obrazok"
                         height="270"
@@ -151,7 +151,7 @@ export default function starsieAktuality({ aktuality }) {
                       </Button>
                     </div>
                     <img
-                      src={'http://localhost:1337' + posledna.preview_img.url}
+                      src={'https://katedra-dizajnu.herokuapp.com' + posledna.preview_img.url}
                       alt="obrazok"
                       height="270"
                       width="100%"

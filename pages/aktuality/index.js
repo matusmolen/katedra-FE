@@ -8,28 +8,19 @@ import {
 import React from 'react';
 import Image from 'next/image';
 import obrazok from '../../public/images/Frame.png';
-import akt from '../../public/images/aktuality.png';
 import useStyles from '../../utils/styles';
 
-export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:1337/news');
-  const data = await res.json();
 
-  return {
-    props: { aktuality: data },
-  };
-};
-
-export default function Aktuality({ aktuality }) {
+function Aktuality({ aktuality }) {
   const classes = useStyles();
   const pocetAktualit = aktuality.length;
   const polka = Math.ceil(pocetAktualit / 2);
-  const latestAkt = aktuality.slice(pocetAktualit - 3, pocetAktualit);
+  const latestAkt = aktuality
   const aktuality1 = aktuality.slice(0, polka);
   const aktuality2 = aktuality.slice(polka, pocetAktualit);
   return (
     <Container>
-      <Container>
+      {/* <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
           <Typography color="text.primary">AKTUALITY</Typography>
         </Breadcrumbs>
@@ -80,7 +71,7 @@ export default function Aktuality({ aktuality }) {
                     </Button>
                   </div>
                   <img
-                    src={'http://localhost:1337' + latestAkt[2].preview_img.url}
+                    src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[2].preview_img.url}
                     alt="obrazok"
                     height="270"
                     width="550"
@@ -115,7 +106,7 @@ export default function Aktuality({ aktuality }) {
                     </Button>
                   </div>
                   <img
-                    src={'http://localhost:1337' + latestAkt[1].preview_img.url}
+                    src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[1].preview_img.url}
                     alt="obrazok"
                     height="270"
                     width="550"
@@ -126,8 +117,8 @@ export default function Aktuality({ aktuality }) {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
-      <br />
+      </Container> */}
+      {/* <br />
       <Container>
         <div style={{ position: 'relative' }}>
           <div
@@ -150,7 +141,7 @@ export default function Aktuality({ aktuality }) {
             </Button>
           </div>
           <img
-            src={'http://localhost:1337' + latestAkt[0].preview_img.url}
+            src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[0].preview_img.url}
             alt="obrazok"
             height="300"
             width="1184"
@@ -169,7 +160,18 @@ export default function Aktuality({ aktuality }) {
         <Button href="/aktuality/starsie" style={{ color: '#000000' }}>
           Zobraziť staršie
         </Button>
-      </Container>
+      </Container> */}
     </Container>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/news');
+  const data = await res.json();
+
+  return {
+    props: { aktuality: data },
+  };
+};
+
+export default Aktuality

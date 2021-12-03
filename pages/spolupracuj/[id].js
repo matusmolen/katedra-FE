@@ -8,7 +8,7 @@ import aktuality_obr2 from '../../public/images/aktuality_obr2.png';
 import aktuality_obr3 from '../../public/images/aktuality_obr3.png';
 
 export const getStaticPaths = async () => {
-    const res = await fetch('http://localhost:1337/coops');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops');
     const data = await res.json();
 
     const paths = data.map(spolupraca => {
@@ -25,7 +25,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const res = await fetch('http://localhost:1337/coops/' + id);
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops/' + id);
     const data = await res.json();
 
     return {
@@ -56,16 +56,16 @@ export default function Details ({ spolupraca }) {
                 </div> */}
                 <div style={{ position: 'absolute', top: 60 }}>
                     {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-                    <img src={'http://localhost:1337' +spolupraca.pic1.url}/>
+                    <img src={'https://katedra-dizajnu.herokuapp.com' +spolupraca.pic1.url}/>
 
                 </div>
                 <div style={{ position: 'absolute', top: 225, right: 0 }}>
                     {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-                    <img src={'http://localhost:1337' +spolupraca.pic2.url}/>
+                    <img src={'https://katedra-dizajnu.herokuapp.com' +spolupraca.pic2.url}/>
                 </div>
                 <div style={{ position: 'absolute', top: 650, left: 88 }}>
                     {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                    <img src={'http://localhost:1337' +spolupraca.pic3.url}/>
+                    <img src={'https://katedra-dizajnu.herokuapp.com' +spolupraca.pic3.url}/>
                 </div>
                 
                 <div

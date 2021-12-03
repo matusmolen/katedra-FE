@@ -15,35 +15,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ImageSlider from '../../../components/ImageSlider';
 
-export async function getStaticPaths() {
-    const res = await fetch('http://localhost:1337/teachers');
-    const data = await res.json();
-
-    const paths = data.map(teacher => {
-        return {
-            params: { id: teacher.id.toString() }
-        }
-    })
-
-    return {
-        paths,
-        fallback: false
-    }
-}
-
-
-export async function getStaticProps(context) {
-    const id = context.params.id;
-    const res = await fetch('http://localhost:1337/teachers/' + id);
-    const data = await res.json();
-
-    return {
-        props: { teacher: data }
-    }
-}
-
-
-export default function Meno({ teacher }) {
+function Meno({ teacher }) {
     const [open, setOpen] = React.useState(false);
     const [selectedValue, setSelectedValue] = React.useState();
 
@@ -58,7 +30,7 @@ export default function Meno({ teacher }) {
 
     return (
         <Container>
-            <Breadcrumbs aria-label="breadcrumb" separator=">">
+            {/* <Breadcrumbs aria-label="breadcrumb" separator=">">
                 <Link underline="hover" color="inherit" href="/studium/">
                     Štúdium
                 </Link>
@@ -94,12 +66,12 @@ export default function Meno({ teacher }) {
                             </h5>
                         </div>
                         <div style={{ maxWidth: 402, whiteSpace: 'pre-wrap' }}>
-                            {/* {teacher.bio.substring(0, 770)} */}
+                            {/* {teacher.bio.substring(0, 770)} 
                             {teacher.bio_odsek1}
                         </div>
                     </Grid>
                     <Grid item xs={6} style={{ marginTop: 100 }}>
-                        <img src={'http://localhost:1337' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
                     </Grid>
                 </Grid>
             </Container>
@@ -111,7 +83,7 @@ export default function Meno({ teacher }) {
                     style={{ marginTop: 48 }}
                 >
                     <Grid item xs={6}>
-                        <img src={'http://localhost:1337' + teacher.desc_picture.url} alt="doplnujuci obrazok" />
+                        <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.desc_picture.url} alt="doplnujuci obrazok" />
                         <Grid
                             container
                             direction="row"
@@ -139,15 +111,42 @@ export default function Meno({ teacher }) {
                     </Grid>
                     <Grid item xs={6}>
                         <div style={{ maxWidth: 455, marginLeft: 104, whiteSpace: 'pre-wrap' }}>
-
                             {teacher.bio_odsek2}
-
                         </div>
                     </Grid>
                 </Grid>
 
-            </Container>
+            </Container> */}
         </Container>
     );
 
 }
+
+export async function getStaticPaths() {
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers');
+    const data = await res.json();
+
+    const paths = data.map(teacher => {
+        return {
+            params: { id: teacher.id.toString() }
+        }
+    })
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+
+export async function getStaticProps(context) {
+    const id = context.params.id;
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers/' + id);
+    const data = await res.json();
+
+    return {
+        props: { teacher: data }
+    }
+}
+
+export default Meno

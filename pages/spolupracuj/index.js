@@ -16,7 +16,7 @@ import obrazok from '../../img/Spolupraca_1-01.png';
 import sipky from '../../public/images/sipky.png';
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:1337/coops');
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops');
   const data = await res.json();
 
   return {

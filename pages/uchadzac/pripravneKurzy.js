@@ -224,7 +224,7 @@ export default function PripravneKurzy({ pKurz }) {
 }
 
 export async function getStaticProps() {
-  const pKurzRes = await axios.get('http://localhost:1337/p-kurz');
+  const pKurzRes = await axios.get('https://katedra-dizajnu.herokuapp.com/p-kurz');
 
   return {
     props: {

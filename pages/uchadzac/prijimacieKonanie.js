@@ -154,7 +154,7 @@ export default function PrijmacieKonanie({ prihlasky }) {
 
 export async function getStaticProps() {
   const prihlaskyRes = await axios.get(
-    'http://localhost:1337/termin-prihlasok'
+    'https://katedra-dizajnu.herokuapp.com/termin-prihlasok'
   );
 
   return {

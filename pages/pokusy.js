@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:1337/galleries');
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/galleries');
   const data = await res.json();
 
   return {

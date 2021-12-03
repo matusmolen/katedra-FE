@@ -7,23 +7,14 @@ import {
     Button,
 } from '@material-ui/core';
 import React from 'react';
-import spoznaj_ucitelov_obr from '../../../public/images/spoznaj_ucitelov.png';
 import Image from 'next/image';
 
-export async function getStaticProps() {
-    const res = await fetch('http://localhost:1337/teachers');
-    const data = await res.json();
-
-    return {
-        props: { teachers: data }
-    }
-}
-
-export default function Ucitelia({ teachers }) {
+function Ucitelia({ teachers }) {
     const pocetOsobL = Math.ceil(teachers.length / 2);
     const Osoby1 = teachers.slice(0, pocetOsobL);
     const Osoby2 = teachers.slice(pocetOsobL, teachers.length);
     return (<>
+      {teachers ? (
         <Container>
             <Breadcrumbs aria-label="breadcrumb" separator=">">
                 <Link underline="hover" color="inherit" href="../studium">
@@ -47,7 +38,7 @@ export default function Ucitelia({ teachers }) {
                     </h5>
                 </Grid>
                 <Grid item xs={6} style={{ marginTop: 35 }}>
-                    <Image src={spoznaj_ucitelov_obr} alt="obrazok" />
+                    {/* <Image src={spoznaj_ucitelov_obr} alt="obrazok" /> */}
                 </Grid>
             </Grid>
 
@@ -90,7 +81,7 @@ export default function Ucitelia({ teachers }) {
                                                 Zobraziť profil
                                             </Button>
                                         </div>
-                                        <img src={'http://localhost:1337' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                                        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} /> */}
                                     </div>
                                     <h3 style={{ textAlign: 'center' }}>
                                         {teacher.name}
@@ -132,7 +123,7 @@ export default function Ucitelia({ teachers }) {
                                                 Zobraziť profil
                                             </Button>
                                         </div>
-                                        <img src={'http://localhost:1337' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                                        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} /> */}
                                     </div>
                                     <h3 style={{ textAlign: 'center' }}>
                                         {teacher.name}
@@ -144,9 +135,21 @@ export default function Ucitelia({ teachers }) {
                     </Grid>
                 </Grid>
             </Container>
-
         </Container>
+        ) : (
+          <div></div>
+        )}  
     </>
     )
-
 }
+
+export async function getStaticProps() {
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers');
+    const data = await res.json();
+
+    return {
+        props: { teachers: data }
+    }
+}
+
+export default Ucitelia

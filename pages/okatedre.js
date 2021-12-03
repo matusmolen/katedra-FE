@@ -22,22 +22,22 @@ const ExpandMore = styled((props) => {
 
 //-----------------------NASADENIE BACKENDU--------------------------------
 export const getStaticProps = async () => {
-  const industrialRes = await fetch('http://localhost:1337/industrial');
+  const industrialRes = await fetch('https://katedra-dizajnu.herokuapp.com/industrial');
   const industrialData = await industrialRes.json();
 
-  const priestorRes = await fetch('http://localhost:1337/priestor');
+  const priestorRes = await fetch('https://katedra-dizajnu.herokuapp.com/priestor');
   const priestorData = await priestorRes.json();
 
-  const inovaciaRes = await fetch('http://localhost:1337/inovacia');
+  const inovaciaRes = await fetch('https://katedra-dizajnu.herokuapp.com/inovacia');
   const inovaciaData = await inovaciaRes.json();
 
-  const vKomRes = await fetch('http://localhost:1337/v-komunikacia');
+  const vKomRes = await fetch('https://katedra-dizajnu.herokuapp.com/v-komunikacia');
   const vKomData = await vKomRes.json();
 
-  const katalogyRes = await fetch('http://localhost:1337/katalogies');
+  const katalogyRes = await fetch('https://katedra-dizajnu.herokuapp.com/katalogies');
   const katalogyData = await katalogyRes.json();
 
-  const oKatedreRes = await fetch('http://localhost:1337/o-katedre');
+  const oKatedreRes = await fetch('https://katedra-dizajnu.herokuapp.com/o-katedre');
   const oKatedreData = await oKatedreRes.json();
 
   return {
@@ -89,7 +89,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
 
   return (
     <div style={{ position: 'relative' }} maxWidth>
-      <Container>
+      {/* <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
           <Typography color="text.primary" fontFamily="Normatica">
             O KATEDRE
@@ -199,7 +199,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
               </h2>
               {/* <RoomOutlinedIcon />
                                 <Link href="/katedra">W4 – 205</Link> |
-                                <Link href="/katedra"> W4 – 214</Link> */}
+                                <Link href="/katedra"> W4 – 214</Link> 
               <i className="bi bi-geo-alt-fill" />
               <a target="_blank" href={ind.link1}>
                 <strong> {ind.miestnost1} </strong>
@@ -227,7 +227,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
                   </IconButton>
                 </ExpandMore>
               </h2>
-              {/* <RoomOutlinedIcon /> */}
+              {/* <RoomOutlinedIcon /> 
               <i className="bi bi-geo-alt-fill" />
               <a target="_blank" href={inov.link1}>
                 <strong> {inov.miestnost1} </strong>
@@ -272,11 +272,11 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
             </h1>
           </div>
           <Collapse in={expandedPubAKatalog} timeout="auto" unmountOnExit>
-            {/* TODO tu dam este backend katalogy */}
+            {/* TODO tu dam este backend katalogy 
             {katalogy.map((katalog) => (
               <a
                 target="_blank"
-                href={'http://localhost:1337' + katalog.pdf.url}
+                href={'https://katedra-dizajnu.herokuapp.com' + katalog.pdf.url}
                 style={{ textDecoration: 'underline' }}
               >
                 <h5>{katalog.title}</h5>
@@ -298,7 +298,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
       ></div>
       <div style={{ position: 'absolute', bottom: 0, right: 465, zIndex: -1 }}>
         <Image src={sipky} height="180px" width="300px" alt="backgroundimg" />
-      </div>
+      </div> */}
     </div>
   );
 }

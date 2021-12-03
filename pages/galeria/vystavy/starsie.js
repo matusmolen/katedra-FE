@@ -1,9 +1,9 @@
 import { Container, Grid, Button, Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
-import useStyles from '../../utils/styles';
+import useStyles from '../../../utils/styles';
 
 export const getStaticProps = async () => {
-    const res = await fetch('http://localhost:1337/vystavas');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/vystavas');
     const data = await res.json();
 
     return {
@@ -84,7 +84,7 @@ export default function starsieVystavy({ vystavy }) {
                                                     Zobraziť viac
                                                 </Button>
                                             </div>
-                                            <img src={'http://localhost:1337' + vystava.preview_img.url} alt="obrazok" height="270" width="550" />
+                                            <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.preview_img.url} alt="obrazok" height="270" width="550" />
                                         </div>
                                         <h4>
                                             {vystava.title}
@@ -123,7 +123,7 @@ export default function starsieVystavy({ vystavy }) {
                                                         Zobraziť viac
                                                     </Button>
                                                 </div>
-                                                <img src={'http://localhost:1337' + vystava.preview_img.url} alt="obrazok" height="270" width="100%" />
+                                                <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.preview_img.url} alt="obrazok" height="270" width="100%" />
                                             </div>
                                             <h4>
                                                 {vystava.title}
@@ -152,7 +152,7 @@ export default function starsieVystavy({ vystavy }) {
                                                     Zobraziť viac
                                                 </Button>
                                             </div>
-                                            <img src={'http://localhost:1337' + posledna.preview_img.url} alt="obrazok" height="270" width="100%" />
+                                            <img src={'https://katedra-dizajnu.herokuapp.com' + posledna.preview_img.url} alt="obrazok" height="270" width="100%" />
                                         </div>
                                         <h4>
                                             {posledna.title}

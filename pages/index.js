@@ -4,7 +4,7 @@ import { Button, Collapse, IconButton, makeStyles } from '@material-ui/core';
 import { styled } from '@mui/material/styles';
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:1337/landing-page');
+  const res = await fetch('https://katedra-dizajnu.herokuapp.com/landing-page');
   const data = await res.json();
 
   return {
@@ -43,13 +43,14 @@ export default function Uvod({ lPage }) {
 
   return (
     <>
+    {lPage ? (
       <div maxWidth position="relative">
         <div className="video-container">
           <video autoPlay muted loop>
             <source
-              src={'http://localhost:1337' + lPage.video.url}
+              src={'https://katedra-dizajnu.herokuapp.com' + lPage.video.url}
               // src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              // src="http://localhost:1337/uploads/LP_video_df3bfef76d.mp4"
+              // src="https://katedra-dizajnu.herokuapp.com/uploads/LP_video_df3bfef76d.mp4"
               type="video/mp4"
             />
           </video>
@@ -79,6 +80,9 @@ export default function Uvod({ lPage }) {
           </Collapse>
         </div>
       </div>
+      ) : (
+        <div></div>
+      )}  
     </>
   );
 }

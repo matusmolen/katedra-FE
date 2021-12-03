@@ -7,7 +7,7 @@ import KontaktnyFormular from '../components/KontaktnyFormular';
 import axios from "axios";
 
 export async function getStaticProps() {
-    const kontaktyRes = await axios.get("http://localhost:1337/kontakt-pages");
+    const kontaktyRes = await axios.get("https://katedra-dizajnu.herokuapp.com/kontakt-pages");
 
     return {
         props: {

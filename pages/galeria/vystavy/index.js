@@ -10,7 +10,7 @@ import Image from 'next/image';
 import obrazok from '../../../public/images/galeria.png';
 
 export const getStaticProps = async () => {
-    const res = await fetch('http://localhost:1337/vystavas');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/vystavas');
     const data = await res.json();
 
     return {
@@ -73,7 +73,7 @@ export default function galeriaVystav({ vystavy }) {
                                         Zobraziť viac
                                     </Button>
                                 </div>
-                                <img src={'http://localhost:1337' + vystava.preview_img.url} alt="obrazok" height="270" width="550" />
+                                <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.preview_img.url} alt="obrazok" height="270" width="550" />
                             </div>
                             <h4>
                                 {vystava.title}
