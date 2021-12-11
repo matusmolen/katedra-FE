@@ -30,7 +30,7 @@ function Meno({ teacher }) {
 
     return (
         <Container>
-            {/* <Breadcrumbs aria-label="breadcrumb" separator=">">
+            <Breadcrumbs aria-label="breadcrumb" separator=">">
                 <Link underline="hover" color="inherit" href="/studium/">
                     Štúdium
                 </Link>
@@ -66,12 +66,12 @@ function Meno({ teacher }) {
                             </h5>
                         </div>
                         <div style={{ maxWidth: 402, whiteSpace: 'pre-wrap' }}>
-                            {/* {teacher.bio.substring(0, 770)} 
+                            {/* {teacher.bio.substring(0, 770)}  */}
                             {teacher.bio_odsek1}
                         </div>
                     </Grid>
                     <Grid item xs={6} style={{ marginTop: 100 }}>
-                        <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
+                        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} /> */}
                     </Grid>
                 </Grid>
             </Container>
@@ -83,7 +83,7 @@ function Meno({ teacher }) {
                     style={{ marginTop: 48 }}
                 >
                     <Grid item xs={6}>
-                        <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.desc_picture.url} alt="doplnujuci obrazok" />
+                        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.desc_picture.url} alt="doplnujuci obrazok" /> */}
                         <Grid
                             container
                             direction="row"
@@ -116,7 +116,7 @@ function Meno({ teacher }) {
                     </Grid>
                 </Grid>
 
-            </Container> */}
+            </Container>
         </Container>
     );
 

@@ -84,7 +84,7 @@ export default function starsieVystavy({ vystavy }) {
                                                     Zobraziť viac
                                                 </Button>
                                             </div>
-                                            <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.preview_img.url} alt="obrazok" height="270" width="550" />
+                                            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.preview_img.url} alt="obrazok" height="270" width="550" /> */}
                                         </div>
                                         <h4>
                                             {vystava.title}

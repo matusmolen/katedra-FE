@@ -89,7 +89,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
 
   return (
     <div style={{ position: 'relative' }} maxWidth>
-      {/* <Container>
+      <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
           <Typography color="text.primary" fontFamily="Normatica">
             O KATEDRE
@@ -197,7 +197,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
                   </IconButton>
                 </ExpandMore>
               </h2>
-              {/* <RoomOutlinedIcon />
+              <RoomOutlinedIcon />
                                 <Link href="/katedra">W4 – 205</Link> |
                                 <Link href="/katedra"> W4 – 214</Link> 
               <i className="bi bi-geo-alt-fill" />
@@ -227,7 +227,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
                   </IconButton>
                 </ExpandMore>
               </h2>
-              {/* <RoomOutlinedIcon /> 
+              <RoomOutlinedIcon /> 
               <i className="bi bi-geo-alt-fill" />
               <a target="_blank" href={inov.link1}>
                 <strong> {inov.miestnost1} </strong>
@@ -272,11 +272,11 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
             </h1>
           </div>
           <Collapse in={expandedPubAKatalog} timeout="auto" unmountOnExit>
-            {/* TODO tu dam este backend katalogy 
+            {/* TODO tu dam este backend katalogy  */}
             {katalogy.map((katalog) => (
               <a
                 target="_blank"
-                href={'https://katedra-dizajnu.herokuapp.com' + katalog.pdf.url}
+                // href={'https://katedra-dizajnu.herokuapp.com' + katalog.pdf.url}
                 style={{ textDecoration: 'underline' }}
               >
                 <h5>{katalog.title}</h5>
@@ -298,7 +298,7 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
       ></div>
       <div style={{ position: 'absolute', bottom: 0, right: 465, zIndex: -1 }}>
         <Image src={sipky} height="180px" width="300px" alt="backgroundimg" />
-      </div> */}
+      </div>
     </div>
   );
 }

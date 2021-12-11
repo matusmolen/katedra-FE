@@ -21,17 +21,17 @@ function Detail ({ vystava }) {
           </div>
           <div style={{ position: 'absolute', top: 60 }}>
             {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-            <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic1.url} />
+            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic1.url} /> */}
           </div>
 
           <div style={{ position: 'absolute', top: 225, right: 0 }}>
             {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-            <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic2.url} />
+            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic2.url} /> */}
           </div>
 
           <div style={{ position: 'absolute', top: 650, left: 88 }}>
             {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-            <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic3.url} />
+            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic3.url} /> */}
           </div>
           <div
             style={{

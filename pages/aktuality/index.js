@@ -20,7 +20,7 @@ function Aktuality({ aktuality }) {
   const aktuality2 = aktuality.slice(polka, pocetAktualit);
   return (
     <Container>
-      {/* <Container>
+      <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
           <Typography color="text.primary">AKTUALITY</Typography>
         </Breadcrumbs>
@@ -65,19 +65,19 @@ function Aktuality({ aktuality }) {
                       className={classes.aktualityButton}
                       variant="contained"
                       color="primary"
-                      href={'/aktuality/' + latestAkt[2].id}
+                      // href={'/aktuality/' + latestAkt[2].id}
                     >
                       Zobraziť viac
                     </Button>
                   </div>
                   <img
-                    src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[2].preview_img.url}
+                    // src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[2].preview_img.url}
                     alt="obrazok"
                     height="270"
                     width="550"
                   />
                 </div>
-                <h4>{latestAkt[2].title}</h4>
+                {/* <h4>{latestAkt[2].title}</h4> */}
               </Grid>
             </Grid>
           </Grid>
@@ -100,25 +100,25 @@ function Aktuality({ aktuality }) {
                       className={classes.aktualityButton}
                       variant="contained"
                       color="primary"
-                      href={'/aktuality/' + latestAkt[1].id}
+                      // href={'/aktuality/' + latestAkt[1].id}
                     >
                       Zobraziť viac
                     </Button>
                   </div>
                   <img
-                    src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[1].preview_img.url}
+                    // src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[1].preview_img.url}
                     alt="obrazok"
                     height="270"
                     width="550"
                   />
                 </div>
-                <h4>{latestAkt[1].title}</h4>
+                {/* <h4>{latestAkt[1].title}</h4> */}
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Container> */}
-      {/* <br />
+      </Container>
+      <br />
       <Container>
         <div style={{ position: 'relative' }}>
           <div
@@ -160,7 +160,7 @@ function Aktuality({ aktuality }) {
         <Button href="/aktuality/starsie" style={{ color: '#000000' }}>
           Zobraziť staršie
         </Button>
-      </Container> */}
+      </Container>
     </Container>
   );
 }

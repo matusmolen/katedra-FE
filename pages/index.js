@@ -46,14 +46,14 @@ export default function Uvod({ lPage }) {
     {lPage ? (
       <div maxWidth position="relative">
         <div className="video-container">
-          <video autoPlay muted loop>
+          {/* <video autoPlay muted loop>
             <source
               src={'https://katedra-dizajnu.herokuapp.com' + lPage.video.url}
               // src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               // src="https://katedra-dizajnu.herokuapp.com/uploads/LP_video_df3bfef76d.mp4"
               type="video/mp4"
             />
-          </video>
+          </video> */}
         </div>
         <div className={classes.text}>
           <h1>
