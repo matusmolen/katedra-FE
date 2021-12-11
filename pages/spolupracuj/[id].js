@@ -27,6 +27,7 @@ export const getStaticProps = async (context) => {
     const id = context.params.id;
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops/' + id);
     const data = await res.json();
+    console.log(res)
 
     return {
         props: { spolupraca: data }
@@ -56,16 +57,16 @@ export default function Details ({ spolupraca }) {
                 </div> */}
                 <div style={{ position: 'absolute', top: 60 }}>
                     {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-                    {/* <img src={'https://katedra-dizajnu.herokuapp.com' +spolupraca.pic1.url}/> */}
+                    <img src={spolupraca.pic1.url} width="50%"/>
 
                 </div>
-                <div style={{ position: 'absolute', top: 225, right: 0 }}>
+                <div style={{ position: 'absolute', top: 225, right: 0, textAlign: 'right' }}>
                     {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-                    {/* <img src={'https://katedra-dizajnu.herokuapp.com' +spolupraca.pic2.url}/> */}
+                    <img src={spolupraca.pic2.url} width="50%"/>
                 </div>
                 <div style={{ position: 'absolute', top: 650, left: 88 }}>
                     {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                    {/* <img src={'https://katedra-dizajnu.herokuapp.com' +spolupraca.pic3.url}/> */}
+                    <img src={spolupraca.pic3.url } width="50%"/>
                 </div>
                 
                 <div
@@ -117,7 +118,7 @@ export default function Details ({ spolupraca }) {
                             letterSpacing: '0.2px',
                         }}
                     >
-                        {spolupraca.description}
+                        { spolupraca.description }
                     </h4>
                 </div>
                 

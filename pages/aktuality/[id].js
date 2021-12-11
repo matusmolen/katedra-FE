@@ -46,17 +46,17 @@ export default function AktDetail({ aktualita }) {
                     </div>
                     <div style={{ position: 'absolute', top: 60 }}>
                         {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-                        <img src={'https://katedra-dizajnu.herokuapp.com' + aktualita.pic1.url} />
+                        <img src={aktualita.pic1.url} width="50%"/>
 
                     </div>
-                    <div style={{ position: 'absolute', top: 225, right: 0 }}>
+                    <div style={{ position: 'absolute', top: 225, right: 0, textAlign: 'right' }}>
                         {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-                        <img src={'https://katedra-dizajnu.herokuapp.com' + aktualita.pic2.url} />
+                        <img src={aktualita.pic2.url} width="50%"/>
                     </div>
 
                     <div style={{ position: 'absolute', top: 650, left: 88 }}>
                         {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                        <img src={'https://katedra-dizajnu.herokuapp.com' + aktualita.pic3.url} />
+                        <img src={aktualita.pic3.url} width="50%"/>
                     </div>
                     <div
                         style={{
@@ -80,7 +80,7 @@ export default function AktDetail({ aktualita }) {
                             textAlign: 'left'
                         }}
                     >
-                        <h1 style={{ fontSize: 100, fontWeight: 'normal' }}>{aktualita.title}</h1>
+                        <h1 style={{ fontSize: 100, fontWeight: 'normal', marginBottom: '200px' }}>{aktualita.title}</h1>
                     </div>
 
                     <div
@@ -89,6 +89,7 @@ export default function AktDetail({ aktualita }) {
                             top: 355,
                             left: 652,
                             maxWidth: '540px',
+                            marginTop: '40px'
                         }}
                     >
                         <h4
@@ -119,7 +120,8 @@ export default function AktDetail({ aktualita }) {
                                 fontSize: '18px',
                                 lineHeight: '31px',
                                 letterSpacing: '0.5px',
-                                whiteSpace: 'pre-wrap'
+                                whiteSpace: 'pre-wrap',
+                                marginTop: '50px'
                             }}
                         >
                             {aktualita.content}

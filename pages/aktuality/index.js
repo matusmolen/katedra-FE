@@ -71,13 +71,14 @@ function Aktuality({ aktuality }) {
                     </Button>
                   </div>
                   <img
-                    // src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[2].preview_img.url}
+                    src={latestAkt[2].preview_img.url}
                     alt="obrazok"
                     height="270"
                     width="550"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
-                {/* <h4>{latestAkt[2].title}</h4> */}
+                <h4>{latestAkt[2].title}</h4>
               </Grid>
             </Grid>
           </Grid>
@@ -100,19 +101,20 @@ function Aktuality({ aktuality }) {
                       className={classes.aktualityButton}
                       variant="contained"
                       color="primary"
-                      // href={'/aktuality/' + latestAkt[1].id}
+                      href={'/aktuality/' + latestAkt[1].id}
                     >
                       Zobraziť viac
                     </Button>
                   </div>
                   <img
-                    // src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[1].preview_img.url}
+                    src={latestAkt[1].preview_img.url}
                     alt="obrazok"
                     height="270"
                     width="550"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
-                {/* <h4>{latestAkt[1].title}</h4> */}
+                <h4>{latestAkt[1].title}</h4>
               </Grid>
             </Grid>
           </Grid>
@@ -140,12 +142,15 @@ function Aktuality({ aktuality }) {
               Zobraziť viac
             </Button>
           </div>
-          <img
-            src={'https://katedra-dizajnu.herokuapp.com' + latestAkt[0].preview_img.url}
-            alt="obrazok"
-            height="300"
-            width="1184"
-          />
+          <div style={{ height: '300px' }}>
+            <img
+              src={latestAkt[0].preview_img.url}
+              alt="obrazok"
+              width="100%"
+              height="400px"
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
         </div>
         <h4>{latestAkt[0].title}</h4>
       </Container>
