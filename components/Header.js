@@ -253,11 +253,11 @@ function Header() {
             </Link>
           </MenuItem>
           <br />
-          <MenuItem className={classes.dropDownBtn}>
+          {/* <MenuItem className={classes.dropDownBtn}>
             <Link underline="none" href="/galeria" style={{ color: '#000000' }}>
               Galéria prác
             </Link>
-          </MenuItem>
+          </MenuItem> */}
         </Paper>
       </Menu>
     </>
