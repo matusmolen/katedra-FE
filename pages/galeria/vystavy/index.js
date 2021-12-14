@@ -73,7 +73,7 @@ export default function galeriaVystav({ vystavy }) {
                                         Zobraziť viac
                                     </Button>
                                 </div>
-                                {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.preview_img.url} alt="obrazok" height="270" width="550" /> */}
+                                <img src={vystava.preview_img.url} alt="obrazok" height="270" width="550" style={{ objectFit: 'cover' }}/>
                             </div>
                             <h4>
                                 {vystava.title}

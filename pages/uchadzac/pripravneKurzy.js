@@ -76,7 +76,7 @@ export default function PripravneKurzy({ pKurz }) {
 
   return (
     <Container>
-      <Container maxWidth>
+      <Container>
         <Breadcrumbs
           aria-label="breadcrumb"
           separator=">"

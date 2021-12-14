@@ -81,7 +81,7 @@ function Ucitelia({ teachers }) {
                                                 Zobraziť profil
                                             </Button>
                                         </div>
-                                        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} /> */}
+                                        <img src={teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
                                     </div>
                                     <h3 style={{ textAlign: 'center' }}>
                                         {teacher.name}
@@ -123,7 +123,7 @@ function Ucitelia({ teachers }) {
                                                 Zobraziť profil
                                             </Button>
                                         </div>
-                                        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} /> */}
+                                        <img src={teacher.profile.url} alt="profilovy obrazok" width="450" height="450" style={{ borderRadius: '50%' }} />
                                     </div>
                                     <h3 style={{ textAlign: 'center' }}>
                                         {teacher.name}

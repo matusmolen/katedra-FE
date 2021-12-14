@@ -10,7 +10,7 @@ function Detail ({ vystava }) {
   return (
     <>
       <div>
-        <div style={{ position: 'relative', height: 1200 }} maxWidth>
+        <div style={{ position: 'relative', height: 'fit-content', paddingBottom: '150%' }}>
           <div style={{ marginLeft: 88 }}>
             <Breadcrumbs aria-label="breadcrumb" separator=">">
               <Link underline="hover" color="inherit" href="/galeria/vystavy">
@@ -21,17 +21,17 @@ function Detail ({ vystava }) {
           </div>
           <div style={{ position: 'absolute', top: 60 }}>
             {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic1.url} /> */}
+            <img src={vystava.pic1.url} width="50%" />
           </div>
 
-          <div style={{ position: 'absolute', top: 225, right: 0 }}>
+          <div style={{ position: 'absolute', top: 225, right: 0, textAlign: 'right' }}>
             {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic2.url} /> */}
+            <img src={vystava.pic2.url} width="50%" />
           </div>
 
           <div style={{ position: 'absolute', top: 650, left: 88 }}>
             {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-            {/* <img src={'https://katedra-dizajnu.herokuapp.com' + vystava.pic3.url} /> */}
+            <img src={vystava.pic3.url} width="50%" />
           </div>
           <div
             style={{
