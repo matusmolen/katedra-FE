@@ -22,7 +22,7 @@ function Aktuality({ aktuality }) {
     <Container>
       <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
-          <Typography color="text.primary">AKTUALITY</Typography>
+          <Typography color="primary">AKTUALITY</Typography>
         </Breadcrumbs>
         <Grid container>
           <Grid item xs={6}>

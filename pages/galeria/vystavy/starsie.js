@@ -33,7 +33,7 @@ export default function starsieVystavy({ vystavy }) {
                     <Link underline="hover" color="inherit" href="/galeria/vystavy">
                         Galéria výstav
                     </Link>
-                    <Typography color="text.primary">Staršie výstavy</Typography>
+                    <Typography color="primary">Staršie výstavy</Typography>
                 </Breadcrumbs>
                 <Container>
                     <h2>Staršie výstavy</h2>

@@ -82,13 +82,13 @@ export default function PripravneKurzy({ pKurz }) {
           separator=">"
           className="breadcrumbs"
         >
-          <Link underline="hover" color="inherit" href="../spolupracuj">
+          <Link underline="hover" color="inherit" href="/spolupracuj">
             Štúdium
           </Link>
           <Link underline="hover" color="inherit" href="/uchadzac">
             Uchádzač
           </Link>
-          <Typography color="text.primary">Prípravné kurzy</Typography>
+          <Typography color="primary">Prípravné kurzy</Typography>
         </Breadcrumbs>
         <h1>Prípravné kurzy</h1>
         <Grid container direction="row" justifyContent="space-between">

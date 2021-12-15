@@ -44,7 +44,7 @@ function Meno({ teacher }) {
                 >
                     Spoznaj učiteľov
                 </Link>
-                <Typography color="text.primary">{teacher.name}</Typography>
+                <Typography color="primary">{teacher.name}</Typography>
             </Breadcrumbs>
 
             <h1

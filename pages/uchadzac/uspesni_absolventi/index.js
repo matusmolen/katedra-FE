@@ -32,7 +32,7 @@ export default function Absolventi({ absolventi }) {
                 <Link underline="hover" color="inherit" href="/uchadzac">
                     Uchádzač
                 </Link>
-                <Typography color="text.primary">Úspešní absolventi</Typography>
+                <Typography color="primary">Úspešní absolventi</Typography>
             </Breadcrumbs>
             <Grid container justifyContent="space-evenly">
                 <Grid item xs={6}>

@@ -35,7 +35,7 @@ export default function praca_staze_sutaze({ works }) {
           <Link underline="hover" color="inherit" href="../studium">
             Študent
           </Link>
-          <Typography color="text.primary">Práca, stáže, súťaže</Typography>
+          <Typography color="primary">Práca, stáže, súťaže</Typography>
         </Breadcrumbs>
         <Grid container justifyContent="space-evenly">
           <Grid item xs={6}>

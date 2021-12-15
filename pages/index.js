@@ -44,7 +44,7 @@ export default function Uvod({ lPage }) {
   return (
     <>
     {lPage ? (
-      <div maxWidth position="relative">
+      <div position="relative">
         <div className="video-container">
           <video autoPlay muted loop>
             <source

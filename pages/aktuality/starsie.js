@@ -38,7 +38,7 @@ export default function starsieAktuality({ aktuality }) {
           <Link underline="hover" color="inherit" href="../aktuality">
             Aktuality
           </Link>
-          <Typography color="text.primary">Staršie aktuality</Typography>
+          <Typography color="primary">Staršie aktuality</Typography>
         </Breadcrumbs>
         <Container>
           <h2>Staršie aktuality</h2>

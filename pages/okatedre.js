@@ -85,13 +85,12 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
   const handleExpandClickInovacia = () => {
     setExpandedInovacia(!expandedInovacia);
   };
-  //--------------------------------------------------------------------
 
   return (
-    <div style={{ position: 'relative' }} maxWidth>
+    <div style={{ position: 'relative' }}>
       <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
-          <Typography color="text.primary" fontFamily="Normatica">
+          <Typography color="primary" fontFamily="Normatica">
             O KATEDRE
           </Typography>
         </Breadcrumbs>
@@ -112,13 +111,13 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
           <br />
           <div style={{ float: 'right' }}>
             <ExpandMore onClick={handleExpandClick}>
-              <Button
+              {/* <Button
                 variant="contained"
                 color="primary"
                 style={{ borderRadius: 20 }}
               >
                 Zobraziť viac
-              </Button>
+              </Button> */}
             </ExpandMore>
           </div>
         </div>
@@ -273,11 +272,12 @@ export default function index({ oKatedre, ind, priestor, inov, vKom, katalogy })
           </div>
           <Collapse in={expandedPubAKatalog} timeout="auto" unmountOnExit>
             {/* TODO tu dam este backend katalogy  */}
-            {katalogy.map((katalog) => (
+            {katalogy.map((katalog, index) => (
               <a
                 target="_blank"
                 // href={'https://katedra-dizajnu.herokuapp.com' + katalog.pdf.url}
                 style={{ textDecoration: 'underline' }}
+                key={index}
               >
                 <h5>{katalog.title}</h5>
               </a>

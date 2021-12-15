@@ -16,7 +16,7 @@ function Detail ({ vystava }) {
               <Link underline="hover" color="inherit" href="/galeria/vystavy">
                 Galeria vystav
               </Link>
-              <Typography color="text.primary">{vystava.title}</Typography>
+              <Typography color="primary">{vystava.title}</Typography>
             </Breadcrumbs>
           </div>
           <div style={{ position: 'absolute', top: 60 }}>

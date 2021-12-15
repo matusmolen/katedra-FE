@@ -122,7 +122,7 @@ function Header() {
 
   return (
     <>
-      <AppBar color="transparent" elevation={0} position="static" disableRipple>
+      <AppBar color="transparent" elevation={0} position="static">
         <Toolbar>
           <LogoIcon
             style={{ marginLeft: '4%' }}
@@ -141,7 +141,6 @@ function Header() {
           </p>
           <Tab
             className={classes.btn}
-            disableRipple
             label="Úvod"
             href="/"
             onChange={handleClickTab}
@@ -151,13 +150,11 @@ function Header() {
             onChange={handleClickTab}
             value={value}
             className={classes.btn}
-            disableRipple
             href="/okatedre"
             label="O katedre"
           />
           <Tab
             className={classes.btn}
-            disableRipple
             label="Aktuality"
             href="/aktuality"
             onChange={handleClickTab}
@@ -167,7 +164,6 @@ function Header() {
             onChange={handleClickTab}
             value={value}
             className={classes.btn}
-            disableRipple
             onClick={handleOpenGaleriaMenu}
             label="Galéria"
           />
@@ -177,21 +173,18 @@ function Header() {
             className={classes.btn}
             aria-controls="studium"
             onClick={handleOpenMenu}
-            disableRipple
             label="Štúdium"
           />
           <Tab
             onChange={handleClickTab}
             value={value}
             className={classes.btn}
-            disableRipple
             label="Kontakt"
             href="/kontakt"
           />
           <Tab
             onChange={handleClickTab}
             value={value}
-            disableRipple
             icon={<FacebookOutlinedIcon />}
             aria-label="facebook"
             href="https://www.facebook.com"
@@ -200,7 +193,6 @@ function Header() {
             onChange={handleClickTab}
             value={value}
             style={{ marginLeft: -50 }}
-            disableRipple
             icon={<InstagramIcon />}
             aria-label="instagram"
             href="https://www.instagram.com"

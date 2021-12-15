@@ -11,13 +11,13 @@ export default function PrijmacieKonanie({ prihlasky }) {
     <div style={{ position: 'relative' }}>
       <Container>
         <Breadcrumbs aria-label="breadcrumb" separator=">">
-          <Link underline="hover" color="inherit" href="../spolupracuj">
+          <Link underline="hover" color="inherit" href="/spolupracuj">
             Štúdium
           </Link>
           <Link underline="hover" color="inherit" href="/uchadzac">
             Uchádzač
           </Link>
-          <Typography color="text.primary">Prijímacie konanie</Typography>
+          <Typography color="primary">Prijímacie konanie</Typography>
         </Breadcrumbs>
         <h1>Prijímacie konanie</h1>
         <Grid container direction="row" justifyContent="space-between">

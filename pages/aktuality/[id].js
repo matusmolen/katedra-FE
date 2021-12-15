@@ -41,7 +41,7 @@ export default function AktDetail({ aktualita }) {
                             <Link underline="hover" color="inherit" href="../aktuality">
                                 Aktuality
                             </Link>
-                            <Typography color="text.primary">{aktualita.title}</Typography>
+                            <Typography color="primary">{aktualita.title}</Typography>
                         </Breadcrumbs>
                     </div>
                     <div style={{ position: 'absolute', top: 60 }}>

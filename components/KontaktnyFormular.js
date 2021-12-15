@@ -49,7 +49,7 @@ function KontaktnyFormular(){
             {/* <Box borderRadius="50%"> */}
             <Button 
             variant="contained" 
-            color="darkgrey" 
+            color="primary" 
             style={{borderRadius: 20, backgroundColor:"#000000", opacity: 0.6, color: "#ffffff"}}>Odoslať email</Button>
             {/* </Box> */}
         </Grid>

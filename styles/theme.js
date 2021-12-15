@@ -14,7 +14,7 @@ const theme = createTheme({
       pressed: '#00AE3B',
       disabled: '#00C242',
     },
-    darkgrey: {
+    primary: {
       main: 'rgba(0, 0, 0, 0.6)',
     },
     grey: {

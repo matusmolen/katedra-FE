@@ -26,7 +26,7 @@ export default function galeriaVystav({ vystavy }) {
         <Container>
             <Container>
                 <Breadcrumbs aria-label="breadcrumb" separator=">">
-                    <Typography color="text.primary">Galéria výstav</Typography>
+                    <Typography color="primary">Galéria výstav</Typography>
                 </Breadcrumbs>
 
                 <Grid container>

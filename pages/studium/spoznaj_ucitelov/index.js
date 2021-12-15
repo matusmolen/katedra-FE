@@ -23,7 +23,7 @@ function Ucitelia({ teachers }) {
                 <Link underline="hover" color="inherit" href="../studium">
                     Študent
                 </Link>
-                <Typography color="text.primary">Spoznaj učiteľov</Typography>
+                <Typography color="primary">Spoznaj učiteľov</Typography>
             </Breadcrumbs>
             <Grid container justifyContent="space-evenly">
                 <Grid item xs={6}>

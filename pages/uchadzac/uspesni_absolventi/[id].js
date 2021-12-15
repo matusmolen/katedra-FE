@@ -54,7 +54,7 @@ export default function MenoAbsolventa({ absolvent }) {
                 >
                     Úspešní absolventi
                 </Link>
-                <Typography color="text.primary">{absolvent.name}</Typography>
+                <Typography color="primary">{absolvent.name}</Typography>
             </Breadcrumbs>
 
             <h1

@@ -18,8 +18,7 @@ export async function getStaticProps() {
 
 export default function KontaktPage({ kontakty }) {
     return <>
-        {/* <Container maxWidth className="right"> */}
-        <Container maxWidth className="kontakt right">
+        <Container className="kontakt right">
             <Grid
                 container
                 direction="row"
@@ -54,8 +53,8 @@ export default function KontaktPage({ kontakty }) {
         </Container>
         {/* </Container> */}
 
-        <Container className="kontakt" maxWidth>
-            <Container maxWidth style={{marginBottom: 30}}>
+        <Container className="kontakt">
+            <Container style={{marginBottom: 30}}>
                 <Grid
                     container
                     direction="row"

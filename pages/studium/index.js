@@ -28,7 +28,7 @@ export default function student({ harmonogram }) {
           <Link underline="hover" color="inherit" href="../studium/student">
             Štúdium
           </Link>
-          <Typography color="text.primary">Študent</Typography>
+          <Typography color="primary">Študent</Typography>
         </Breadcrumbs>
 
         <a

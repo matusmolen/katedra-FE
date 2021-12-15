@@ -17,7 +17,7 @@ export default function Uchadzac() {
           <Link underline="hover" color="inherit" href="../studium">
             Štúdium
           </Link>
-          <Typography color="text.primary">Uchádzač</Typography>
+          <Typography color="primary">Uchádzač</Typography>
         </Breadcrumbs>
       </Container>
       {/* TODO obrazok do pozadia */}

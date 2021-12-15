@@ -38,7 +38,7 @@ export default function ResponsiveSpacing() {
                 <Link underline="hover" color="inherit" href="../galeria/">
                     Galéria
                 </Link>
-                <Typography color="text.primary">2020/2021</Typography>
+                <Typography color="primary">2020/2021</Typography>
             </Breadcrumbs>
 
             <div style={{marginTop: 20, marginBottom: 80}}>

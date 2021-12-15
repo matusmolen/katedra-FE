@@ -43,7 +43,7 @@ export default function Details ({ spolupraca }) {
                         <Link underline="hover" color="inherit" href="../aktuality">
                             Spolupracuj
                         </Link>
-                        <Typography color="text.primary">{spolupraca.title}</Typography>
+                        <Typography color="primary">{spolupraca.title}</Typography>
                     </Breadcrumbs>
                 </div>
                 {/* <div style={{ position: 'absolute', top: 60 }}>

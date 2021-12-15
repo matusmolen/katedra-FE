@@ -51,7 +51,7 @@ function Footer() {
               informovaný ako prvý.
             </p>
             <p>
-              <Link href="../spolupracuj">Spolupracuj s katedrou dizajnu</Link>
+              <Link href="/spolupracuj">Spolupracuj s katedrou dizajnu</Link>
             </p>
           </Grid>
         </Grid>
