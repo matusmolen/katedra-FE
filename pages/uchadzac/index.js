@@ -113,9 +113,9 @@ export default function Uchadzac() {
             Zobraziť viac
           </Button>
         </Container>
-        <div style={{ position: 'absolute', zIndex: -1, top: 60 }}>
+        {/* <div style={{ position: 'absolute', zIndex: -1, top: 60 }}>
           <Image src={ruka} alt="ruka" />
-        </div>
+        </div> */}
       </div>
     </>
   );
