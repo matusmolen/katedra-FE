@@ -35,7 +35,6 @@ function SimpleDialog(props) {
       >
         <Fab
           size="small"
-          color="info"
           aria-label="add"
           style={{ position: 'absolute', bottom: 130, left: 0 }}
         >
@@ -43,7 +42,6 @@ function SimpleDialog(props) {
         </Fab>
         <Fab
           size="small"
-          color="info"
           aria-label="add"
           style={{ position: 'absolute', bottom: 130, right: 0 }}
         >

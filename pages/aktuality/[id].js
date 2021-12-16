@@ -35,7 +35,7 @@ export default function AktDetail({ aktualita }) {
         <>
             <div>
 
-                <div style={{ position: 'relative', height: 1200 }} maxWidth>
+                <div style={{ position: 'relative', height: 1200 }}>
                     <div style={{ marginLeft: 88 }}>
                         <Breadcrumbs aria-label="breadcrumb" separator=">">
                             <Link underline="hover" color="inherit" href="../aktuality">

@@ -39,8 +39,8 @@ export default function Spoluprace({ spoluprace }) {
   };
 
   return (
-    <Container maxWidth postion="relative">
-      <Container maxWidth>
+    <Container postion="relative">
+      <Container>
         <Grid container spacing={2}>
           <Grid item md={6} xs={12}>
             <h1>Pripravení na spoluprácu?</h1>
@@ -110,7 +110,7 @@ export default function Spoluprace({ spoluprace }) {
         </Collapse>
       </Card>
       <br />
-      <Container maxWidth style={{ marginBottom: '30px' }}>
+      <Container style={{ marginBottom: '30px' }}>
         <h2>Kontaktný formulár</h2>
         <KontaktnyFormular />
       </Container>
