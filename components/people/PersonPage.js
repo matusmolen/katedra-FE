@@ -39,7 +39,7 @@ export default function PersonPage({person}) {
                 <Grid item md={6}>
                     <img
                         src={person.desc_picture ? person.desc_picture.url : ''}
-                        alt={person.desc_picture.alternativeText}
+                        alt={person.desc_picture ? person.desc_picture.alternativeText : '' }
                         width="100%"
                         height="auto"
                     />
