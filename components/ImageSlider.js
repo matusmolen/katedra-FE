@@ -1,81 +1,71 @@
 //------------------------------------------------------------------------------
 // LEN NA SKUSANIE ROZNYCH VECI ABY SOM NEROZDRBALA UZ TAKMER HOTOVE STRANKY ---
 //------------------------------------------------------------------------------
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Dialog from '@mui/material/Dialog';
-import { Button, Container, Fab } from "@material-ui/core";
+import {Box, Button, Fab} from "@mui/material";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Image from "next/image";
 
 
+export default function ImageSlider({galery}) {
+    const [Current, setCurrent] = useState(0)
+    const slidesLength = galery.length;
 
-export default function ImageSlider({ galery }) {
-  const [Current, setCurrent] = useState(0)
-  // console.log(galeria);
-  // const galeria = param.galery;
+    //----- nastavenie dialogu -------------
+    const [open, setOpen] = React.useState(false);
 
-  const slidesLength = galery.length;
+    return (
+        <>
+            <Button
+                variant="contained"
+                color="primary"
+                sx={{borderRadius: 20, margin:{sm: '1em', md:'4em'}}}
+                onClick={() => setOpen(true)}
+            >
+                Zobraziť viac
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        width: '300px',
+                        height: '180px',
+                        bottom: '-50px',
+                        left: '-90px',
+                    }}
+                    display={{
+                        xs: 'none',
+                        sm: 'none',
+                        md: 'block'
+                    }}
+                >
+                    <Image src='/images/sipky.png' alt="backgroundimg" layout='fill' objectFit='contain'/>
+                </Box>
+            </Button>
 
-  // console.log(slidesLength);
+            <Dialog
+                open={open}
+                onClose={() => setOpen(false)}>
 
-  const nextSlide = () => {
-    setCurrent(
-      Current == slidesLength - 1
-        ? 0
-        : Current + 1
+                <img src={galery[Current]?.url} width="550" alt={galery[Current]?.alternativeText}/>
+
+                <Fab
+                    onClick={() => setCurrent((Current + 1 + slidesLength) % slidesLength)}
+                    size="small"
+                    style={{position: 'absolute', bottom: "50%", left: 0}}>
+                    <ArrowBackIosIcon/>
+                </Fab>
+                <Fab
+                    onClick={() => setCurrent((Current - 1 + slidesLength) % slidesLength)}
+                    size="small"
+                    style={{position: 'absolute', bottom: "50%", right: 0}}>
+                    <ArrowForwardIosIcon/>
+                </Fab>
+
+            </Dialog>
+
+            {/* </Container> */}
+
+        </>
     )
-  }
-
-  const prevSlide = () => {
-    setCurrent(
-      Current == 0
-        ? slidesLength - 1
-        : Current - 1
-    )
-  }
-
-
-  //----- nastavenie dialogu -------------
-  const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-
-  return (
-    // style={{ marginBottom: 30 }}
-    <>
-      {/* <Container> */}
-      <Button variant="contained" color="primary" onClick={handleClickOpen} style={{ borderRadius: 20 }}>
-        Zobraziť viac
-      </Button>
-
-      <Dialog
-        open={open}
-        onClose={handleClose}>
-
-        {/* <img src={'https://katedra-dizajnu.herokuapp.com' + galery[Current].url} width="550" /> */}
-
-        <Fab
-          onClick={prevSlide}
-          size="small"
-          style={{ position: 'absolute', bottom: "50%", left: 0 }}>
-          <ArrowBackIosIcon />
-        </Fab>
-        <Fab
-          onClick={nextSlide}
-          size="small"
-          style={{ position: 'absolute', bottom: "50%", right: 0 }}>
-          <ArrowForwardIosIcon />
-        </Fab>
-
-      </Dialog>
-
-      {/* </Container> */}
-
-    </>
-  )
 }

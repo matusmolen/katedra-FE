@@ -1,11 +1,6 @@
-import { Breadcrumbs } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
-import { Link } from '@material-ui/core';
+import {Breadcrumbs, Typography} from '@mui/material';
 import * as React from 'react';
-import Image from 'next/image';
-import aktuality_obr1 from '../../public/images/aktuality_obr1.png';
-import aktuality_obr2 from '../../public/images/aktuality_obr2.png';
-import aktuality_obr3 from '../../public/images/aktuality_obr3.png';
+import AppLink from "../../utils/AppLink";
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops');
@@ -13,7 +8,7 @@ export const getStaticPaths = async () => {
 
     const paths = data.map(spolupraca => {
         return {
-            params: { id: spolupraca.id.toString() }
+            params: {id: spolupraca.id.toString()}
         }
     })
 
@@ -30,20 +25,20 @@ export const getStaticProps = async (context) => {
     console.log(res)
 
     return {
-        props: { spolupraca: data }
+        props: {spolupraca: data}
     }
 }
 
-export default function Details ({ spolupraca }) {
+export default function Details({spolupraca}) {
     return (
         <div>
-            <div style={{ position: 'relative', height: 1200 }}>
-                <div style={{ marginLeft: 88 }}>
+            <div style={{position: 'relative', height: 1200}} maxWidth>
+                <div style={{marginLeft: 88}}>
                     <Breadcrumbs aria-label="breadcrumb" separator=">">
-                        <Link underline="hover" color="inherit" href="../aktuality">
+                        <AppLink underline="hover" color="inherit" href="../aktuality">
                             Spolupracuj
-                        </Link>
-                        <Typography color="primary">{spolupraca.title}</Typography>
+                        </AppLink>
+                        <Typography>{spolupraca.title}</Typography>
                     </Breadcrumbs>
                 </div>
                 {/* <div style={{ position: 'absolute', top: 60 }}>
@@ -55,20 +50,20 @@ export default function Details ({ spolupraca }) {
                 <div style={{ position: 'absolute', top: 225, right: 0 }}>
                     <Image src={aktuality_obr3} alt="obrazok" />
                 </div> */}
-                <div style={{ position: 'absolute', top: 60 }}>
+                <div style={{position: 'absolute', top: 60}}>
                     {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
                     <img src={spolupraca.pic1.url} width="50%"/>
 
                 </div>
-                <div style={{ position: 'absolute', top: 225, right: 0, textAlign: 'right' }}>
+                <div style={{position: 'absolute', top: 225, right: 0, textAlign: 'right'}}>
                     {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
                     <img src={spolupraca.pic2.url} width="50%"/>
                 </div>
-                <div style={{ position: 'absolute', top: 650, left: 88 }}>
+                <div style={{position: 'absolute', top: 650, left: 88}}>
                     {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                    <img src={spolupraca.pic3.url } width="50%"/>
+                    <img src={spolupraca.pic3.url} width="50%"/>
                 </div>
-                
+
                 <div
                     style={{
                         position: 'absolute',
@@ -90,7 +85,7 @@ export default function Details ({ spolupraca }) {
                         textAlign: 'right'
                     }}
                 >
-                    <h1 style={{ fontSize: 100, fontWeight: 'normal' }}>{spolupraca.title}</h1>
+                    <h1 style={{fontSize: 100, fontWeight: 'normal'}}>{spolupraca.title}</h1>
                 </div>
                 {/* <div
                     style={{
@@ -118,10 +113,10 @@ export default function Details ({ spolupraca }) {
                             letterSpacing: '0.2px',
                         }}
                     >
-                        { spolupraca.description }
+                        {spolupraca.description}
                     </h4>
                 </div>
-                
+
                 <div
                     style={{
                         position: 'absolute',

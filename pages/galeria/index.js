@@ -1,124 +1,91 @@
-
-import {
-    Container,
-    Breadcrumbs,
-    Typography,
-    Grid,
-    Link,
-    Button,
-    Collapse,
-} from '@material-ui/core';
-import MasonryInfiniteScroller from 'react-masonry-infinite';
+import {Breadcrumbs, Button, Container, Grid, Typography,} from '@mui/material';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { maxWidth } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import Paper from '@mui/material/Paper';
+import {styled} from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Masonry from '@mui/lab/Masonry';
+import AppLink from "../../utils/AppLink";
+
+const CategoryButton = styled(Button)(({theme}) => ({
+    borderRadius: 20,
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    '&.selected': {
+        backgroundColor: theme.palette.primary.main,
+        color: '#000000',
+    }
+}));
 
 export default function ResponsiveSpacing() {
 
 
-    const Label = styled(Paper)(({ theme }) => ({
-        ...theme.typography.body2,
-        color: theme.palette.text.secondary,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }));
 
     return (
+        <Box>
+            <Container>
+                <Breadcrumbs aria-label="breadcrumb" separator=">">
+                    <AppLink underline="hover" color="inherit" href="../galeria/">
+                        Galéria
+                    </AppLink>
+                    <Typography>2020/2021</Typography>
+                </Breadcrumbs>
 
-        <Box sx={{ width: maxWidth, height: 800, overflowY: 'scroll', padding: '40px' }}>
-            <div style={{ marginLeft: 100}}>   
-            <Breadcrumbs aria-label="breadcrumb" separator=">">
-                <Link underline="hover" color="inherit" href="../galeria/">
-                    Galéria
-                </Link>
-                <Typography color="primary">2020/2021</Typography>
-            </Breadcrumbs>
-
-            <div style={{marginTop: 20, marginBottom: 80}}>
                 <Grid
                     container
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="center"
+                    sx={{margin: '2em 0'}}
+                    spacing={2}
                 >
                     <Grid item>
-                        <Button
+                        <CategoryButton
                             size="large"
-                            color="primary"
                             variant="contained"
-                            style={{
-                                backgroundColor: '#000000',
-                                color: '#ffffff',
-                                borderRadius: 20,
-                                
-                            }}
                         >
                             Industrial
-                        </Button>
+                        </CategoryButton>
                     </Grid>
                     <Grid item>
-                        <Button
+                        <CategoryButton
                             size="large"
-                            color="primary"
                             variant="contained"
-                            style={{
-                                backgroundColor: '#000000',
-                                color: '#ffffff',
-                                borderRadius: 20,
-                                marginLeft: 20
-                            }}
                         >
                             Priestor
-                        </Button>
+                        </CategoryButton>
                     </Grid>
                     <Grid item>
-                        <Button
+                        <CategoryButton
                             size="large"
-                            color="primary"
                             variant="contained"
-                            style={{
-                                backgroundColor: '#000000',
-                                color: '#ffffff',
-                                borderRadius: 20,
-                                marginLeft: 20
-                            }}
+                            className="selected"
                         >
                             Inovácia
-                        </Button>
+                        </CategoryButton>
                     </Grid>
                     <Grid item>
-                        <Button
+                        <CategoryButton
                             size="large"
-                            color="primary"
                             variant="contained"
-                            style={{ borderRadius: 20, marginLeft: 20 }}
                         >
                             Viz. komunikácia
-                        </Button>
+                        </CategoryButton>
                     </Grid>
                 </Grid>
-            </div>
-            </div> 
-            <Masonry columns={4} spacing={1}>
-              {itemData.map((item, index) => (
-                <Stack key={index}>
-                  <img
-                    src={`${item.img}?w=162&auto=format`}
-                    srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    loading="lazy"
-                    style={{ borderBottomLeftRadius: 4, borderBottomRightRadius: 4 }}
-                  />
-                </Stack>
-              ))}
-            </Masonry>
+            </Container>
+            <Container maxWidth='xl'>
+                <Masonry columns={4} spacing={1}>
+                    {itemData.map((item, index) => (
+                        <Stack key={index}>
+                            <img
+                                src={`${item.img}?w=162&auto=format`}
+                                srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
+                                alt={item.title}
+                                loading="lazy"
+                                style={{borderBottomLeftRadius: 4, borderBottomRightRadius: 4}}
+                            />
+                        </Stack>
+                    ))}
+                </Masonry>
+            </Container>
+
             {/* <Masonry columns={4} spacing={{ xs: 1, sm: 2, md: 6 }}>
                 {itemData.map((item, index) => (
                     <Stack key={index} >

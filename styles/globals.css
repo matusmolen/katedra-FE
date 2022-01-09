@@ -1,86 +1,88 @@
 @font-face {
-  font-family: 'Technik-200';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Technik-200'),
+    font-family: 'Technik-200';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Technik-200'),
     url('~/assets/fonts/Technik-200.otf') format('opentype');
 }
-/* @font-face {
+
+@font-face {
   font-family: 'Technik-200';
   font-style: italic;
-  font-weight: normal;   
+  font-weight: normal;
   src: local('Technik-100'),
    url('~/assets/fonts/Technik-100.otf') format("opentype");
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: 'Technik';
   font-style: bold;
-  font-weight: normal;   
+  font-weight: normal;
   src: local('Technik-50'),
    url('~/assets/fonts/Technik-50.otf') format("opentype");
-} */
-@font-face {
-  font-family: 'Technik';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Technik-25'),
-    url('~/assets/fonts/Technik-25.otf') format('opentype');
 }
 @font-face {
-  font-family: 'Normatica';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Normatica'),
+    font-family: 'Technik';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Technik-25'),
+    url('~/assets/fonts/Technik-25.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Normatica';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Normatica'),
     url('~/assets/fonts/Normatica-Regular.otf') format('opentype');
 }
 
 html,
 body {
-  padding: auto;
-  /* padding-bottom: 0%; */
-  margin: 0%;
-  font-family: 'Normatica';
-  line-height: 31px;
-  size: 18px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Normatica';
+    line-height: 31px;
+    size: 18px;
+    overflow-x: hidden;
 }
 
 h1 {
-  font-family: 'Technik-200';
-  font-size: 90px;
-  line-height: 104px;
+    font-family: 'Technik-200';
+    font-size: 5em;
+    line-height: 104px;
 }
 
 p {
-  font-family: 'Normatica';
-  font-size: 18px;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  line-height: 31px;
+    font-family: 'Normatica';
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    line-height: 31px;
 }
 
 h2 {
-  font-family: 'Technik';
-  font-size: 60px;
-  line-height: 66px;
+    font-family: 'Technik';
+    font-size: 60px;
+    line-height: 60px;
 }
 
 h3 {
-  font-family: 'Technik-200';
-  font-size: 34px;
-  line-height: 43.4px;
+    font-family: 'Technik-200';
+    font-size: 34px;
+    line-height: 43.4px;
 }
 
 h4 {
-  font-family: 'Normatica';
-  font-size: 32px;
+    font-family: 'Normatica';
+    font-size: 32px;
 }
 
 h5 {
-  font-family: 'Technik-200';
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 36px;
+    font-family: 'Technik-200';
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
 }
 
 /* i {
@@ -97,22 +99,22 @@ h5 {
 } */
 
 .right {
-  width: 300px;
-  background: linear-gradient(to left, #00ff0a 50%, transparent 50%);
-  display: flex;
-  /* justify-content: center; */
+    width: 300px;
+    background: linear-gradient(to left, #00ff0a 50%, transparent 50%);
+    display: flex;
+    /* justify-content: center; */
 }
 
 .left {
-  width: 300px;
-  background: linear-gradient(to right, #00ff0a 50%, transparent 10%);
-  display: flex;
+    width: 300px;
+    background: linear-gradient(to right, #00ff0a 50%, transparent 10%);
+    display: flex;
 }
 
 .profilAbsolventa {
-  background: linear-gradient(to top, #00ff0a 70%, transparent 10%);
-  margin-bottom: 0px;
-  margin-left: 0px;
+    background: linear-gradient(to top, #00ff0a 70%, transparent 10%);
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 
 /* .mapka{
@@ -120,43 +122,36 @@ h5 {
 } */
 
 .profil-absolventa {
-  width: 50%;
-  background-color: #00ff0a;
+    width: 50%;
+    background-color: #00ff0a;
 }
 
 .spolupraca-right {
-  /* background: linear-gradient(to left, #00FF0A 80%, transparent 20%); */
-  background-color: rgba(0, 255, 10, 1);
-  justify-content: center;
+    /* background: linear-gradient(to left, #00FF0A 80%, transparent 20%); */
+    background-color: rgba(0, 255, 10, 1);
+    justify-content: center;
 }
 
 .spolupraca-obr {
-  /* background-image: '../img/Kontakt_2-01.png'; */
-  background-color: rgb(88, 88, 88);
+    /* background-image: '../img/Kontakt_2-01.png'; */
+    background-color: rgb(88, 88, 88);
 }
 
 a,
 a:hover,
 a.active,
 a:active {
-  color: black;
+    color: black;
 }
 
-/* .uchadzac { */
-/* background-image: url('~/img/uchadzac_1-01.jpg'); */
-/* bottom:0; */
-/* } */
-/* .zelena{
-  background-color: #00FF0A;
-} */
 
 .down {
-  /* width: 300px; */
-  /* background: linear-gradient(to right, #00FF0A 50%, transparent 50%); */
-  /* background: linear-gradient(to left, #00FF0A 50%, transparent 50%); */
-  width: 75vw;
-  background-color: #00ff0a;
-  display: flex;
+    /* width: 300px; */
+    /* background: linear-gradient(to right, #00FF0A 50%, transparent 50%); */
+    /* background: linear-gradient(to left, #00FF0A 50%, transparent 50%); */
+    width: 75vw;
+    background-color: #00ff0a;
+    display: flex;
 }
 
 /* .displayed{
@@ -169,60 +164,67 @@ a:active {
 } */
 
 .terminy {
-  /* font-family: 'Normatica'; */
-  font-size: 18px;
-  line-height: 31px;
+    /* font-family: 'Normatica'; */
+    font-size: 18px;
+    line-height: 31px;
 }
 
-.kontakt a,
-.kontakt a.active,
-.kontakt a:active {
-  color: black;
-  text-decoration: none;
-}
-
-.kontakt a:hover {
-  color: #00ff0a;
-  text-decoration: none;
-}
 
 .video-container {
-  margin-top: -140px;
-  height: 903px;
-  width: 100%;
-  position: relative;
-  z-index: -1;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
 }
 
 .image-container {
-  margin-top: -60px;
-  height: 903px;
-  width: 100%;
-  position: relative;
-  z-index: -1;
+    margin-top: -60px;
+    height: 903px;
+    width: 100%;
+    position: relative;
+    z-index: -1;
 }
 
 .video-container video {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
 }
 
 .katedra a,
 .katedra a.active,
 .katedra a:active {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
 .ktedra a:hover {
-  color: #00ff0a;
-  text-decoration: none;
+    color: #00ff0a;
+    text-decoration: none;
 }
 
-/* Just styling the content of the div, the *magic* in the previous rules */
-/* .video-container .caption {
-  z-index: 1;
-  position: relative;
-} */
+.MuiBreadcrumbs-li {
+    color: #c1c1c1;
+}
+
+.MuiBreadcrumbs-li:last-child {
+    color: #000000;
+}
+
+.rooms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.rooms i {
+    margin-top: 5px;
+}
+
+.rooms a {
+    margin: 0 0.5em
+}
