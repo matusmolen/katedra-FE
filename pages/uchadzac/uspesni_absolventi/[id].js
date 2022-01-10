@@ -24,7 +24,7 @@ export async function getStaticProps(context) {
     const id = context.params.id;
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/absolvents/' + id);
     const data = await res.json();
-    console.log(data)
+
     return {
         props: {absolvent: data}
     }

@@ -7,7 +7,7 @@ export default function PersonBox({topMargin, route, person, cols}) {
     return (
         <Grid item
               key={person.id}
-              xs={12} md={12/cols}
+              xs={12} md={6} lg={12/cols}
               flexDirection='column'
               display='flex'
               alignItems='center'
@@ -17,7 +17,7 @@ export default function PersonBox({topMargin, route, person, cols}) {
                   md: topMargin ? '10em' : 0
               }}
         >
-            <Box position='relative' display='flex' justifyContent='center' width={{xs: '75%', md: '100%'}}>
+            <Box position='relative' display='flex' justifyContent='center' width={{xs: '75%', md: '80%'}}>
                 <img
                     src={person.profile.url}
                     alt={`profilovy obrazok ${person.name}`}
@@ -35,9 +35,9 @@ export default function PersonBox({topMargin, route, person, cols}) {
                     </Button>
                 </AppLink>
             </Box>
-            <h3>
+            <h5>
                 {person.name}
-            </h3>
+            </h5>
         </Grid>
     )
 }

@@ -1,142 +1,68 @@
 import React from 'react';
-import {Breadcrumbs, Typography,} from '@mui/material';
+import {Box, Breadcrumbs, Container, Grid, Typography, useMediaQuery,} from '@mui/material';
 import ImageSlider from '../../../components/ImageSlider';
 import AppLink from "../../../utils/AppLink";
+import theme from "../../../styles/theme";
+import {ImageBox} from "../../aktuality/[id]";
 
 function Detail({vystava}) {
+    const largeScreen = useMediaQuery(theme.breakpoints.up('md'));
+
     return (
-        <>
-            <div>
-                <div style={{position: 'relative', height: 'fit-content', paddingBottom: '150%'}}>
-                    <div style={{marginLeft: 88}}>
-                        <Breadcrumbs aria-label="breadcrumb" separator=">">
-                            <AppLink underline="hover" color="inherit" href="/galeria/vystavy">
-                                Galeria vystav
-                            </AppLink>
-                            <Typography>{vystava.title}</Typography>
-                        </Breadcrumbs>
-                    </div>
-                    <div style={{position: 'absolute', top: 60}}>
-                        {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-                        <img src={vystava.pic1.url} width="50%"/>
-                    </div>
+        <Container>
+            <Breadcrumbs aria-label="breadcrumb" separator=">">
+                <AppLink underline="hover" color="inherit" href="/galeria/vystavy">
+                    Galéria výstav
+                </AppLink>
+                <Typography>{vystava.title}</Typography>
+            </Breadcrumbs>
 
-                    <div style={{position: 'absolute', top: 225, right: 0, textAlign: 'right'}}>
-                        {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-                        <img src={vystava.pic2.url} width="50%"/>
-                    </div>
+            <Grid container mt={4} spacing={4}  justifyContent='space-between'
+                  flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
+                <Grid item md={5} position='relative'>
+                    <ImageBox sx={{left:'-145px'}}>
+                        <img src={vystava.pic1.url} alt={vystava.pic1.alternativeText} width="100%"/>
+                    </ImageBox>
+                    <ImageBox sx={{bottom:'5em', right:'-35%'}}>
+                        <img src={vystava.pic3.url} alt={vystava.pic3.alternativeText} width="100%"/>
+                    </ImageBox>
 
-                    <div style={{position: 'absolute', top: 650, left: 88}}>
-                        {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                        <img src={vystava.pic3.url} width="50%"/>
-                    </div>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: 80,
-                            right: 44.5,
-                            width: 780,
-                            height: 38.5,
-                            backgroundColor: '#00FF0A',
-                            opacity: 0.9,
-                        }}
-                    ></div>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: 80,
-                            right: 44.5,
-                            width: 41.5,
-                            height: 1100,
-                            backgroundColor: '#00FF0A',
-                            opacity: 0.9,
-                        }}
-                    ></div>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: 118.5,
-                            right: 86,
-                            width: 739.5,
-                            height: 1061.5,
-                            backgroundColor: '#FFFFFF',
-                            opacity: 0.9,
-                        }}
-                    ></div>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: 50,
-                            left: 491,
-                            inlineSize: 850,
-                            overflowWrap: 'break-word',
-                            textAlign: 'left',
-                        }}
-                    >
-                        <h1 style={{fontSize: 100, fontWeight: 'normal'}}>
+                </Grid>
+                <Grid item md={7}>
+                    <Box position='relative' padding={2}>
+                        <h1 style={{
+                            marginTop: 0,
+                            fontWeight: largeScreen ? 400 : 700,
+                            fontSize: largeScreen ? '80px' : '3em',
+                            lineHeight: largeScreen ? 'auto' : '1.2em'
+                        }}>
                             {vystava.title}
                         </h1>
-                    </div>
-
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: 355,
-                            left: 652,
-                            maxWidth: '540px',
-                        }}
-                    >
-                        <h4
-                            style={{
-                                fontSize: 32,
-                                fontWeight: 'normal',
-                                fontStyle: 'normal',
-                                lineHeight: '48px',
-                                letterSpacing: '0.2px',
-                            }}
-                        >
-                            {vystava.description}
-                        </h4>
-                    </div>
-                    <br/>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            top: 540,
-                            left: 733,
-                            maxWidth: '455px',
-                        }}
-                    >
-                        <div
-                            style={{
-                                fontStyle: 'normal',
-                                fontWeight: 'normal',
-                                fontSize: '18px',
-                                lineHeight: '31px',
-                                letterSpacing: '0.5px',
-                                whiteSpace: 'pre-wrap',
-                            }}
-                        >
+                        <h4>{vystava.description}</h4>
+                        <p style={{whiteSpace: 'pre-wrap', paddingLeft: largeScreen ? '1em' : 0}}>
                             {vystava.content}
-                        </div>
-                    </div>
-                    <div style={{position: 'absolute', bottom: 0, left: 0}}>
-                        <h1
-                            style={{
-                                fontFamily: 'Technik',
-                                fontStyle: 'normal',
-                                fontWeight: 'normal',
-                                fontSize: 60,
-                                letterSpacing: '-1px',
-                                marginLeft: '84px',
+                        </p>
+                        <Box
+                            sx={{
+                                position: 'absolute',
+                                inset: '4em 0 0 0',
+                                backgroundColor: largeScreen ? '#FFFFFF' : theme.palette.primary.main,
+                                borderRight: `1em solid ${theme.palette.primary.main}`,
+                                borderTop: `1em solid ${theme.palette.primary.main}`,
+                                zIndex: -1,
+                                opacity: 0.8
                             }}
-                        >
-                            Fotky z výstavy <ImageSlider galery={vystava.foto}/>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </>
+                        />
+                        <ImageBox sx={{right:'-50%',top:'5em'}}>
+                            <img src={vystava.pic2.url} alt={vystava.pic2.alternativeText} width="100%"/>
+                        </ImageBox>
+                    </Box>
+                </Grid>
+            </Grid>
+            <h5>
+                Fotky z výstavy <ImageSlider galery={vystava.foto}/>
+            </h5>
+        </Container>
     );
 }
 

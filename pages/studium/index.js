@@ -7,7 +7,7 @@ import theme from "../../styles/theme";
 
 export async function getStaticProps() {
     const harmonogramRes = await axios.get('https://katedra-dizajnu.herokuapp.com/harmonogramy');
-    console.log(harmonogramRes)
+
     return {
         props: {
             harmonogram: harmonogramRes.data,

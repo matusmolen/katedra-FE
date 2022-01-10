@@ -70,7 +70,7 @@ export default function PripravneKurzy({pKurz}) {
         setSelectedValue(value);
     };
 
-    console.log(pKurz);
+
     return (
         <Container>
                 <Breadcrumbs

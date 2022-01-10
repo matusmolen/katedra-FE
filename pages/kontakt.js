@@ -26,7 +26,7 @@ export default function KontaktPage({kontakty}) {
             <Grid container>
                 <Grid item sm={12} md={4}>
                     <h1 style={{margin: '40px 0'}}>Kde nás nájdete?</h1>
-                    <p>Watsonova 4, <br/> 040 20 Košice - Sever</p>
+                    <p>Watsonova 4, <br/> 040 01 Košice - Sever</p>
 
                     <ContactBox kontakt={kontakty[3]}/>
                 </Grid>
@@ -39,17 +39,18 @@ export default function KontaktPage({kontakty}) {
                           marginLeft: 'auto',
                       }}
                 >
-                    <img
-                        src='/images/kontakt_mapa.png'
-                        alt="mapka"
-                        width='100%'
-                        height='auto'
-                    />
+                    <Box sx={{boxShadow: 1, display: 'flex'}}>
+                        <img
+                            src='/images/kontakt_mapa.png'
+                            alt="mapka"
+                            width='100%'
+                            height='auto'
+                        />
+                    </Box>
                     <Box
                         sx={{
                             position: 'absolute',
                             inset: 0,
-                            left: '20%',
                             backgroundColor: theme.palette.primary.main,
                             zIndex: -1
                         }}
@@ -59,14 +60,9 @@ export default function KontaktPage({kontakty}) {
 
             <Grid
                 container
-                spacing={4}
-                mt={2}
+                spacing={2}
             >
-                {kontakty.slice(0, 3).map((kontakt, index) =>
-                    <Grid item sm={12} md={6} lg={4}>
-                        <ContactBox kontakt={kontakt}/>
-                    </Grid>
-                )}
+                {kontakty.slice(0, 3).map((kontakt, index) => <ContactBox kontakt={kontakt} key={index}/>)}
             </Grid>
 
             <Grid container spacig={1} alignItems={'center'}>

@@ -18,12 +18,21 @@ const StyledTabBtn = styled(Tab)(({theme}) => ({
     lineHeight: '15px',
     display: 'flex',
     color: '#000000',
-    marginLeft: '10px',
 
     '&:hover, &.active': {
         textDecorationLine: 'underline',
         textDecorationStyle: 'wavy',
         textDecorationColor: theme.palette.primary.main,
+    },
+}));
+const SocialLink = styled(AppLink)(({theme}) => ({
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 0.5em',
+    color: 'inherit',
+    transition: 'color 0.2s ease-in-out',
+    '&:hover': {
+        color: theme.palette.primary.main,
     },
 }));
 
@@ -102,19 +111,13 @@ function Header() {
                                     className={router.pathname === '/kontakt' ? 'active' : ''}
                                 />
                             </AppLink>
-                            <Tab
-                                icon={<FacebookOutlinedIcon/>}
-                                aria-label="facebook"
-                                target='_blank'
-                                href="https://www.facebook.com"
-                            />
-                            <Tab
-                                style={{marginLeft: -50}}
-                                icon={<InstagramIcon/>}
-                                aria-label="instagram"
-                                target='_blank'
-                                href="https://www.instagram.com/futu_kd/"
-                            />
+
+                            <SocialLink target='_blank' href="https://www.facebook.com" underline='none'>
+                                <FacebookOutlinedIcon/>
+                            </SocialLink>
+                            <SocialLink target='_blank' href="https://www.instagram.com/futu_kd/">
+                                <InstagramIcon/>
+                            </SocialLink>
                         </Box>
                     </Toolbar>
                 </Container>

@@ -1,6 +1,23 @@
-import {Breadcrumbs, Container, Typography} from '@mui/material';
+import {Box, Breadcrumbs, Container, Grid, Typography, useMediaQuery} from '@mui/material';
 import React from 'react';
 import AppLink from "../../utils/AppLink";
+import theme from "../../styles/theme";
+import {styled} from "@mui/material/styles";
+
+export const ImageBox = styled('Box')(({theme}) => ({
+    [theme.breakpoints.up('md')]: {
+        position: 'absolute',
+        width: '125%',
+        zIndex: -2,
+    },
+    [theme.breakpoints.down('md')]: {
+        position: 'relative',
+        width: '100%',
+        zIndex: 1,
+        inset: 'auto'
+    },
+}));
+
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/news');
@@ -30,7 +47,7 @@ export const getStaticProps = async (context) => {
 };
 
 export default function AktDetail({aktualita}) {
-
+    const largeScreen = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Container>
             <Breadcrumbs aria-label="breadcrumb" separator=">">
@@ -40,91 +57,64 @@ export default function AktDetail({aktualita}) {
                 <Typography>{aktualita.title}</Typography>
             </Breadcrumbs>
 
-            <div style={{position: 'relative', height: 1200}}>
-                <div style={{position: 'absolute', top: 60, left: -60}}>
-                    {/* <Image src={aktuality_obr1} alt="obrazok" /> */}
-                    <img src={aktualita.pic1.url} width="50%"/>
+            <Grid container mt={4} spacing={4}  justifyContent='space-between'
+                  flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
+                <Grid item md={5} position='relative'>
+                    <ImageBox sx={{left:'-145px'}}>
+                        <img src={aktualita.pic1.url} alt={aktualita.pic1.alternativeText} width="100%"/>
+                    </ImageBox>
+                    <ImageBox sx={{bottom:'2em', right:'-35%'}}>
+                        <img src={aktualita.pic3.url} alt={aktualita.pic3.alternativeText} width="100%"/>
+                    </ImageBox>
+                </Grid>
+                <Grid item md={7}>
+                    <Box sx={{position:'relative'}} padding={2}>
+                        <h1 style={{
+                            marginTop: 0,
+                            fontWeight: largeScreen ? 400 : 700,
+                            fontSize: largeScreen ? '80px' : '3em',
+                            lineHeight: largeScreen ? 'auto' : '1.2em'
+                        }}>
+                            {aktualita.title}
+                        </h1>
+                        <h4>{aktualita.description}</h4>
+                        <p style={{whiteSpace: 'pre-wrap', paddingLeft: largeScreen ? '1em' : 0}}>
+                            {aktualita.content}
+                        </p>
+                        <Box
+                            sx={{
+                                position: 'absolute',
+                                inset: '4em 0 0 0',
+                                backgroundColor: theme.palette.primary.main,
+                                zIndex: -1,
+                                opacity: 0.8
+                            }}
+                        />
+                        <ImageBox sx={{right:'-50%',top:'5em'}}>
+                            <img src={aktualita.pic2.url} alt={aktualita.pic2.alternativeText} width="100%"/>
+                        </ImageBox>
 
-                </div>
-                <div style={{position: 'absolute', top: 225, right: 0, textAlign: 'right'}}>
-                    {/* <Image src={aktuality_obr3} alt="obrazok" /> */}
-                    <img src={aktualita.pic2.url} width="50%"/>
-                </div>
-
-                <div style={{position: 'absolute', top: 650, left: 88}}>
-                    {/* <Image src={aktuality_obr2} alt="obrazok" /> */}
-                    <img src={aktualita.pic3.url} width="50%"/>
-                </div>
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 110,
-                        left: 571,
-                        width: 780,
-                        height: 1070,
-                        backgroundColor: '#00FF0A',
-                        opacity: 0.85,
-                    }}
-                ></div>
-
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 50,
-                        left: 491,
-                        inlineSize: 850,
-                        overflowWrap: 'break-word',
-                        textAlign: 'left'
-                    }}
+                    </Box>
+                </Grid>
+            </Grid>
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                gap: '1em',
+                marginBottom: '2em'
+            }}>
+                <AppLink
+                    target="_blank"
+                    href="https://fu.tuke.sk/wps/portal/fu/fakulta/aktuality"
+                    style={{color: '#000000'}}
                 >
-                    <h1 style={{fontSize: 100, fontWeight: 'normal', marginBottom: '200px'}}>{aktualita.title}</h1>
-                </div>
-
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 355,
-                        left: 652,
-                        maxWidth: '540px',
-                        marginTop: '40px'
-                    }}
-                >
-                    <h4
-                        style={{
-                            fontSize: 32,
-                            fontWeight: 'normal',
-                            fontStyle: 'normal',
-                            lineHeight: '48px',
-                            letterSpacing: '0.2px',
-                        }}
-                    >
-                        {aktualita.description}
-                    </h4>
-                </div>
-
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 540,
-                        left: 733,
-                        maxWidth: '455px',
-                    }}
-                >
-                    <div
-                        style={{
-                            fontStyle: 'normal',
-                            fontWeight: 'normal',
-                            fontSize: '18px',
-                            lineHeight: '31px',
-                            letterSpacing: '0.5px',
-                            whiteSpace: 'pre-wrap',
-                            marginTop: '50px'
-                        }}
-                    >
-                        {aktualita.content}
-                    </div>
-                </div>
-            </div>
+                    Zobraziť fakultné aktuality
+                </AppLink>
+                <AppLink style={{color: '#000000'}} href="/aktuality/starsie">
+                    Zobraziť staršie
+                </AppLink>
+            </Box>
         </Container>
     );
 }

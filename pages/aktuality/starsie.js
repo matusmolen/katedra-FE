@@ -24,7 +24,7 @@ export default function starsieAktuality({aktuality}) {
 
             <h2>Staršie aktuality</h2>
 
-            <ImageGrid route='aktuality' items={aktuality}/>
+            <ImageGrid route='/aktuality' items={aktuality}/>
 
             <Box sx={{
                 display: 'flex',
