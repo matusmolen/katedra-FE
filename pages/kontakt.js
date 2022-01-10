@@ -21,7 +21,7 @@ export default function KontaktPage({kontakty}) {
     return (
         <Container>
             <Breadcrumbs>
-                <Typography>KONTAKT</Typography>
+                <Typography>Kontakt</Typography>
             </Breadcrumbs>
             <Grid container>
                 <Grid item sm={12} md={4}>

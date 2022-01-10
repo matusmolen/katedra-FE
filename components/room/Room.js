@@ -3,6 +3,8 @@ import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
 import {Collapse, Grid} from "@mui/material";
 import React from "react";
 import {styled} from "@mui/material/styles";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 
 export const RoomLink = styled('a')(({theme}) => ({
@@ -55,9 +57,7 @@ export default function Room({room}) {
                 |
                 <RoomLink target="_blank" href={room.link2}>{room.miestnost2}</RoomLink>
             </div>
-            <div style={{whiteSpace: 'pre-wrap'}}>
-                {room.ludia}
-            </div>
+            <ReactMarkdown children={room.ludia} plugins={[remarkGfm]}/>
             <Collapse in={openDescription} timeout="auto" unmountOnExit>
                 <div>{room.popis}</div>
             </Collapse>

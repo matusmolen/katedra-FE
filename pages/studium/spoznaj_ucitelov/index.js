@@ -6,11 +6,6 @@ import PeopleGrid from "../../../components/people/PeopleGrid";
 import Image from "next/image";
 
 function Ucitelia({teachers}) {
-    const router = useRouter();
-    const pocetOsobL = Math.ceil(teachers.length / 2);
-    const Osoby1 = teachers.slice(0, pocetOsobL);
-    const Osoby2 = teachers.slice(pocetOsobL, teachers.length);
-
     return (<>
             {teachers ? (
                 <Container>
@@ -54,7 +49,7 @@ function Ucitelia({teachers}) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers?_sort=name');
     const data = await res.json();
 
     return {
