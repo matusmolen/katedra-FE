@@ -4,7 +4,7 @@ import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {styled} from "@mui/material/styles";
 
-export const ImageBox = styled('Box')(({theme}) => ({
+export const ImageBox = styled('div')(({theme}) => ({
     [theme.breakpoints.up('md')]: {
         position: 'absolute',
         width: '125%',
@@ -63,7 +63,7 @@ export default function AktDetail({aktualita}) {
                     <ImageBox sx={{left:'-145px'}}>
                         <img src={aktualita.pic1.url} alt={aktualita.pic1.alternativeText} width="100%"/>
                     </ImageBox>
-                    <ImageBox sx={{bottom:'2em', right:'-35%'}}>
+                    <ImageBox style={{bottom:'2em', right:'-35%'}}>
                         <img src={aktualita.pic3.url} alt={aktualita.pic3.alternativeText} width="100%"/>
                     </ImageBox>
                 </Grid>
@@ -71,6 +71,7 @@ export default function AktDetail({aktualita}) {
                     <Box sx={{position:'relative'}} padding={2}>
                         <h1 style={{
                             marginTop: 0,
+                            marginLeft: largeScreen ? '-1.5em' : 0,
                             fontWeight: largeScreen ? 400 : 700,
                             fontSize: largeScreen ? '80px' : '3em',
                             lineHeight: largeScreen ? 'auto' : '1.2em'

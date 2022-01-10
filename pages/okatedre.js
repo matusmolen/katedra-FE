@@ -61,7 +61,7 @@ export default function index({oKatedre, rooms, katalogy}) {
         <Container>
             <Breadcrumbs aria-label="breadcrumb" separator=">">
                 <Typography>
-                    O KATEDRE
+                    O katedre
                 </Typography>
             </Breadcrumbs>
             <h1 style={{fontWeight: 'normal'}}>Profil katedry Dizajnu FU TUKE</h1>

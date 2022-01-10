@@ -32,6 +32,7 @@ function Detail({vystava}) {
                     <Box position='relative' padding={2}>
                         <h1 style={{
                             marginTop: 0,
+                            marginLeft: largeScreen ? '-1.5em' : 0,
                             fontWeight: largeScreen ? 400 : 700,
                             fontSize: largeScreen ? '80px' : '3em',
                             lineHeight: largeScreen ? 'auto' : '1.2em'

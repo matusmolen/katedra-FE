@@ -9,7 +9,7 @@ function Aktuality({aktuality}) {
     return (
         <Container>
             <Breadcrumbs aria-label="breadcrumb" separator=">">
-                <Typography>AKTUALITY</Typography>
+                <Typography>Aktuality</Typography>
             </Breadcrumbs>
             <Grid container>
                 <Grid item sm={12} md={6}>

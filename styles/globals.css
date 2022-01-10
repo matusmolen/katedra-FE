@@ -228,3 +228,10 @@ a:active {
 .rooms a {
     margin: 0 0.5em
 }
+
+table {
+    text-align: left;
+}
+td {
+    padding: 0 0.2em;
+}
