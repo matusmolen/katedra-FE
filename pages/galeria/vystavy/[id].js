@@ -23,6 +23,9 @@ function Detail({vystava}) {
                     <ImageBox sx={{left:'-145px'}}>
                         <img src={vystava.pic1.url} alt={vystava.pic1.alternativeText} width="100%"/>
                     </ImageBox>
+                    <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
+                        <img src={vystava.pic2.url} alt={vystava.pic2.alternativeText} width="100%"/>
+                    </ImageBox>
                     <ImageBox sx={{bottom:'5em', right:'-35%'}}>
                         <img src={vystava.pic3.url} alt={vystava.pic3.alternativeText} width="100%"/>
                     </ImageBox>
@@ -54,7 +57,7 @@ function Detail({vystava}) {
                                 opacity: 0.8
                             }}
                         />
-                        <ImageBox sx={{right:'-50%',top:'5em'}}>
+                        <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
                             <img src={vystava.pic2.url} alt={vystava.pic2.alternativeText} width="100%"/>
                         </ImageBox>
                     </Box>
