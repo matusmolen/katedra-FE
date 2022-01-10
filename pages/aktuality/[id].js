@@ -63,7 +63,10 @@ export default function AktDetail({aktualita}) {
                     <ImageBox sx={{left:'-145px'}}>
                         <img src={aktualita.pic1.url} alt={aktualita.pic1.alternativeText} width="100%"/>
                     </ImageBox>
-                    <ImageBox style={{bottom:'2em', right:'-35%'}}>
+                    <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
+                        <img src={aktualita.pic2.url} alt={aktualita.pic2.alternativeText} width="100%"/>
+                    </ImageBox>
+                    <ImageBox sx={{bottom:'2em', right:'-35%'}}>
                         <img src={aktualita.pic3.url} alt={aktualita.pic3.alternativeText} width="100%"/>
                     </ImageBox>
                 </Grid>
@@ -91,7 +94,7 @@ export default function AktDetail({aktualita}) {
                                 opacity: 0.8
                             }}
                         />
-                        <ImageBox sx={{right:'-50%',top:'5em'}}>
+                        <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
                             <img src={aktualita.pic2.url} alt={aktualita.pic2.alternativeText} width="100%"/>
                         </ImageBox>
 
