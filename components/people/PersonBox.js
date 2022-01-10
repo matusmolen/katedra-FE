@@ -35,7 +35,7 @@ export default function PersonBox({topMargin, route, person, cols}) {
                     </Button>
                 </AppLink>
             </Box>
-            <h5>
+            <h5 style={{fontSize:'1.3em'}}>
                 {person.name}
             </h5>
         </Grid>
