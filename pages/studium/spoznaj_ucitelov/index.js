@@ -49,7 +49,7 @@ function Ucitelia({teachers}) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers?_sort=name');
+    const res = await fetch('https://katedra-dizajnu.herokuapp.com/teachers?_sort=published_at');
     const data = await res.json();
 
     return {
