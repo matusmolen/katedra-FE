@@ -1,8 +1,5 @@
-import {Box, Breadcrumbs, Container, Dialog, Fab, Grid, Typography} from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import {Box, Breadcrumbs, Container, Grid, Typography} from '@mui/material';
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import AppLink from "../../utils/AppLink";
 import ImageSlider from "../../components/ImageSlider";

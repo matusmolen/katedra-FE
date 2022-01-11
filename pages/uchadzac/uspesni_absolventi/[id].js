@@ -1,6 +1,5 @@
-import {Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
+import {Breadcrumbs, Container, Typography,} from '@mui/material';
 import React from 'react';
-import ImageSlider from '../../../components/ImageSlider';
 import AppLink from "../../../utils/AppLink";
 import PersonPage from "../../../components/people/PersonPage";
 

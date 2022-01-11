@@ -1,7 +1,6 @@
 import {Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
 import AppLink from "../../../utils/AppLink";
-import {useRouter} from "next/router";
 import PeopleGrid from "../../../components/people/PeopleGrid";
 import Image from "next/image";
 
