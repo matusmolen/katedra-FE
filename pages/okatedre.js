@@ -130,11 +130,10 @@ export default function index({oKatedre, rooms, katalogy}) {
                     </h1>
                 </div>
                 <Collapse in={expandedPubAKatalog} timeout="auto" unmountOnExit>
-                    {/* TODO tu dam este backend katalogy  */}
                     {katalogy.map((katalog, index) => (
                         <a
                             target="_blank"
-                            href={katalog.pdf ? `https://katedra-dizajnu.herokuapp.com/${katalog.pdf.url}` : '#'}
+                            href={katalog.pdf ? katalog.pdf.url : '#'}
                             style={{textDecoration: 'underline'}}
                             key={index}
                         >
