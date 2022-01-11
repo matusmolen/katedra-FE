@@ -76,11 +76,11 @@ export default function student({harmonogram}) {
                         táto sekcia presne to čo práve hľadáš.
                     </h5>
                     <Button variant="contained"
-                            sx={{
-                                backgroundColor: '#000000',
-                                color: '#ffffff',
-                                borderRadius: 20,
-                            }}
+                        sx={{
+                            backgroundColor: '#000000',
+                            color: '#ffffff',
+                            borderRadius: 20,
+                        }}
                     >
                         <AppLink
                             href="/studium/praca_staze_sutaze"
