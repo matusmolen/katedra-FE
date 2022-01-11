@@ -9,68 +9,9 @@ import ImageSlider from "../../components/ImageSlider";
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
-function SimpleDialog(props) {
-    const {onClose, selectedValue, open} = props;
 
-    const handleClose = () => {
-        onClose(selectedValue);
-    };
 
-    const handleListItemClick = (value) => {
-        onClose(value);
-    };
-
-    return (
-        <Dialog onClose={handleClose} open={open}>
-            <Box
-                sx={{
-                    width: 300,
-                    height: 300,
-                    backgroundColor: '#add8e6',
-                }}
-            >
-                <Fab
-                    size="small"
-                    color="info"
-                    aria-label="add"
-                    style={{position: 'absolute', bottom: 130, left: 0}}
-                >
-                    <ArrowBackIosIcon/>
-                </Fab>
-                <Fab
-                    size="small"
-                    color="info"
-                    aria-label="add"
-                    style={{position: 'absolute', bottom: 130, right: 0}}
-                >
-                    <ArrowForwardIosIcon/>
-                </Fab>
-            </Box>
-        </Dialog>
-    );
-}
-
-SimpleDialog.propTypes = {
-    onClose: PropTypes.func.isRequired,
-    open: PropTypes.bool.isRequired,
-    selectedValue: PropTypes.string.isRequired,
-};
-
-// TODO: tu upravit tie mly bo su zbytocne
 export default function PripravneKurzy({pKurz}) {
-    const [open, setOpen] = React.useState(false);
-    const [selectedValue, setSelectedValue] = React.useState(emails[1]);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = (value) => {
-        setOpen(false);
-        setSelectedValue(value);
-    };
-
-
     return (
         <Container>
                 <Breadcrumbs
@@ -185,11 +126,7 @@ export default function PripravneKurzy({pKurz}) {
                         <i className="bi bi-envelope"></i> e-mail: kd.fu@tuke.sk
                     </p>
                 </Container>
-                {/* <h1>Fotogaléria z kurzu</h1> */}
-                {/* TODO dialog popup */}
-                {/* <Button
-                    variant="contained"
-                    color="primary">Zobraziť viac</Button> */}
+
                 <div style={{position: 'relative'}}>
                     <Typography variant="subtitle1" component="div">
                         <h1
@@ -204,12 +141,6 @@ export default function PripravneKurzy({pKurz}) {
                             <ImageSlider galery={pKurz.foto}/>
                         </h1>
                     </Typography>
-
-                    <SimpleDialog
-                        selectedValue={selectedValue}
-                        open={open}
-                        onClose={handleClose}
-                    />
                 </div>
 
         </Container>
