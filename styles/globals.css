@@ -37,6 +37,10 @@
     url('~/assets/fonts/Normatica-Regular.otf') format('opentype');
 }
 
+#__next {
+    height: 100%;
+}
+
 html,
 body {
     padding: 0;
@@ -45,6 +49,7 @@ body {
     line-height: 31px;
     size: 18px;
     overflow-x: hidden;
+    height: 100%;
 }
 
 h1 {
