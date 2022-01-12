@@ -63,9 +63,6 @@ export default function ImageSlider({galery}) {
                 </Fab>
 
             </Dialog>
-
-            {/* </Container> */}
-
         </>
     )
 }
