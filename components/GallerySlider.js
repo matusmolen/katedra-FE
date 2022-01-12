@@ -61,10 +61,10 @@ export default function GallerySlider({gallery}) {
                             <ArrowForwardIosIcon/>
                         </Fab>
                     </Grid>
-                    <Grid item md={5} sx={{padding:'2em'}}>
-                        <h2>{gallery.author}</h2>
-                        <h2>{gallery.grade}</h2>
-                        <h3>{gallery.title}</h3>
+                    <Grid item md={5} style={{padding:'2em'}}>
+                        <h4 style={{marginBottom: 0}}>{gallery.author}</h4>
+                        <h4 style={{marginTop: 5}}>{gallery.grade}</h4>
+                        <h5>{gallery.title}</h5>
                         <p>{gallery.text}</p>
                     </Grid>
                 </Grid>
