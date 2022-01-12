@@ -155,6 +155,11 @@ function Header() {
                         Galéria výstav
                     </StyledMenuItem>
                 </AppLink>
+                <AppLink href='/galeria' underline='none'>
+                    <StyledMenuItem onClick={() => setAnchorGalleryMenu(null)}>
+                        Galéria prác
+                    </StyledMenuItem>
+                </AppLink>
             </Menu>
         </>
     );
