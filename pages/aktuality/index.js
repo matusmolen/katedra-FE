@@ -2,7 +2,7 @@ import {Box, Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
 import Image from 'next/image';
 import AppLink from "../../utils/AppLink";
-import PostGrid from "../../components/posts/ImageGrid";
+import PostGrid from "../../components/posts/PostGrid";
 
 
 function Aktuality({aktuality}) {

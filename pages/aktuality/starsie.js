@@ -1,7 +1,7 @@
 import {Box, Breadcrumbs, Container, Typography} from '@mui/material';
 import React from 'react';
 import AppLink from "../../utils/AppLink";
-import PostGrid from "../../components/posts/ImageGrid";
+import PostGrid from "../../components/posts/PostGrid";
 
 export const getStaticProps = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/news');

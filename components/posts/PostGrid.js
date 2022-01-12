@@ -1,6 +1,6 @@
 import {Grid} from "@mui/material";
 import React from "react";
-import PostBox from "./ImageBox";
+import PostBox from "./PostBox";
 
 
 export default function PostGrid({items, route}) {
