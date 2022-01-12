@@ -19,14 +19,12 @@ export default function PersonPage({person}) {
 
             <Grid container spacing={4}>
                 <Grid item md={6}>
-                    <div>
-                        <h5>
-                            {person.description}
-                        </h5>
-                    </div>
-                    <div>
+                    <h5 style={{whiteSpace: 'pre-wrap'}}>
+                        {person.description}
+                    </h5>
+                    <p style={{whiteSpace: 'pre-wrap', margin: 0}}>
                         {person.bio_odsek1}
-                    </div>
+                    </p>
                 </Grid>
                 <Grid item xs={12} md={6} sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                     <img src={person.profile ? person.profile.url : ''} alt="profilovy obrazok" width="80%"
