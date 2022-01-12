@@ -2,7 +2,7 @@ import {Box, Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
 import Image from 'next/image';
 import AppLink from "../../utils/AppLink";
-import ImageGrid from "../../components/gallery/ImageGrid";
+import PostGrid from "../../components/posts/ImageGrid";
 
 
 function Aktuality({aktuality}) {
@@ -25,7 +25,7 @@ function Aktuality({aktuality}) {
                 </Grid>
             </Grid>
 
-            <ImageGrid route='/aktuality' items={aktuality.slice(0, 3)}/>
+            <PostGrid route='/aktuality' items={aktuality.slice(0, 3)}/>
 
             <Box sx={{
                 display: 'flex',

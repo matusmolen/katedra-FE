@@ -1,7 +1,7 @@
 import {Box, Breadcrumbs, Container, Typography} from '@mui/material';
 import React from 'react';
 import AppLink from "../../../utils/AppLink";
-import ImageGrid from "../../../components/gallery/ImageGrid";
+import PostGrid from "../../../components/posts/ImageGrid";
 
 export const getStaticProps = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/vystavas');
@@ -24,7 +24,7 @@ export default function starsieVystavy({vystavy}) {
 
             <h2>Staršie výstavy</h2>
 
-            <ImageGrid route='/galeria/vystavy' items={vystavy}/>
+            <PostGrid route='/galeria/vystavy' items={vystavy}/>
 
             <Box sx={{
                 display: 'flex',

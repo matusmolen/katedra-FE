@@ -3,7 +3,7 @@ import React from "react";
 import AppLink from "../../utils/AppLink";
 import Image from 'next/image'
 
-export default function ImageBox({item, fullWidth = false, route}) {
+export default function PostBox({item, fullWidth = false, route}) {
     return (
         <Grid item sm={fullWidth ? 12 : 6} xs={12}>
             <Box sx={{position: 'relative', height: '20em'}}>

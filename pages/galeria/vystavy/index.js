@@ -2,7 +2,7 @@ import React from 'react'
 import {Box, Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import Image from 'next/image';
 import AppLink from "../../../utils/AppLink";
-import ImageGrid from "../../../components/gallery/ImageGrid";
+import PostGrid from "../../../components/posts/ImageGrid";
 
 export const getStaticProps = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/vystavas');
@@ -36,7 +36,7 @@ export default function galeriaVystav({vystavy}) {
                 </Grid>
             </Grid>
 
-            <ImageGrid route='/galeria/vystavy' items={najnovsie}/>
+            <PostGrid route='/galeria/vystavy' items={najnovsie}/>
 
             <Box sx={{
                 display: 'flex',
