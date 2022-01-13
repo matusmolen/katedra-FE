@@ -26,7 +26,7 @@ function Detail({vystava}) {
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
                         <img src={vystava.pic2.url} alt={vystava.pic2.alternativeText} width="100%"/>
                     </ImageBox>
-                    <ImageBox sx={{bottom:'5em', right:'-35%'}}>
+                    <ImageBox sx={{top:'70%', right:'-35%'}}>
                         <img src={vystava.pic3.url} alt={vystava.pic3.alternativeText} width="100%"/>
                     </ImageBox>
 

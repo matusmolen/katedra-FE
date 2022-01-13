@@ -50,7 +50,7 @@ export default function Details({spolupraca}) {
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
                         <img src={spolupraca.pic2.url} alt={spolupraca.pic2.alternativeText} width="100%"/>
                     </ImageBox>
-                    <ImageBox sx={{bottom:'1em', right:'-35%'}}>
+                    <ImageBox sx={{top:'70%', right:'-25%'}}>
                         <img src={spolupraca.pic3.url} alt={spolupraca.pic3.alternativeText} width="100%"/>
                     </ImageBox>
                 </Grid>

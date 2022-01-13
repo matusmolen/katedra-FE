@@ -66,7 +66,7 @@ export default function AktDetail({aktualita}) {
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
                         <img src={aktualita.pic2.url} alt={aktualita.pic2.alternativeText} width="100%"/>
                     </ImageBox>
-                    <ImageBox sx={{bottom:'2em', right:'-35%'}}>
+                    <ImageBox sx={{top:'70%', right:'-35%'}}>
                         <img src={aktualita.pic3.url} alt={aktualita.pic3.alternativeText} width="100%"/>
                     </ImageBox>
                 </Grid>
