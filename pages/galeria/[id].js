@@ -17,7 +17,7 @@ export const CategoryButton = styled(Button)(({theme}) => ({
 }));
 
 
-export default function GalleryCategory({year, galleries=[], categories}) {
+export default function GalleryCategory({year, galleries, categories}) {
     const [selectedCategory, setSelectedCategory] = React.useState(null);
 
 
@@ -36,7 +36,7 @@ export default function GalleryCategory({year, galleries=[], categories}) {
                     <AppLink underline="hover" color="inherit" href="../galeria/">
                         Galéria prác
                     </AppLink>
-                    <Typography>2020/2021</Typography>
+                    <Typography>{year.year}</Typography>
                 </Breadcrumbs>
 
                 <Grid
@@ -60,9 +60,14 @@ export default function GalleryCategory({year, galleries=[], categories}) {
 
             </Container>
             <Container maxWidth='xl' sx={{marginTop: '2em'}}>
-                <Masonry spacing={2} columns={{xs: 1, sm: 2, md: 3, lg: 4}} width='100%'
-                         defaultSpacing={2} defaultColumns={4} defaultHeight={200}>
-
+                <Masonry
+                    spacing={2}
+                    columns={{xs: 1, sm: 2, md: 3, lg: 4}}
+                    sx={{width:'100%', overflowX: 'hidden'}}
+                    defaultSpacing={2}
+                    defaultColumns={4}
+                    defaultHeight={200}
+                >
                     {galleries
                         .filter((gallery) => {
                             if (selectedCategory === null) {
@@ -103,10 +108,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
     const year = await (await fetch(`https://katedra-dizajnu.herokuapp.com/years/${params.id}`)).json();
     const galleries = await (await fetch(`https://katedra-dizajnu.herokuapp.com/galleries?_year=${params.id}`)).json();
-    let categories = new Set();
+    let category_ids = new Set()
+    const categories = [];
     for (let gallery of galleries) {
         for (let category of gallery.gallery_categories) {
-            categories.add(category);
+            if(!category_ids.has(category.id)) {
+                category_ids.add(category.id)
+                categories.push(category)
+            }
         }
     }
 
