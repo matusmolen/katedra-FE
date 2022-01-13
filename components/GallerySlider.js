@@ -3,7 +3,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Dialog from "@mui/material/Dialog";
 import React, {useState} from "react";
-
+import Image from "next/image";
 
 export default function GallerySlider({gallery}) {
     const [current, setCurrent] = useState(0)
@@ -14,14 +14,13 @@ export default function GallerySlider({gallery}) {
 
     return (
         <>
-            <Box position='relative' width='100%'>
-                <img
-                    src={`${images[0].url}?w=162&auto=format`}
-                    srcSet={`${images[0].url}?w=162&auto=format&dpr=2 2x`}
+            <Box  sx={{position: 'relative', width: '100%', cursor:'pointer'}} onClick={() => setOpen(true)}>
+                <Image
+                    src={images[0].formats.small.url}
+                    height={images[0].height}
+                    width={images[0].width}
+                    objectFit='contain'
                     alt={images[0].alternativeText}
-                    loading="lazy"
-                    style={{cursor: 'pointer', width:'100%', height:'auto'}}
-                    onClick={() => setOpen(true)}
                 />
             </Box>
             <Dialog
@@ -41,9 +40,12 @@ export default function GallerySlider({gallery}) {
                             alignItems:'center',
                         }}
                     >
-                        <img
+                        <Image
                             src={images[current]?.url}
                              alt={images[current]?.alternativeText}
+                            height={images[current]?.height}
+                            width={images[current]?.width}
+                            objectFit='containt'
                             style={{height: '100%', width: '100%', objectFit: 'contain'}}
                         />
                         <Fab
