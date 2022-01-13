@@ -17,7 +17,7 @@ export const CategoryButton = styled(Button)(({theme}) => ({
 }));
 
 
-export default function GalleryCategory({year, galleries, categories}) {
+export default function GalleryCategory({year, galleries=[], categories}) {
     const [selectedCategory, setSelectedCategory] = React.useState(null);
 
 
@@ -60,7 +60,7 @@ export default function GalleryCategory({year, galleries, categories}) {
 
             </Container>
             <Container maxWidth='xl' sx={{marginTop: '2em'}}>
-                <Masonry spacing={2} columns={{xs: 1, sm: 2, md: 3, lg: 4}}
+                <Masonry spacing={2} columns={{xs: 1, sm: 2, md: 3, lg: 4}} width='100%'
                          defaultSpacing={2} defaultColumns={4} defaultHeight={200}>
 
                     {galleries
