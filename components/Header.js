@@ -112,9 +112,9 @@ function Header() {
                                 />
                             </AppLink>
 
-                            <SocialLink target='_blank' href="https://www.facebook.com" underline='none'>
-                                <FacebookOutlinedIcon/>
-                            </SocialLink>
+                            {/*<SocialLink target='_blank' href="https://www.facebook.com" underline='none'>*/}
+                            {/*    <FacebookOutlinedIcon/>*/}
+                            {/*</SocialLink>*/}
                             <SocialLink target='_blank' href="https://www.instagram.com/futu_kd/">
                                 <InstagramIcon/>
                             </SocialLink>
