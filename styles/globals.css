@@ -48,7 +48,7 @@ body {
     font-family: 'Normatica';
     line-height: 31px;
     size: 18px;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     height: 100%;
 }
 
