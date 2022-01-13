@@ -14,7 +14,7 @@ export default function GalleryYears({years}) {
                     flexDirection: 'column',
                     justifyContent:'center',
                     height: '100%',
-                    minHeight: '70vh',
+                    minHeight: '90vh',
                     padding: 1
             }}
             >
