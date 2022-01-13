@@ -48,7 +48,7 @@ body {
     font-family: 'Normatica';
     line-height: 31px;
     size: 18px;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
     height: 100%;
 }
 
@@ -90,6 +90,28 @@ h5 {
     line-height: 36px;
 }
 
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+        line-height: 104px;
+    }
+    h2 {
+        font-size: 40px;
+        line-height: 69px;
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 31px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 18px;
+        line-height: 31px;
+    }
+}
 /* i {
   color: #00ff0a;
 } */
