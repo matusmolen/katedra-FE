@@ -71,9 +71,8 @@ export default function GallerySlider({gallery}) {
                             aria-label='close'
                             onClick={() => setOpen(false)}
                             sx={{display: 'flex', marginLeft: 'auto'}}
-                            size='large'
                         >
-                            <CloseIcon fontSize='inherit'/>
+                            <CloseIcon fontSize='inherit' sx={{color: '#000000'}}/>
                         </IconButton>
                         <h4 style={{margin: 0}}>{gallery.author}</h4>
                         <h4 style={{marginTop: 5}}>{gallery.grade}</h4>
