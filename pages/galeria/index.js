@@ -9,8 +9,8 @@ export default function GalleryYears({years}) {
     return (
         <Box sx={{minHeight:'90vh', display: 'flex', alignItems:'center'}}>
             <Container>
-                <h1 style={{marginTop: 0}}>GALÉRIA PRÁC</h1>
-                <Grid container spacing={2}>
+                <h1 style={{margin: 0}}>GALÉRIA PRÁC</h1>
+                <Grid container spacing={2} mt={1}>
                     {years.map((year, index) => (
                         <Grid item key={index}>
                             <AppLink href={`/galeria/${year.id}`} key={index} underline='none'>
@@ -21,6 +21,7 @@ export default function GalleryYears({years}) {
                         </Grid>
                     ))}
                 </Grid>
+                <h5>Pozrite si výber z prác našich študentov.</h5>
             </Container>
             <Box sx={{position:'absolute', inset: '0', zIndex: -1}}>
                 <Image src='/images/gallery_bg.png' layout='fill' objectFit='cover'/>
