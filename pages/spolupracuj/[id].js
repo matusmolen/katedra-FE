@@ -3,6 +3,7 @@ import * as React from 'react';
 import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {ImageBox} from "../aktuality/[id]";
+import Image from "next/image";
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops');
@@ -45,13 +46,37 @@ export default function Details({spolupraca}) {
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
-                        <img src={spolupraca.pic1.url} alt={spolupraca.pic1.alternativeText} width="100%"/>
+                        <Image
+                            src={spolupraca.pic1.url}
+                            alt={spolupraca.pic1.alternativeText}
+                            height={spolupraca.pic1.height}
+                            width={spolupraca.pic1.width}
+                            objectFit='cover'
+                            blurDataURL={spolupraca.pic1.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
-                        <img src={spolupraca.pic2.url} alt={spolupraca.pic2.alternativeText} width="100%"/>
+                        <Image
+                            src={spolupraca.pic2.url}
+                            alt={spolupraca.pic2.alternativeText}
+                            height={spolupraca.pic2.height}
+                            width={spolupraca.pic2.width}
+                            objectFit={'cover'}
+                            blurDataURL={spolupraca.pic2.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                     <ImageBox sx={{top:'70%', right:'-25%'}}>
-                        <img src={spolupraca.pic3.url} alt={spolupraca.pic3.alternativeText} width="100%"/>
+                        <Image
+                            src={spolupraca.pic3.url}
+                            alt={spolupraca.pic3.alternativeText}
+                            height={spolupraca.pic3.height}
+                            width={spolupraca.pic3.width}
+                            objectFit={'cover'}
+                            blurDataURL={spolupraca.pic3.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                 </Grid>
                 <Grid item md={7}>
@@ -79,9 +104,16 @@ export default function Details({spolupraca}) {
                             }}
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
-                            <img src={spolupraca.pic2.url} alt={spolupraca.pic2.alternativeText} width="100%"/>
+                            <Image
+                                src={spolupraca.pic2.url}
+                                alt={spolupraca.pic2.alternativeText}
+                                height={spolupraca.pic2.height}
+                                width={spolupraca.pic2.width}
+                                objectFit={'cover'}
+                                blurDataURL={spolupraca.pic2.formats.small.url}
+                                placeholder='blur'
+                            />
                         </ImageBox>
-
                     </Box>
                 </Grid>
             </Grid>

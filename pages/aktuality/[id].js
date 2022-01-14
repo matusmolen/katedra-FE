@@ -3,8 +3,12 @@ import React from 'react';
 import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {styled} from "@mui/material/styles";
+import Image from "next/image"
 
 export const ImageBox = styled('div')(({theme}) => ({
+    '& img, & div': {
+        width: '100%',
+    },
     [theme.breakpoints.up('md')]: {
         position: 'absolute',
         width: '125%',
@@ -61,13 +65,37 @@ export default function AktDetail({aktualita}) {
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
-                        <img src={aktualita.pic1.url} alt={aktualita.pic1.alternativeText} width="100%"/>
+                        <Image
+                            src={aktualita.pic1.url}
+                            alt={aktualita.pic1.alternativeText}
+                            height={aktualita.pic1.height}
+                            width={aktualita.pic1.width}
+                            objectFit={'cover'}
+                            blurDataURL={aktualita.pic1.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
-                        <img src={aktualita.pic2.url} alt={aktualita.pic2.alternativeText} width="100%"/>
+                        <Image
+                            src={aktualita.pic2.url}
+                            alt={aktualita.pic2.alternativeText}
+                            height={aktualita.pic2.height}
+                            width={aktualita.pic2.width}
+                            objectFit={'cover'}
+                            blurDataURL={aktualita.pic2.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                     <ImageBox sx={{top:'70%', right:'-35%'}}>
-                        <img src={aktualita.pic3.url} alt={aktualita.pic3.alternativeText} width="100%"/>
+                        <Image
+                            src={aktualita.pic3.url}
+                            alt={aktualita.pic3.alternativeText}
+                            height={aktualita.pic3.height}
+                            width={aktualita.pic3.width}
+                            objectFit={'cover'}
+                            blurDataURL={aktualita.pic3.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                 </Grid>
                 <Grid item md={7}>
@@ -95,7 +123,15 @@ export default function AktDetail({aktualita}) {
                             }}
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
-                            <img src={aktualita.pic2.url} alt={aktualita.pic2.alternativeText} width="100%"/>
+                            <Image
+                                src={aktualita.pic2.url}
+                                alt={aktualita.pic2.alternativeText}
+                                height={aktualita.pic2.height}
+                                width={aktualita.pic2.width}
+                                objectFit={'cover'}
+                                blurDataURL={aktualita.pic2.formats.small.url}
+                                placeholder='blur'
+                            />
                         </ImageBox>
 
                     </Box>

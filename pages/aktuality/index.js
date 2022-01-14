@@ -21,7 +21,14 @@ function Aktuality({aktuality}) {
                     </h5>
                 </Grid>
                 <Grid item sm={12} md={6} sx={{position:'relative'}}>
-                    <Image src='/images/Frame.png' alt="free fonts" layout='fill' objectFit='contain'/>
+                    <Image
+                        src='/images/Frame.png'
+                        alt="free fonts"
+                        layout='fill'
+                        objectFit='contain'
+                        blurDataURL='/images/Frame.png'
+                        placeholder='blur'
+                    />
                 </Grid>
             </Grid>
 

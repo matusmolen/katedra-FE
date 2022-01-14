@@ -12,6 +12,8 @@ export default function PostBox({item, fullWidth = false, route}) {
                     alt={`obrazok ${item.title}`}
                     layout='fill'
                     objectFit='cover'
+                    blurDataURL={item.preview_img.formats.small.url}
+                    placeholder='blur'
                 />
 
                 <AppLink

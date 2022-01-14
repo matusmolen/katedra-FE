@@ -4,6 +4,7 @@ import ImageSlider from '../../../components/ImageSlider';
 import AppLink from "../../../utils/AppLink";
 import theme from "../../../styles/theme";
 import {ImageBox} from "../../aktuality/[id]";
+import Image from "next/image";
 
 function Detail({vystava}) {
     const largeScreen = useMediaQuery(theme.breakpoints.up('md'));
@@ -21,13 +22,37 @@ function Detail({vystava}) {
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
-                        <img src={vystava.pic1.url} alt={vystava.pic1.alternativeText} width="100%"/>
+                        <Image
+                            src={vystava.pic1.url}
+                            alt={vystava.pic1.alternativeText}
+                            height={vystava.pic1.height}
+                            width={vystava.pic1.width}
+                            objectFit='cover'
+                            blurDataURL={vystava.pic1.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
-                        <img src={vystava.pic2.url} alt={vystava.pic2.alternativeText} width="100%"/>
+                        <Image
+                            src={vystava.pic2.url}
+                            alt={vystava.pic2.alternativeText}
+                            height={vystava.pic2.height}
+                            width={vystava.pic2.width}
+                            objectFit='cover'
+                            blurDataURL={vystava.pic2.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
                     <ImageBox sx={{top:'70%', right:'-35%'}}>
-                        <img src={vystava.pic3.url} alt={vystava.pic3.alternativeText} width="100%"/>
+                        <Image
+                            src={vystava.pic3.url}
+                            alt={vystava.pic3.alternativeText}
+                            height={vystava.pic3.height}
+                            width={vystava.pic3.width}
+                            objectFit='cover'
+                            blurDataURL={vystava.pic3.formats.small.url}
+                            placeholder='blur'
+                        />
                     </ImageBox>
 
                 </Grid>
@@ -58,7 +83,15 @@ function Detail({vystava}) {
                             }}
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
-                            <img src={vystava.pic2.url} alt={vystava.pic2.alternativeText} width="100%"/>
+                            <Image
+                                src={vystava.pic2.url}
+                                alt={vystava.pic2.alternativeText}
+                                height={vystava.pic2.height}
+                                width={vystava.pic2.width}
+                                objectFit='cover'
+                                blurDataURL={vystava.pic2.formats.small.url}
+                                placeholder='blur'
+                            />
                         </ImageBox>
                     </Box>
                 </Grid>

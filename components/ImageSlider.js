@@ -5,17 +5,10 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Image from "next/image";
 import CloseIcon from '@mui/icons-material/Close';
-import {styled} from "@mui/system";
-
-const ImageWrapper = styled(Box)(({theme}) => ({
-    '& > div': {
-        maxHeight: '80vh'
-    },
-}));
-
+import {ImageWrapper} from "./GallerySlider";
 
 export default function ImageSlider({galery}) {
-    const [Current, setCurrent] = useState(0)
+    const [current, setCurrent] = useState(0)
     const slidesLength = galery.length;
 
     const [open, setOpen] = React.useState(false);
@@ -43,7 +36,14 @@ export default function ImageSlider({galery}) {
                         md: 'block'
                     }}
                 >
-                    <Image src='/images/sipky.png' alt="backgroundimg" layout='fill' objectFit='contain'/>
+                    <Image
+                        src='/images/sipky.png'
+                        alt="backgroundimg"
+                        layout='fill'
+                        objectFit='contain'
+                        blurDataURL='/images/sipky.png'
+                        placeholder='blur'
+                    />
                 </Box>
             </Button>
 
@@ -52,34 +52,43 @@ export default function ImageSlider({galery}) {
                 onClose={() => setOpen(false)}
                 fullWidth
                 maxWidth="lg"
+                className={'gallery-slider'}
+                style={{ maxWidth: "100%", maxHeight: "100%" }}
             >
                 <Box
                     sx={{
-                        maxHeight:'90vh',
                         position:'relative',
-                        display:'flex',
-                        justifyContent:'center',
+                        display: 'flex',
                         alignItems:'center',
+                        justifyContent:'center',
                     }}
                 >
-                    <ImageWrapper>
-                        <Image
-                            src={galery[Current]?.url}
-                            alt={galery[Current]?.alternativeText}
-                            height={galery[Current]?.height}
-                            width={galery[Current]?.width}
-                            objectFit={'contain'}
-                        />
-                    </ImageWrapper>
+                    {
+                        galery.map((image, index) =>
+                            <ImageWrapper className={current === index ? 'show' : 'hide'}>
+                                <Image
+                                    src={image.url}
+                                    alt={image.alternativeText}
+                                    height={image.height}
+                                    width={image.width}
+                                    objectFit='contain'
+                                    blurDataURL={image.formats.small.url}
+                                    placeholder='blur'
+                                    style={{maxHeight: 'calc(100vh - 64px)'}}
+                                />
+                            </ImageWrapper>
+                        )
+                    }
+
                     <Fab
-                        onClick={() => setCurrent((Current + 1 + slidesLength) % slidesLength)}
+                        onClick={() => setCurrent((current - 1 + slidesLength) % slidesLength)}
                         size="small"
                         sx={{position: 'absolute', inset: 'auto auto auto 2em'}}
                     >
                         <ArrowBackIosIcon/>
                     </Fab>
                     <Fab
-                        onClick={() => setCurrent((Current - 1 + slidesLength) % slidesLength)}
+                        onClick={() => setCurrent((current + 1 + slidesLength) % slidesLength)}
                         size="small"
                         sx={{position: 'absolute', inset: 'auto 2em auto auto'}}
                     >

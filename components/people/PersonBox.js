@@ -1,9 +1,10 @@
 import {Box, Button, Grid} from "@mui/material";
 import React from "react";
 import AppLink from "../../utils/AppLink";
-
+import Image from "next/image"
 
 export default function PersonBox({topMargin, route, person, cols}) {
+    console.log(person.profile.formats.small)
     return (
         <Grid item
               key={person.id}
@@ -18,12 +19,13 @@ export default function PersonBox({topMargin, route, person, cols}) {
               }}
         >
             <Box position='relative' display='flex' justifyContent='center' width={{xs: '75%', md: '80%'}}>
-                <img
+                <Image
                     src={person.profile.url}
                     alt={`profilovy obrazok ${person.name}`}
-                    width="100%"
-                    height="auto"
-                    style={{borderRadius: '100%'}}
+                    height={person.profile.height}
+                    width={person.profile.width}
+                    blurDataURL={person.profile.formats.small?.url || person.profile.url}
+                    placeholder='blur'
                 />
                 <AppLink href={`${route}/${person.id}`} sx={{display:'block', position:'absolute', bottom: '3em'}}>
                     <Button

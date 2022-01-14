@@ -5,7 +5,23 @@ import Dialog from "@mui/material/Dialog";
 import React, {useState} from "react";
 import Image from "next/image";
 import CloseIcon from '@mui/icons-material/Close';
+import {styled} from "@mui/system";
 
+
+export const ImageWrapper = styled(Box)(({theme}) => ({
+    alignItems:'center',
+    justifyContent: 'center',
+    position: 'relative',
+    '&.show': {
+        display: 'flex',
+    },
+    '&.hide': {
+        display: 'none'
+    },
+    '& div': {
+        maxHeight: 'calc(100vh - 64px)'
+    }
+}));
 
 export default function GallerySlider({gallery}) {
     const [current, setCurrent] = useState(0)
@@ -23,6 +39,8 @@ export default function GallerySlider({gallery}) {
                     width={images[0].width}
                     objectFit='contain'
                     alt={images[0].alternativeText}
+                    blurDataURL={images[0].formats.small.url}
+                    placeholder='blur'
                 />
             </Box>
             <Dialog
@@ -30,6 +48,7 @@ export default function GallerySlider({gallery}) {
                 onClose={() => setOpen(false)}
                 fullWidth
                 maxWidth="lg"
+                className={'gallery-slider'}
             >
                 <Grid container spacing={1}>
                     <Grid
@@ -39,27 +58,38 @@ export default function GallerySlider({gallery}) {
                         sx={{
                             position:'relative',
                             display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
-                            alignItems:'center',
                         }}
                     >
-                        <Image
-                            src={images[current]?.url}
-                             alt={images[current]?.alternativeText}
-                            height={images[current]?.height}
-                            width={images[current]?.width}
-                            objectFit='contain'
-                            style={{height: '100%', width: '100%', objectFit: 'contain'}}
-                        />
+
+                            {
+                                images.map((image, index) =>
+                                    <ImageWrapper className={index === current ? 'show' : 'hide'} key={index}>
+                                        <Image
+                                            src={image?.url}
+                                            alt={image?.alternativeText}
+                                            height={image?.height}
+                                            width={image?.width}
+                                            objectFit='contain'
+                                            blurDataURL={image?.formats.small.url}
+                                            placeholder='blur'
+                                        />
+                                    </ImageWrapper>
+                                )
+                            }
+
+
+
                         <Fab
-                            onClick={() => setCurrent((current + 1 + imagesLength) % imagesLength)}
+                            onClick={() => setCurrent((current - 1 + imagesLength) % imagesLength)}
                             size="small"
                             sx={{position: 'absolute', inset: 'auto auto auto 2em'}}
                         >
                             <ArrowBackIosIcon/>
                         </Fab>
                         <Fab
-                            onClick={() => setCurrent((current - 1 + imagesLength) % imagesLength)}
+                            onClick={() => setCurrent((current + 1 + imagesLength) % imagesLength)}
                             size="small"
                             sx={{position: 'absolute', inset: 'auto 2em auto auto'}}
                         >
