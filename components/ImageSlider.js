@@ -1,19 +1,23 @@
-//------------------------------------------------------------------------------
-// LEN NA SKUSANIE ROZNYCH VECI ABY SOM NEROZDRBALA UZ TAKMER HOTOVE STRANKY ---
-//------------------------------------------------------------------------------
 import React, {useState} from 'react'
 import Dialog from '@mui/material/Dialog';
-import {Box, Button, Fab} from "@mui/material";
+import {Box, Button, Fab, IconButton} from "@mui/material";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Image from "next/image";
+import CloseIcon from '@mui/icons-material/Close';
+import {styled} from "@mui/system";
+
+const ImageWrapper = styled(Box)(({theme}) => ({
+    '& > div': {
+        maxHeight: '80vh'
+    },
+}));
 
 
 export default function ImageSlider({galery}) {
     const [Current, setCurrent] = useState(0)
     const slidesLength = galery.length;
 
-    //----- nastavenie dialogu -------------
     const [open, setOpen] = React.useState(false);
 
     return (
@@ -45,23 +49,52 @@ export default function ImageSlider({galery}) {
 
             <Dialog
                 open={open}
-                onClose={() => setOpen(false)}>
+                onClose={() => setOpen(false)}
+                fullWidth
+                maxWidth="lg"
+            >
+                <Box
+                    sx={{
+                        maxHeight:'90vh',
+                        position:'relative',
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:'center',
+                    }}
+                >
+                    <ImageWrapper>
+                        <Image
+                            src={galery[Current]?.url}
+                            alt={galery[Current]?.alternativeText}
+                            height={galery[Current]?.height}
+                            width={galery[Current]?.width}
+                            objectFit={'contain'}
+                        />
+                    </ImageWrapper>
+                    <Fab
+                        onClick={() => setCurrent((Current + 1 + slidesLength) % slidesLength)}
+                        size="small"
+                        sx={{position: 'absolute', inset: 'auto auto auto 2em'}}
+                    >
+                        <ArrowBackIosIcon/>
+                    </Fab>
+                    <Fab
+                        onClick={() => setCurrent((Current - 1 + slidesLength) % slidesLength)}
+                        size="small"
+                        sx={{position: 'absolute', inset: 'auto 2em auto auto'}}
+                    >
+                        <ArrowForwardIosIcon/>
+                    </Fab>
+                    <IconButton
+                        aria-label='close'
+                        onClick={() => setOpen(false)}
+                        sx={{position:'absolute', inset: '0.5em 0.5em auto auto'}}
+                        size='large'
 
-                <img src={galery[Current]?.url} width="550" alt={galery[Current]?.alternativeText}/>
-
-                <Fab
-                    onClick={() => setCurrent((Current + 1 + slidesLength) % slidesLength)}
-                    size="small"
-                    style={{position: 'absolute', bottom: "50%", left: 0}}>
-                    <ArrowBackIosIcon/>
-                </Fab>
-                <Fab
-                    onClick={() => setCurrent((Current - 1 + slidesLength) % slidesLength)}
-                    size="small"
-                    style={{position: 'absolute', bottom: "50%", right: 0}}>
-                    <ArrowForwardIosIcon/>
-                </Fab>
-
+                    >
+                        <CloseIcon fontSize='inherit' sx={{color: '#000000'}}/>
+                    </IconButton>
+                </Box>
             </Dialog>
         </>
     )

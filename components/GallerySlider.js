@@ -1,9 +1,11 @@
-import {Box, Fab, Grid} from "@mui/material";
+import {Box, Fab, Grid, IconButton} from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Dialog from "@mui/material/Dialog";
 import React, {useState} from "react";
 import Image from "next/image";
+import CloseIcon from '@mui/icons-material/Close';
+
 
 export default function GallerySlider({gallery}) {
     const [current, setCurrent] = useState(0)
@@ -32,6 +34,7 @@ export default function GallerySlider({gallery}) {
                 <Grid container spacing={1}>
                     <Grid
                         item
+                        xs={12}
                         md={7}
                         sx={{
                             position:'relative',
@@ -45,7 +48,7 @@ export default function GallerySlider({gallery}) {
                              alt={images[current]?.alternativeText}
                             height={images[current]?.height}
                             width={images[current]?.width}
-                            objectFit='containt'
+                            objectFit='contain'
                             style={{height: '100%', width: '100%', objectFit: 'contain'}}
                         />
                         <Fab
@@ -63,8 +66,16 @@ export default function GallerySlider({gallery}) {
                             <ArrowForwardIosIcon/>
                         </Fab>
                     </Grid>
-                    <Grid item md={5} style={{padding:'2em'}}>
-                        <h4 style={{marginBottom: 0}}>{gallery.author}</h4>
+                    <Grid item xs={12} md={5} style={{padding:'2em'}}>
+                        <IconButton
+                            aria-label='close'
+                            onClick={() => setOpen(false)}
+                            sx={{display: 'block', marginLeft: 'auto'}}
+                            size='large'
+                        >
+                            <CloseIcon fontSize='inherit'/>
+                        </IconButton>
+                        <h4 style={{margin: 0}}>{gallery.author}</h4>
                         <h4 style={{marginTop: 5}}>{gallery.grade}</h4>
                         <h5>{gallery.title}</h5>
                         <p>{gallery.text}</p>
