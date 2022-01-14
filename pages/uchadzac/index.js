@@ -6,7 +6,7 @@ export default function Uchadzac() {
     return (
         <Container
             sx={{
-                backgroundImage: 'url(/images/uchadzac_1-01.jpg)',
+                backgroundImage: 'url(/images/uchadzac_1-01.png)',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPositionX: '30px',
