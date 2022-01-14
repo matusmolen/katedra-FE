@@ -73,14 +73,10 @@ export default function Spoluprace({spoluprace}) {
                     <CardContent>
                         <Grid
                             container
-                            direction="row"
-                            //justifyContent="space-around"   //spravi to ze tretia spolupraca bude v strede
-                            justifyContent="space-between"
-                            alignItems="flex-start"
-                            spacing={5}
+                            spacing={2}
                         >
                             {spoluprace.map((spolupraca) => (
-                                <Grid item xs={6} key={spolupraca.id}>
+                                <Grid item md={6} key={spolupraca.id}>
                                     <h3>{spolupraca.title}</h3>
                                     <p>{spolupraca.description}</p>
                                     <AppLink href={`/spolupracuj/${spolupraca.id}`} underline='none'>
