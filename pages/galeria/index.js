@@ -7,18 +7,9 @@ import Image from "next/image"
 
 export default function GalleryYears({years}) {
     return (
-        <Container sx={{position:'relative', height: '100%'}}>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent:'center',
-                    height: '100%',
-                    minHeight: '90vh',
-                    padding: 1
-            }}
-            >
-                <h1>GALÉRIA PRÁC</h1>
+        <Box sx={{minHeight:'90vh', display: 'flex', alignItems:'center'}}>
+            <Container>
+                <h1 style={{marginTop: 0}}>GALÉRIA PRÁC</h1>
                 <Grid container spacing={2}>
                     {years.map((year, index) => (
                         <Grid item key={index}>
@@ -30,11 +21,11 @@ export default function GalleryYears({years}) {
                         </Grid>
                     ))}
                 </Grid>
-            </Box>
-            <Box sx={{position:'absolute', inset: '0 -2em', zIndex: -1}}>
+            </Container>
+            <Box sx={{position:'absolute', inset: '0', zIndex: -1}}>
                 <Image src='/images/gallery_bg.png' layout='fill' objectFit='cover'/>
             </Box>
-        </Container>
+        </Box>
     );
 }
 
