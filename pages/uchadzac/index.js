@@ -1,12 +1,15 @@
-import {Breadcrumbs, Button, Container, Grid, Typography} from '@mui/material';
+import {Breadcrumbs, Button, Container, Grid, Typography, useMediaQuery} from '@mui/material';
 import Image from 'next/image';
 import AppLink from "../../utils/AppLink";
+import theme from "../../styles/theme";
 
 export default function Uchadzac() {
+    const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+
     return (
         <Container
             sx={{
-                backgroundImage: 'url(/images/uchadzac_1-01.png)',
+                backgroundImage: largeScreen ? 'url(/images/uchadzac_1-01.png)' : '',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPositionX: '30px',
@@ -26,7 +29,7 @@ export default function Uchadzac() {
                         justifyContent="flex-start"
                         spacing={2}
                     >
-                        <Grid item xs={5}>
+                        <Grid item lg={5}>
                             <h1>Príjímacie konanie</h1>
                             <h5>
                                 Všetko čo potrebuješ vedieť skôr, ako si podáš prihlášku na
@@ -56,11 +59,16 @@ export default function Uchadzac() {
                         justifyContent="space-between"
                         spacing={2}
                     >
-                        <Grid item md={6}>
+                        <Grid item md={5}>
                             <div
-                                style={{position: 'relative', width: '25vw', height: '38vw'}}
+                                style={{position: 'relative', height: '100%'}}
                             >
-                                <Image src='/images/uchadzac_2-01.png' alt="plechovka" layout="fill" objectFit='contain'/>
+                                <Image
+                                    src='/images/uchadzac_2-01.png'
+                                    alt="plechovka"
+                                    layout="fill"
+                                    objectFit='contain'
+                                />
                             </div>
                         </Grid>
                         <Grid item md={6}>

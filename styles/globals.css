@@ -173,10 +173,6 @@ a:active {
 
 
 .down {
-    /* width: 300px; */
-    /* background: linear-gradient(to right, #00FF0A 50%, transparent 50%); */
-    /* background: linear-gradient(to left, #00FF0A 50%, transparent 50%); */
-    width: 75vw;
     background-color: #00ff0a;
     display: flex;
 }
