@@ -23,7 +23,7 @@ export default function GalleryYears({years}) {
                 </Grid>
                 <h5>Pozrite si výber z prác našich študentov.</h5>
             </Container>
-            <Box sx={{position:'absolute', inset: '0', zIndex: -1}}>
+            <Box sx={{position:'fixed', inset: '0', zIndex: -1}}>
                 <Image src='/images/gallery_bg.png' layout='fill' objectFit='cover'/>
             </Box>
         </Box>
