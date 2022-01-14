@@ -70,7 +70,7 @@ export default function GallerySlider({gallery}) {
                         <IconButton
                             aria-label='close'
                             onClick={() => setOpen(false)}
-                            sx={{display: 'block', marginLeft: 'auto'}}
+                            sx={{display: 'flex', marginLeft: 'auto'}}
                             size='large'
                         >
                             <CloseIcon fontSize='inherit'/>
