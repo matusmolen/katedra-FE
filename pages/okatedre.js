@@ -88,7 +88,7 @@ export default function index({oKatedre, rooms, katalogy}) {
                 className="katedra"
             >
                 <h3>Ateliéry a pedagógovia Katedry dizajnu </h3>
-                <Grid container justifyContent="space-between" direction='row' columnSpacing={12}>
+                <Grid container justifyContent="space-between" direction='row' columnSpacing={12} rowSpacing={4}>
                     {rooms.map((room, key) => <Room key={key} room={room}/>)}
                 </Grid>
                 <div>

@@ -1,10 +1,11 @@
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
-import {Collapse, Grid} from "@mui/material";
+import {Collapse, Grid, useMediaQuery} from "@mui/material";
 import React from "react";
 import {styled} from "@mui/material/styles";
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import theme from "../../styles/theme";
 
 
 export const RoomLink = styled('a')(({theme}) => ({
@@ -19,7 +20,6 @@ const DescriptionExpandButton = styled('div')(({theme}) => ({
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    transform: 'translateY(-14px)',
     marginLeft: '1em',
     borderRadius: '100%',
     padding: '14px',
@@ -33,15 +33,22 @@ const DescriptionExpandButton = styled('div')(({theme}) => ({
     },
     '& svg': {
         strokeWidth: '1.5px',
+    },
+    [theme.breakpoints.up('md')]: {
+        transform: 'translateY(-14px)',
+    },
+    [theme.breakpoints.down('md')]: {
+        transform: 'translateY(-5px)',
     }
 }));
 
 export default function Room({room}) {
     const [openDescription, setOpenDescription] = React.useState(false);
+    const largeScreen = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
         <Grid item xs={12} md={6}>
-            <h2>
+            <h2 style={{marginTop: largeScreen && room.nazov.toUpperCase() === "INOVÁCIA" ? '1em' : 0}}>
                 {room.nazov}
                 <DescriptionExpandButton
                     onClick={() => setOpenDescription(!openDescription)}
