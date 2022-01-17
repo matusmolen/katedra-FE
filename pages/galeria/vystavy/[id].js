@@ -20,7 +20,7 @@ function Detail({vystava}) {
 
             <Grid container mt={4} spacing={4}  justifyContent='space-between'
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
-                <Grid item md={5} position='relative'>
+                <Grid item sm={12} md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
                         <Image
                             src={vystava.pic1.url}
@@ -56,7 +56,7 @@ function Detail({vystava}) {
                     </ImageBox>
 
                 </Grid>
-                <Grid item md={7}>
+                <Grid item sm={12} md={7}>
                     <Box position='relative' padding={2}>
                         <h1 style={{
                             marginTop: 0,
@@ -74,10 +74,10 @@ function Detail({vystava}) {
                         <Box
                             sx={{
                                 position: 'absolute',
-                                inset: '4em 0 0 0',
+                                inset: largeScreen ? '4em -35px 0 0' : '4em 0 0 0',
                                 backgroundColor: largeScreen ? '#FFFFFF' : theme.palette.primary.main,
-                                borderRight: `1em solid ${theme.palette.primary.main}`,
-                                borderTop: `1em solid ${theme.palette.primary.main}`,
+                                borderRight: `35px solid ${theme.palette.primary.main}`,
+                                borderTop: `35px solid ${theme.palette.primary.main}`,
                                 zIndex: -1,
                                 opacity: 0.8
                             }}
