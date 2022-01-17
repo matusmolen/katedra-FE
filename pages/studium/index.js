@@ -104,7 +104,7 @@ export default function student({harmonogram}) {
                 <Grid item md={5} sx={{position:'relative', padding: '2em'}}>
                     <h1 style={{fontWeight: 'normal'}}>Spoznaj učiteľov</h1>
                     <h5 style={{fontWeight: 'normal'}}>
-                        Na prednáškach a konzultáciách stráviš veľa času. Rôzne predmety,
+                        Na prednáškach a ateliérovej výuke stráviš veľa času. Rôzne predmety,
                         rôzni učitelia a veľa skúseností za nimi. V tejto sekcii sa
                         dozvieš niečo viac o svojich pedagógoch. Zistíš, že majú bohaté
                         skúsenosti, venujú sa dizajnu a dosahujú úspechy aj mimo
