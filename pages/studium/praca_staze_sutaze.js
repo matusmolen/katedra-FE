@@ -61,12 +61,10 @@ export default function praca_staze_sutaze({works}) {
                         <Stack direction="row" spacing={1}>
                             <Chip
                                 label={work.oddelenie}
-                                variant="outlined"
                                 color='primary'
                             />
                             <Chip
                                 label={work.cinnost}
-                                variant="outlined"
                                 color='primary'
                             />
                         </Stack>
