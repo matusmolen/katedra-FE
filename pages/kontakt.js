@@ -7,7 +7,7 @@ import ContactBox from "../components/ContactBox";
 import KontaktnyFormular from "../components/KontaktnyFormular";
 
 export async function getStaticProps() {
-    const kontaktyRes = await axios.get("https://katedra-dizajnu.herokuapp.com/kontakt-pages");
+    const kontaktyRes = await axios.get("https://katedra-dizajnu.herokuapp.com/kontakt-pages?_sort=published_at");
 
     return {
         props: {
@@ -28,7 +28,7 @@ export default function KontaktPage({kontakty}) {
                     <h1 style={{margin: '40px 0'}}>Kde nás nájdete?</h1>
                     <p>Watsonova 4, <br/> 040 01 Košice - Sever</p>
 
-                    <ContactBox kontakt={kontakty[3]}/>
+                    <ContactBox kontakt={kontakty[3]} fullWidth/>
                 </Grid>
                 <Grid item sm={12} md={7}
                       sx={{
