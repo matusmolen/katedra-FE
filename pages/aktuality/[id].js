@@ -11,7 +11,7 @@ export const ImageBox = styled('div')(({theme}) => ({
     },
     [theme.breakpoints.up('md')]: {
         position: 'absolute',
-        width: '125%',
+        width: '120%',
         zIndex: -2,
     },
     [theme.breakpoints.down('md')]: {
@@ -65,7 +65,7 @@ export default function AktDetail({aktualita}) {
             <Grid container mt={4} spacing={4}  justifyContent='space-between'
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
                 <Grid item md={5} position='relative'>
-                    <ImageBox sx={{left:'-145px'}}>
+                    <ImageBox sx={{left:'-145px', top: '-2%'}}>
                         <Image
                             src={aktualita.pic1.url}
                             alt={aktualita.pic1.alternativeText}
@@ -87,7 +87,7 @@ export default function AktDetail({aktualita}) {
                             placeholder='blur'
                         />
                     </ImageBox>
-                    <ImageBox sx={{top:'70%', right:'-35%'}}>
+                    <ImageBox sx={{bottom:'-5%', right:'-35%'}}>
                         <Image
                             src={aktualita.pic3.url}
                             alt={aktualita.pic3.alternativeText}

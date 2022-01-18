@@ -68,7 +68,7 @@ export default function Details({spolupraca}) {
                             placeholder='blur'
                         />
                     </ImageBox>
-                    <ImageBox sx={{top:'70%', right:'-25%'}}>
+                    <ImageBox sx={{top:'50%', right:'-25%', width: '100% !important'}}>
                         <Image
                             src={spolupraca.pic3.url}
                             alt={spolupraca.pic3.alternativeText}
