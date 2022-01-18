@@ -151,5 +151,6 @@ export async function getStaticProps() {
         props: {
             pKurz: pKurzRes.data,
         },
+        revalidate: 60
     };
 }

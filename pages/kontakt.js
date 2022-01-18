@@ -13,6 +13,7 @@ export async function getStaticProps() {
         props: {
             kontakty: kontaktyRes.data
         },
+        revalidate: 60
     }
 }
 

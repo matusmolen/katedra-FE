@@ -37,5 +37,6 @@ export async function getStaticProps() {
         props: {
             years: await categoriesRes.json(),
         },
+        revalidate: 60
     };
 }

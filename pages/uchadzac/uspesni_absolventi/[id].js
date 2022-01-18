@@ -25,7 +25,8 @@ export async function getStaticProps(context) {
     const data = await res.json();
 
     return {
-        props: {absolvent: data}
+        props: {absolvent: data},
+        revalidate: 60
     }
 }
 

@@ -9,6 +9,7 @@ export const getStaticProps = async () => {
 
     return {
         props: {aktuality: data},
+        revalidate: 60
     };
 };
 

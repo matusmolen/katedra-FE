@@ -126,5 +126,6 @@ export async function getStaticProps({params}) {
             galleries,
             categories: [...categories]
         },
+        revalidate: 60
     };
 }

@@ -126,6 +126,7 @@ export async function getStaticProps({params}) {
 
     return {
         props: {vystava: data},
+        revalidate: 60
     };
 };
 

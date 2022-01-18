@@ -146,5 +146,6 @@ export async function getStaticProps() {
         props: {
             prihlasky: prihlaskyRes.data,
         },
+        revalidate: 60
     };
 }

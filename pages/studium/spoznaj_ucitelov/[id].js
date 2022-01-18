@@ -52,7 +52,8 @@ export async function getStaticProps(context) {
     const data = await res.json();
 
     return {
-        props: {teacher: data}
+        props: {teacher: data},
+        revalidate: 60
     }
 }
 

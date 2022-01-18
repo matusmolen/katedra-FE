@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
 
     const paths = data.map((aktualita) => {
         return {
-            params: {id: aktualita.id.toString()},
+            params: {id: aktualita.id.toString()}
         };
     });
 
@@ -47,6 +47,7 @@ export const getStaticProps = async (context) => {
 
     return {
         props: {aktualita: data},
+        revalidate: 60
     };
 };
 

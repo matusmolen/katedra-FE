@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Box, Button, Container} from '@mui/material';
+import AppLink from "../utils/AppLink";
 
 export async function getStaticProps() {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/landing-page');
@@ -7,6 +8,7 @@ export async function getStaticProps() {
 
     return {
         props: {lPage: data},
+        revalidate: 60
     };
 }
 
@@ -24,18 +26,19 @@ export default function Uvod({lPage}) {
                     </h5>
 
                     {lPage.tlacidlo_odkaz &&
-                        <Button
-                            variant="contained"
-                            href={lPage.tlacidlo_odkaz}
-                            style={{
-                                borderRadius: 20,
-                                width: '192px',
-                                backgroundColor: '#000000',
-                                color: '#ffffff',
-                            }}
-                        >
-                            Zobraziť
-                        </Button>
+                        <AppLink href={lPage.tlacidlo_odkaz} underline='none'>
+                            <Button
+                                variant="contained"
+                                style={{
+                                    borderRadius: 20,
+                                    width: '192px',
+                                    backgroundColor: '#000000',
+                                    color: '#ffffff',
+                                }}
+                            >
+                                Zobraziť
+                            </Button>
+                        </AppLink>
                     }
 
                 </Container>

@@ -48,6 +48,7 @@ export const getStaticProps = async () => {
             katalogy: katalogyData,
             oKatedre: oKatedreData,
         },
+        revalidate: 60
     };
 };
 

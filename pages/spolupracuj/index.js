@@ -11,6 +11,7 @@ export const getStaticProps = async () => {
 
     return {
         props: {spoluprace: data},
+        revalidate: 60
     };
 };
 
