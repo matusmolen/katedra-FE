@@ -6,6 +6,7 @@ import {ThemeProvider} from '@mui/material/styles';
 import theme from '../styles/theme.js';
 import {CacheProvider} from '@emotion/react';
 import createCache from "@emotion/cache";
+import { SnackbarProvider } from 'notistack';
 
 function MyApp({Component, pageProps}) {
     return (
@@ -18,9 +19,11 @@ function MyApp({Component, pageProps}) {
             </Head>
 
             <ThemeProvider theme={theme}>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
+                <SnackbarProvider maxSnack={3}>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </SnackbarProvider>
             </ThemeProvider>
         </CacheProvider>
     );

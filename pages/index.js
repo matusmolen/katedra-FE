@@ -46,8 +46,6 @@ export default function Uvod({lPage}) {
                     <video autoPlay muted loop>
                         <source
                             src={lPage.video.url}
-                            // src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                            // src="https://katedra-dizajnu.herokuapp.com/uploads/LP_video_df3bfef76d.mp4"
                             type="video/mp4"
                         />
                     </video>
