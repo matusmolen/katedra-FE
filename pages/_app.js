@@ -6,7 +6,8 @@ import {ThemeProvider} from '@mui/material/styles';
 import theme from '../styles/theme.js';
 import {CacheProvider} from '@emotion/react';
 import createCache from "@emotion/cache";
-import { SnackbarProvider } from 'notistack';
+import {SnackbarProvider} from 'notistack';
+import BackToTop from "../components/BackToTop";
 
 function MyApp({Component, pageProps}) {
     return (
@@ -23,6 +24,7 @@ function MyApp({Component, pageProps}) {
                     <Layout>
                         <Component {...pageProps} />
                     </Layout>
+                    <BackToTop/>
                 </SnackbarProvider>
             </ThemeProvider>
         </CacheProvider>
