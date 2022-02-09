@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import {AppBar, Box, Container, Tab, Toolbar} from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import {styled} from '@mui/system';
 import {useRouter} from "next/router";
@@ -36,27 +35,13 @@ const SocialLink = styled(AppLink)(({theme}) => ({
     },
 }));
 
-const StyledMenuItem = styled(MenuItem)(({theme}) => ({
+const StyledMenuItem = styled(MenuItem)(() => ({
     transition: 'background-color 0.2s ease-in-out',
     color: '#000000',
     '&:hover': {
         backgroundColor: '#e5ffe7',
     },
 }));
-
-const Logo = styled('div')({
-    display: 'flex',
-    flowDirection: 'row',
-    alignItems: 'center',
-    userSelect: 'none',
-    '& p': {
-        fontSize: '12px',
-        marginLeft: '1em',
-        maxWidth: 'min-content',
-        lineHeight: '15px'
-    }
-});
-
 
 function Header() {
     const router = useRouter();
@@ -66,14 +51,13 @@ function Header() {
     return (
         <>
             <AppBar color="transparent" elevation={0} position="static">
-                <Container>
+                <Container sx={{padding: '16px 0'}}>
                     <Toolbar disableGutters>
-                        <AppLink href='/' underline='none' sx={{flexGrow:1}} color='inherit'>
-                            <Logo>
+                        <Box sx={{flexGrow:1}} justifyContent='center'>
+                            <AppLink href='/' underline='none' style={{display: 'flex'}}>
                                 <LogoIcon/>
-                                <p>Fakulta umení</p>
-                            </Logo>
-                        </AppLink>
+                            </AppLink>
+                        </Box>
                         <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
                             <AppLink href='/' underline='none'>
                                 <StyledTabBtn
