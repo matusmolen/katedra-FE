@@ -10,9 +10,9 @@ export default function PersonPage({person}) {
                     fontFamily: 'Technik',
                     fontStyle: 'normal',
                     fontWeight: 'normal',
-                    fontSize: 60,
-                    marginBottom: '0'
+                    marginBottom: '0',
                 }}
+                className='person-name'
             >
                 {person.name}
             </h1>
