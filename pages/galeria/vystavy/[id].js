@@ -115,9 +115,9 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false,
+        fallback: "blocking",
     };
-};
+}
 
 export async function getStaticProps({params}) {
     const id = params.id;
@@ -128,6 +128,6 @@ export async function getStaticProps({params}) {
         props: {vystava: data},
         revalidate: 60
     };
-};
+}
 
 export default Detail
