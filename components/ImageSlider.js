@@ -65,7 +65,7 @@ export default function ImageSlider({galery}) {
                 >
                     {
                         galery.map((image, index) =>
-                            <ImageWrapper className={current === index ? 'show' : 'hide'}>
+                            <ImageWrapper className={current === index ? 'show' : 'hide'} key={index}>
                                 <Image
                                     src={image.url}
                                     alt={image.alternativeText}
