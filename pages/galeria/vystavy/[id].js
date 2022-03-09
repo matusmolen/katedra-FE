@@ -43,7 +43,7 @@ function Detail({vystava}) {
                             placeholder='blur'
                         />
                     </ImageBox>
-                    <ImageBox sx={{top:'70%', right:'-35%'}}>
+                    <ImageBox sx={{top:'55%', right:'-35%'}}>
                         <Image
                             src={vystava.pic3.url}
                             alt={vystava.pic3.alternativeText}
