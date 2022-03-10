@@ -1,5 +1,5 @@
 import {Box, Breadcrumbs, Button, Collapse, Container, Grid, Typography} from '@mui/material';
-import React from 'react';
+import React, {useState} from 'react';
 import {styled} from '@mui/material/styles';
 import Image from 'next/image';
 import Room from "../components/room/Room";
@@ -52,10 +52,10 @@ export const getStaticProps = async () => {
     };
 };
 
-export default function index({oKatedre, rooms, katalogy}) {
+const  OKatedre = ({oKatedre, rooms, katalogy}) => {
     //-------------------NASTAVENIE EXPAND BUTTONOV-------------------
-    const [expanded, setExpanded] = React.useState(false);
-    const [expandedPubAKatalog, setExpandedPubAKatalog] = React.useState(false);
+    const [expanded, setExpanded] = useState(false);
+    const [expandedPubAKatalog, setExpandedPubAKatalog] = useState(false);
 
 
     return (
@@ -137,6 +137,7 @@ export default function index({oKatedre, rooms, katalogy}) {
                             href={katalog.pdf ? katalog.pdf.url : '#'}
                             style={{textDecoration: 'underline'}}
                             key={index}
+                            rel="noreferrer"
                         >
                             <h5>{katalog.title}</h5>
                         </a>
@@ -146,3 +147,5 @@ export default function index({oKatedre, rooms, katalogy}) {
         </Container>
     );
 }
+
+export default OKatedre;

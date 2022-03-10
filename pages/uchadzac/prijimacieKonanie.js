@@ -24,6 +24,7 @@ export default function PrijmacieKonanie({prihlasky}) {
                     <a
                         href="https://fu.tuke.sk/wps/portal/fu/uchadzaci/prijimacie-konanie"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <h3>I. stupeň štúdia (Bc.)</h3>
                     </a>
@@ -39,6 +40,7 @@ export default function PrijmacieKonanie({prihlasky}) {
                     <a
                         href="https://fu.tuke.sk/wps/portal/fu/uchadzaci/prijimacie-konanie"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <h3>II. stupeň štúdia (Mgr art.)</h3>
                     </a>
@@ -54,6 +56,7 @@ export default function PrijmacieKonanie({prihlasky}) {
                     <a
                         href="https://fu.tuke.sk/wps/portal/fu/uchadzaci/prijimacie-konanie"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <h3>III. stupeň štúdia (ArtD.)</h3>
                     </a>

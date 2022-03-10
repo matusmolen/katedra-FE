@@ -1,7 +1,7 @@
 import createEmotionServer from '@emotion/server/create-instance';
 import createCache from '@emotion/cache';
 // eslint-disable-next-line @next/next/no-document-import-in-page
-import Document, {Head, Html, Main, NextScript} from 'next/document';
+import Document, {Head, Html, Main, NextScript} from 'next/document'
 import React from 'react';
 
 export default class MyDocument extends Document {
@@ -26,6 +26,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
     ctx.renderPage = () =>
         originalRenderPage({
+            // eslint-disable-next-line react/display-name
             enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
         });
 

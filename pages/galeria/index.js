@@ -24,7 +24,7 @@ export default function GalleryYears({years}) {
                 <h5>Pozrite si výber z prác našich študentov.</h5>
             </Container>
             <Box sx={{position:'fixed', inset: '0', zIndex: -1}}>
-                <Image src='/images/gallery_bg.png' layout='fill' objectFit='cover'/>
+                <Image src='/images/gallery_bg.png' layout='fill' objectFit='cover' alt={"gallery-background"}/>
             </Box>
         </Box>
     );
@@ -35,7 +35,10 @@ export async function getStaticProps() {
 
     return {
         props: {
-            years: await categoriesRes.json(),
+            years: (await categoriesRes.json()).map(year => ({
+                id: year.id,
+                year: year.year,
+            }))
         },
         revalidate: 60
     };
