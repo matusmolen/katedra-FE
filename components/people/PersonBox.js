@@ -4,7 +4,6 @@ import AppLink from "../../utils/AppLink";
 import Image from "next/image"
 
 export default function PersonBox({topMargin, route, person, cols}) {
-    console.log(person.profile.formats.small)
     return (
         <Grid item
               key={person.id}
