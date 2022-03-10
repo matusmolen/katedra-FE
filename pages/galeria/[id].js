@@ -36,7 +36,7 @@ export default function GalleryCategory({year, galleries, categories}) {
                     <AppLink underline="hover" color="inherit" href="../galeria/">
                         Galéria prác
                     </AppLink>
-                    <Typography>{year.year}</Typography>
+                    <Typography>{year}</Typography>
                 </Breadcrumbs>
 
                 <Grid
@@ -122,8 +122,18 @@ export async function getStaticProps({params}) {
 
     return {
         props: {
-            year,
-            galleries,
+            year: year.year,
+            galleries: galleries.map((gallery) => {
+                return {
+                    author: gallery.author,
+                    gallery_categories: gallery.gallery_categories.map((category) => ({id: category.id})),
+                    grade: gallery.grade,
+                    id: gallery.id,
+                    images: gallery.images,
+                    text: gallery.text,
+                    title: gallery.title,
+                }
+            }),
             categories: [...categories]
         },
         revalidate: 60

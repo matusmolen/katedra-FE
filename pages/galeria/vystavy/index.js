@@ -9,7 +9,13 @@ export const getStaticProps = async () => {
     const data = await res.json();
 
     return {
-        props: {vystavy: data},
+        props: {
+            vystavy: data.map((vystava) => ({
+                id: vystava.id,
+                title: vystava.title,
+                preview_img: vystava.preview_img
+            }))
+        },
         revalidate: 60
     };
 };

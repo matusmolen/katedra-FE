@@ -52,7 +52,13 @@ export async function getStaticProps() {
     const data = await res.json();
 
     return {
-        props: {teachers: data},
+        props: {
+            teachers: data.map((teacher) => ({
+                id: teacher.id,
+                name: teacher.name,
+                profile: teacher.profile
+            }))
+        },
         revalidate: 60
     }
 }
