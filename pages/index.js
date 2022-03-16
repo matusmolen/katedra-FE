@@ -18,11 +18,11 @@ export default function Uvod({lPage}) {
             <Box sx={{minHeight:'90vh', display: 'flex', alignItems:'center'}}>
                 <Container>
                     <h1>
-                        {lPage.zber} <br/>
-                        katedry Dizajnu
+                        {lPage.title}
                     </h1>
+
                     <h5 style={{marginTop: '-1em'}}>
-                        Pozývame Vás na prehliadku <br/> semestrálnych prác Katedry dizajnu
+                        {lPage.subtitle}
                     </h5>
 
                     {lPage.tlacidlo_odkaz &&
