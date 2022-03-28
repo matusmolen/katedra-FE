@@ -5,6 +5,7 @@ import AppLink from "../../../utils/AppLink";
 import theme from "../../../styles/theme";
 import {ImageBox} from "../../aktuality/[id]";
 import Image from "next/image";
+import {AWSLoader} from "../../../utils/ImageLoader";
 
 function Detail({vystava}) {
     const largeScreen = useMediaQuery(theme.breakpoints.up('md'));
@@ -23,6 +24,7 @@ function Detail({vystava}) {
                 <Grid item sm={12} md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
                         <Image
+                            loader={AWSLoader}
                             src={vystava.pic1.url}
                             alt={vystava.pic1.alternativeText}
                             height={vystava.pic1.height}
@@ -34,6 +36,7 @@ function Detail({vystava}) {
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
                         <Image
+                            loader={AWSLoader}
                             src={vystava.pic2.url}
                             alt={vystava.pic2.alternativeText}
                             height={vystava.pic2.height}
@@ -45,6 +48,7 @@ function Detail({vystava}) {
                     </ImageBox>
                     <ImageBox sx={{top:'55%', right:'-35%'}}>
                         <Image
+                            loader={AWSLoader}
                             src={vystava.pic3.url}
                             alt={vystava.pic3.alternativeText}
                             height={vystava.pic3.height}
@@ -84,6 +88,7 @@ function Detail({vystava}) {
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
                             <Image
+                                loader={AWSLoader}
                                 src={vystava.pic2.url}
                                 alt={vystava.pic2.alternativeText}
                                 height={vystava.pic2.height}

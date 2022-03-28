@@ -4,6 +4,7 @@ import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {ImageBox} from "../aktuality/[id]";
 import Image from "next/image";
+import {AWSLoader} from "../../utils/ImageLoader";
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops');
@@ -48,6 +49,7 @@ export default function Details({spolupraca}) {
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
                         <Image
+                            loader={AWSLoader}
                             src={spolupraca.pic1.url}
                             alt={spolupraca.pic1.alternativeText}
                             height={spolupraca.pic1.height}
@@ -59,6 +61,7 @@ export default function Details({spolupraca}) {
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
                         <Image
+                            loader={AWSLoader}
                             src={spolupraca.pic2.url}
                             alt={spolupraca.pic2.alternativeText}
                             height={spolupraca.pic2.height}
@@ -70,6 +73,7 @@ export default function Details({spolupraca}) {
                     </ImageBox>
                     <ImageBox sx={{top:'50%', right:'-25%', width: '100% !important'}}>
                         <Image
+                            loader={AWSLoader}
                             src={spolupraca.pic3.url}
                             alt={spolupraca.pic3.alternativeText}
                             height={spolupraca.pic3.height}
@@ -106,6 +110,7 @@ export default function Details({spolupraca}) {
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
                             <Image
+                                loader={AWSLoader}
                                 src={spolupraca.pic2.url}
                                 alt={spolupraca.pic2.alternativeText}
                                 height={spolupraca.pic2.height}

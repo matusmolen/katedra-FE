@@ -2,6 +2,7 @@ import {Box, Button, Grid} from "@mui/material";
 import React from "react";
 import AppLink from "../../utils/AppLink";
 import Image from 'next/image'
+import {AWSLoader} from "../../utils/ImageLoader";
 
 export default function PostBox({item, fullWidth = false, route}) {
     console.log(item)
@@ -9,12 +10,13 @@ export default function PostBox({item, fullWidth = false, route}) {
         <Grid item sm={fullWidth ? 12 : 6} xs={12}>
             <Box sx={{position: 'relative', height: '20em'}}>
                 <Image
+                    loader={AWSLoader}
                     src={item.preview_img.url}
                     alt={`obrazok ${item.title}`}
                     layout='fill'
                     objectFit='cover'
-                    // blurDataURL={item.preview_img.formats.small.url}
-                    // placeholder='blur'
+                    blurDataURL={item.preview_img.formats.small.url}
+                    placeholder='blur'
                 />
 
                 <AppLink

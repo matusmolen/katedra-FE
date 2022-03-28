@@ -2,6 +2,7 @@ import {Box, Button, Grid} from "@mui/material";
 import React from "react";
 import AppLink from "../../utils/AppLink";
 import Image from "next/image"
+import {AWSLoader} from "../../utils/ImageLoader";
 
 export default function PersonBox({topMargin, route, person, cols}) {
     return (
@@ -19,6 +20,7 @@ export default function PersonBox({topMargin, route, person, cols}) {
         >
             <Box position='relative' display='flex' justifyContent='center' width={{xs: '75%', md: '80%'}}>
                 <Image
+                    loader={AWSLoader}
                     src={person.profile.url}
                     alt={`profilovy obrazok ${person.name}`}
                     height={person.profile.height}

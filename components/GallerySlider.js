@@ -6,6 +6,7 @@ import React, {useState} from "react";
 import Image from "next/image";
 import CloseIcon from '@mui/icons-material/Close';
 import {styled} from "@mui/system";
+import {AWSLoader} from "../utils/ImageLoader";
 
 
 export const ImageWrapper = styled(Box)(({theme}) => ({
@@ -34,6 +35,7 @@ export default function GallerySlider({gallery}) {
         <>
             <Box  sx={{position: 'relative', width: '100%', cursor:'pointer'}} onClick={() => setOpen(true)}>
                 <Image
+                    loader={AWSLoader}
                     src={images[0].formats.small.url}
                     height={images[0].height}
                     width={images[0].width}
@@ -67,6 +69,7 @@ export default function GallerySlider({gallery}) {
                                 images.map((image, index) =>
                                     <ImageWrapper className={index === current ? 'show' : 'hide'} key={index}>
                                         <Image
+                                            loader={AWSLoader}
                                             src={image?.url}
                                             alt={image?.alternativeText}
                                             height={image?.height}

@@ -4,6 +4,7 @@ import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {styled} from "@mui/material/styles";
 import Image from "next/image"
+import {AWSLoader} from "../../utils/ImageLoader";
 
 export const ImageBox = styled('div')(({theme}) => ({
     '& img, & div': {
@@ -67,6 +68,7 @@ export default function AktDetail({aktualita}) {
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px', top: '-2%'}}>
                         <Image
+                            loader={AWSLoader}
                             src={aktualita.pic1.url}
                             alt={aktualita.pic1.alternativeText}
                             height={aktualita.pic1.height}
@@ -78,6 +80,7 @@ export default function AktDetail({aktualita}) {
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
                         <Image
+                            loader={AWSLoader}
                             src={aktualita.pic2.url}
                             alt={aktualita.pic2.alternativeText}
                             height={aktualita.pic2.height}
@@ -125,6 +128,7 @@ export default function AktDetail({aktualita}) {
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
                             <Image
+                                loader={AWSLoader}
                                 src={aktualita.pic2.url}
                                 alt={aktualita.pic2.alternativeText}
                                 height={aktualita.pic2.height}
