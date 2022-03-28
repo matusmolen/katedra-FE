@@ -43,10 +43,10 @@ export default function Uvod({lPage}) {
 
                 </Container>
                 <div className="video-container">
-                    <video autoPlay muted loop>
+                    <video autoPlay muted loop playsInline controls={false}>
                         <source
                             src={lPage.video.url}
-                            type="video/mp4"
+                            type={lPage.video.mime}
                         />
                     </video>
                 </div>

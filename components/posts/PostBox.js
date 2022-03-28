@@ -4,6 +4,7 @@ import AppLink from "../../utils/AppLink";
 import Image from 'next/image'
 
 export default function PostBox({item, fullWidth = false, route}) {
+    console.log(item)
     return (
         <Grid item sm={fullWidth ? 12 : 6} xs={12}>
             <Box sx={{position: 'relative', height: '20em'}}>
@@ -12,8 +13,8 @@ export default function PostBox({item, fullWidth = false, route}) {
                     alt={`obrazok ${item.title}`}
                     layout='fill'
                     objectFit='cover'
-                    blurDataURL={item.preview_img.formats.small.url}
-                    placeholder='blur'
+                    // blurDataURL={item.preview_img.formats.small.url}
+                    // placeholder='blur'
                 />
 
                 <AppLink
