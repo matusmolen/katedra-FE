@@ -5,7 +5,6 @@ import Image from 'next/image'
 import {AWSLoader} from "../../utils/ImageLoader";
 
 export default function PostBox({item, fullWidth = false, route}) {
-    console.log(item)
     return (
         <Grid item sm={fullWidth ? 12 : 6} xs={12}>
             <Box sx={{position: 'relative', height: '20em'}}>
