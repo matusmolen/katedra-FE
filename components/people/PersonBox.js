@@ -1,8 +1,6 @@
 import {Box, Button, Grid} from "@mui/material";
 import React from "react";
 import AppLink from "../../utils/AppLink";
-import Image from "next/image"
-import {AWSLoader} from "../../utils/ImageLoader";
 
 export default function PersonBox({topMargin, route, person, cols}) {
     return (
@@ -19,13 +17,11 @@ export default function PersonBox({topMargin, route, person, cols}) {
               }}
         >
             <Box position='relative' display='flex' justifyContent='center' width={{xs: '75%', md: '80%'}}>
-                <Image
-                    loader={AWSLoader}
+                <img
                     src={person.profile.url}
                     alt={`profilovy obrazok ${person.name}`}
-                    height={person.profile.height}
-                    width={person.profile.width}
-                    blurDataURL={person.profile.formats.small?.url || person.profile.url}
+                    className='image-fill'
+                    loading='lazy'
                     placeholder='blur'
                 />
                 <AppLink href={`${route}/${person.id}`} sx={{display:'block', position:'absolute', bottom: '3em'}}>

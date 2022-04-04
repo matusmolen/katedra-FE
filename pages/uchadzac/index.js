@@ -1,5 +1,4 @@
 import {Breadcrumbs, Button, Container, Grid, Typography, useMediaQuery} from '@mui/material';
-import Image from 'next/image';
 import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 
@@ -59,17 +58,19 @@ export default function Uchadzac() {
                 justifyContent="space-between"
                 spacing={2}
             >
-                <Grid item md={5}>
-                    <div
-                        style={{position: 'relative', height: '100%'}}
-                    >
-                        <Image
-                            src='/images/uchadzac_2-01.png'
-                            alt="plechovka"
-                            layout="fill"
-                            objectFit='contain'
-                        />
-                    </div>
+                <Grid
+                    item
+                    md={5}
+                    display={{xs: 'none', sm: 'none', md: 'flex'}}
+                    justifyContent='center'
+                    alignItems='center'
+                >
+                    <img
+                        src={'/images/uchadzac_2-01.png'}
+                        alt='plechovka'
+                        style={{maxWidth: '60%'}}
+                    />
+
                 </Grid>
                 <Grid item md={6}>
                     <h1>Prípravné kurzy</h1>
@@ -81,7 +82,6 @@ export default function Uchadzac() {
                         navrhovanie a grafické cvičenia. Prihlás sa a zvýš svoje šance
                         na prijatie.
                     </h5>
-                    {/* <Button variant="contained" color="info" href="/uchadzac/pripravneKurzy">Zobraziť viac</Button> */}
                     <Button
                         variant="contained"
                         href="/uchadzac/pripravneKurzy"

@@ -1,6 +1,5 @@
 import {Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
-import Image from 'next/image';
 
 
 import Chip from '@mui/material/Chip';
@@ -44,12 +43,17 @@ export default function praca_staze_sutaze({works}) {
                         Ponuky sú vždy čerstvé a pravidelne aktualizované.
                     </h5>
                 </Grid>
-                <Grid item md={6} sx={{marginTop: '4em', position:'relative'}}>
-                    <Image
-                        src='/images/program_prestal_pracovat.png'
-                        layout='fill'
-                        objectFit='contain'
+                <Grid
+                    item
+                    md={6}
+                    display={{xs: 'none', sm: 'none', md: 'flex'}}
+                    justifyContent='center'
+                    alignItems='center'
+                >
+                    <img
+                        src={'/images/program_prestal_pracovat.png'}
                         alt="program prestal pracovať"
+                        style={{maxWidth: '95%'}}
                     />
                 </Grid>
             </Grid>

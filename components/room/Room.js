@@ -64,7 +64,7 @@ export default function Room({room}) {
                 |
                 <RoomLink target="_blank" href={room.link2}>{room.miestnost2}</RoomLink>
             </div>
-            <ReactMarkdown plugins={[remarkGfm]}>{room.ludia}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{room.ludia}</ReactMarkdown>
             <Collapse in={openDescription} timeout="auto" unmountOnExit>
                 <div>{room.popis}</div>
             </Collapse>

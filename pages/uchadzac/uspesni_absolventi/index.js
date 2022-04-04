@@ -1,8 +1,6 @@
 import {Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
-import Image from 'next/image';
 import AppLink from "../../../utils/AppLink";
-import {useRouter} from "next/router";
 import PeopleGrid from "../../../components/people/PeopleGrid";
 
 export async function getStaticProps() {
@@ -16,10 +14,6 @@ export async function getStaticProps() {
 }
 
 export default function Absolventi({absolventi}) {
-    const router = useRouter();
-    const pocetOsobL = Math.ceil(absolventi.length / 2);
-    const Osoby1 = absolventi.slice(0, pocetOsobL);
-    const Osoby2 = absolventi.slice(pocetOsobL, absolventi.length);
     return (<>
             <Container>
                 <Breadcrumbs aria-label="breadcrumb" separator=">">
@@ -45,12 +39,17 @@ export default function Absolventi({absolventi}) {
                             ako vyzeral ich študijný život.
                         </h5>
                     </Grid>
-                    <Grid item md={6} sx={{position: 'relative'}}>
-                        <Image
-                            src='/images/uspesni_absolventi.png'
+                    <Grid
+                        item
+                        md={6}
+                        display={{xs: 'none', sm: 'none', md: 'flex'}}
+                        justifyContent='center'
+                        alignItems='center'
+                    >
+                        <img
+                            src={'/images/uspesni_absolventi.png'}
                             alt="uspesni absolventi"
-                            layout='fill'
-                            objectFit='contain'
+                            style={{maxWidth: '85%'}}
                         />
                     </Grid>
                 </Grid>

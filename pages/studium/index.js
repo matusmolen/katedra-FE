@@ -1,6 +1,5 @@
 import {Box, Breadcrumbs, Button, Container, Grid, Typography} from '@mui/material';
 import React from 'react';
-import Image from 'next/image';
 import axios from 'axios';
 import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
@@ -92,15 +91,15 @@ export default function student({harmonogram}) {
                         </AppLink>{' '}
                     </Button>
                 </Grid>
-                <Grid item md={6} sx={{position: 'relative'}}>
-                    <Image src='/images/deadline.png' layout='fill' objectFit='contain' alt="deadline"/>
+                <Grid item md={6} display={{xs: 'none', sm: 'none', md: 'flex'}}>
+                    <img src={'/images/deadline.png'} alt="deadline" className='image-contain'/>
                 </Grid>
             </Grid>
 
 
             <Grid container justifyContent="space-evenly">
-                <Grid item md={5} sx={{position: 'relative'}}>
-                    <Image src='/images/dama_s_titulom.png' layout='fill' objectFit='contain' alt="dama s titulom"/>
+                <Grid item md={5} sx={{position: 'relative'}} display={{xs: 'none', sm: 'none', md: 'flex'}}>
+                    <img src={'/images/dama_s_titulom.png'} alt="dama s titulom" className='image-contain'/>
                 </Grid>
                 <Grid item md={5} sx={{position:'relative', padding: '2em'}}>
                     <h1 style={{fontWeight: 'normal'}}>Spoznaj učiteľov</h1>

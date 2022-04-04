@@ -1,6 +1,5 @@
 import {Box, Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
-import Image from 'next/image';
 import AppLink from "../../utils/AppLink";
 import PostGrid from "../../components/posts/PostGrid";
 
@@ -20,13 +19,12 @@ function Aktuality({aktuality}) {
                         správy, ktoré by nemali ujsť tvojej pozornosti.
                     </h5>
                 </Grid>
-                <Grid item sm={12} md={6} sx={{position:'relative'}}>
-                    <Image
-                        src='/images/Frame.png'
+                <Grid item md={6} display={{xs: 'none', sm: 'none', md: 'flex'}}>
+                    <img
+                        src={'/images/Frame.png'}
                         alt="free fonts"
-                        layout='fill'
-                        objectFit='contain'
-                        blurDataURL='/images/Frame.png'
+                        className='image-contain'
+                        loading='lazy'
                         placeholder='blur'
                     />
                 </Grid>

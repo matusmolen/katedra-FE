@@ -3,8 +3,6 @@ import React from 'react';
 import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {styled} from "@mui/material/styles";
-import Image from "next/image"
-import {AWSLoader} from "../../utils/ImageLoader";
 
 export const ImageBox = styled('div')(({theme}) => ({
     '& img, & div': {
@@ -67,38 +65,27 @@ export default function AktDetail({aktualita}) {
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px', top: '-2%'}}>
-                        <Image
-                            loader={AWSLoader}
+                        <img
                             src={aktualita.pic1.url}
                             alt={aktualita.pic1.alternativeText}
-                            height={aktualita.pic1.height}
-                            width={aktualita.pic1.width}
-                            objectFit={'cover'}
-                            blurDataURL={aktualita.pic1.formats.small.url}
-                            placeholder='blur'
+                            className='image-cover'
+                            loading='lazy'
                         />
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
-                        <Image
-                            loader={AWSLoader}
+                        <img
                             src={aktualita.pic2.url}
                             alt={aktualita.pic2.alternativeText}
-                            height={aktualita.pic2.height}
-                            width={aktualita.pic2.width}
-                            objectFit={'cover'}
-                            blurDataURL={aktualita.pic2.formats.small.url}
-                            placeholder='blur'
+                            className='image-cover'
+                            loading='lazy'
                         />
                     </ImageBox>
                     <ImageBox sx={{bottom:'-5%', right:'-35%'}}>
-                        <Image
+                        <img
                             src={aktualita.pic3.url}
                             alt={aktualita.pic3.alternativeText}
-                            height={aktualita.pic3.height}
-                            width={aktualita.pic3.width}
-                            objectFit={'cover'}
-                            blurDataURL={aktualita.pic3.formats.small.url}
-                            placeholder='blur'
+                            className='image-cover'
+                            loading='lazy'
                         />
                     </ImageBox>
                 </Grid>
@@ -127,15 +114,11 @@ export default function AktDetail({aktualita}) {
                             }}
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
-                            <Image
-                                loader={AWSLoader}
+                            <img
                                 src={aktualita.pic2.url}
                                 alt={aktualita.pic2.alternativeText}
-                                height={aktualita.pic2.height}
-                                width={aktualita.pic2.width}
-                                objectFit={'cover'}
-                                blurDataURL={aktualita.pic2.formats.small.url}
-                                placeholder='blur'
+                                className='image-cover'
+                                loading='lazy'
                             />
                         </ImageBox>
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import {Box, Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
-import Image from 'next/image';
 import AppLink from "../../../utils/AppLink";
 import PostGrid from "../../../components/posts/PostGrid";
 
@@ -38,8 +37,8 @@ export default function galeriaVystav({vystavy}) {
                         grafických ale aj produktových prác.
                     </h5>
                 </Grid>
-                <Grid item md={4} sx={{position: 'relative'}}>
-                    <Image src='/images/galeria.png' alt="galeria" layout='fill' objectFit='contain'/>
+                <Grid item md={4} display={{xs: 'none', sm: 'none', md: 'flex'}}>
+                    <img src={'/images/galeria.png'} alt="galeria" className='image-contain'/>
                 </Grid>
             </Grid>
 

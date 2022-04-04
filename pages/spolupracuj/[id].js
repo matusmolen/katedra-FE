@@ -3,8 +3,6 @@ import * as React from 'react';
 import AppLink from "../../utils/AppLink";
 import theme from "../../styles/theme";
 import {ImageBox} from "../aktuality/[id]";
-import Image from "next/image";
-import {AWSLoader} from "../../utils/ImageLoader";
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://katedra-dizajnu.herokuapp.com/coops');
@@ -48,39 +46,28 @@ export default function Details({spolupraca}) {
                   flexDirection={{xs: 'column-reverse', sm:'column-reverse', md: 'row'}}>
                 <Grid item md={5} position='relative'>
                     <ImageBox sx={{left:'-145px'}}>
-                        <Image
-                            loader={AWSLoader}
+                        <img
                             src={spolupraca.pic1.url}
                             alt={spolupraca.pic1.alternativeText}
-                            height={spolupraca.pic1.height}
-                            width={spolupraca.pic1.width}
-                            objectFit='cover'
-                            blurDataURL={spolupraca.pic1.formats.small.url}
+                            className='image-cover'
+                            loading='lazy'
                             placeholder='blur'
                         />
                     </ImageBox>
                     <ImageBox sx={{display: largeScreen ? 'none' : 'block'}}>
-                        <Image
-                            loader={AWSLoader}
+                        <img
                             src={spolupraca.pic2.url}
                             alt={spolupraca.pic2.alternativeText}
-                            height={spolupraca.pic2.height}
-                            width={spolupraca.pic2.width}
-                            objectFit={'cover'}
-                            blurDataURL={spolupraca.pic2.formats.small.url}
-                            placeholder='blur'
+                            className='image-cover'
+                            loading='lazy'
                         />
                     </ImageBox>
                     <ImageBox sx={{top:'50%', right:'-25%', width: '100% !important'}}>
-                        <Image
-                            loader={AWSLoader}
+                        <img
                             src={spolupraca.pic3.url}
                             alt={spolupraca.pic3.alternativeText}
-                            height={spolupraca.pic3.height}
-                            width={spolupraca.pic3.width}
-                            objectFit={'cover'}
-                            blurDataURL={spolupraca.pic3.formats.small.url}
-                            placeholder='blur'
+                            className='image-cover'
+                            loading='lazy'
                         />
                     </ImageBox>
                 </Grid>
@@ -109,15 +96,11 @@ export default function Details({spolupraca}) {
                             }}
                         />
                         <ImageBox sx={{right:'-50%',top:'5em', display: largeScreen ? 'block' : 'none'}}>
-                            <Image
-                                loader={AWSLoader}
+                            <img
                                 src={spolupraca.pic2.url}
                                 alt={spolupraca.pic2.alternativeText}
-                                height={spolupraca.pic2.height}
-                                width={spolupraca.pic2.width}
-                                objectFit={'cover'}
-                                blurDataURL={spolupraca.pic2.formats.small.url}
-                                placeholder='blur'
+                                className='image-cover'
+                                loading='lazy'
                             />
                         </ImageBox>
                     </Box>

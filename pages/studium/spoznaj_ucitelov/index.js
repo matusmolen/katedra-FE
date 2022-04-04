@@ -2,7 +2,6 @@ import {Breadcrumbs, Container, Grid, Typography,} from '@mui/material';
 import React from 'react';
 import AppLink from "../../../utils/AppLink";
 import PeopleGrid from "../../../components/people/PeopleGrid";
-import Image from "next/image";
 
 function Ucitelia({teachers}) {
     return (<>
@@ -30,11 +29,17 @@ function Ucitelia({teachers}) {
                                 si galériu ich profesionálnych výstupov.
                             </h5>
                         </Grid>
-                        <Grid item md={6} sx={{position:'relative'}}>
-                             <Image
-                                 src='/images/spoznaj_ucitelov.png'
-                                 layout='fill'
+                        <Grid
+                            item
+                            md={6}
+                            display={{xs: 'none', sm: 'none', md: 'flex'}}
+                            justifyContent='center'
+                            alignItems='center'
+                        >
+                             <img
+                                 src={'/images/spoznaj_ucitelov.png'}
                                  alt="obrazok spoznaj ucitelov"
+                                 style={{maxWidth: '90%'}}
                              />
                         </Grid>
                     </Grid>

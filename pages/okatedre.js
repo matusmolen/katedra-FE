@@ -1,7 +1,6 @@
 import {Box, Breadcrumbs, Button, Collapse, Container, Grid, Typography} from '@mui/material';
 import React, {useState} from 'react';
 import {styled} from '@mui/material/styles';
-import Image from 'next/image';
 import Room from "../components/room/Room";
 
 const GreenBox = styled('div')(({theme}) => ({
@@ -124,7 +123,7 @@ const  OKatedre = ({oKatedre, rooms, katalogy}) => {
                                         md: 'block'
                                     }}
                                 >
-                                    <Image src='/images/sipky.png' alt="backgroundimg" layout='fill' objectFit='contain'/>
+                                    <img src={'/images/sipky.png'} alt="backgroundimg" className='image-contain'/>
                                 </Box>
                             </Button>
                         </div>

@@ -3,7 +3,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import AppLink from "../../utils/AppLink";
 import {CategoryButton} from "./[id]";
-import Image from "next/image"
 
 export default function GalleryYears({years}) {
     return (
@@ -24,7 +23,7 @@ export default function GalleryYears({years}) {
                 <h5>Pozrite si výber z prác našich študentov.</h5>
             </Container>
             <Box sx={{position:'fixed', inset: '0', zIndex: -1}}>
-                <Image src='/images/gallery_bg.png' layout='fill' objectFit='cover' alt={"gallery-background"}/>
+                <img src={'/images/gallery_bg.png'} alt={"gallery-background"} className='image-cover'/>
             </Box>
         </Box>
     );

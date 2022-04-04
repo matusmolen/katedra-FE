@@ -3,7 +3,6 @@ import Dialog from '@mui/material/Dialog';
 import {Box, Button, Fab, IconButton} from "@mui/material";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import Image from "next/image";
 import CloseIcon from '@mui/icons-material/Close';
 import {ImageWrapper} from "./GallerySlider";
 
@@ -36,13 +35,11 @@ export default function ImageSlider({galery}) {
                         md: 'block'
                     }}
                 >
-                    <Image
-                        src='/images/sipky.png'
-                        alt="backgroundimg"
-                        layout='fill'
-                        objectFit='contain'
-                        blurDataURL='/images/sipky.png'
-                        placeholder='blur'
+                    <img
+                        src={'/images/sipky.png'}
+                        alt="background_img"
+                        className='image-contain'
+                        loading='lazy'
                     />
                 </Box>
             </Button>
@@ -63,22 +60,20 @@ export default function ImageSlider({galery}) {
                         justifyContent:'center',
                     }}
                 >
+                    <ImageWrapper>
                     {
                         galery.map((image, index) =>
-                            <ImageWrapper className={current === index ? 'show' : 'hide'} key={index}>
-                                <Image
+                            <img
+                                    key={image.id}
                                     src={image.url}
                                     alt={image.alternativeText}
-                                    height={image.height}
-                                    width={image.width}
-                                    objectFit='contain'
-                                    blurDataURL={image.formats.small.url}
-                                    placeholder='blur'
+                                    className={`image-contain ${current === index ? 'show' : 'hide'}`}
+                                    loading={'lazy'}
                                     style={{maxHeight: 'calc(100vh - 64px)'}}
-                                />
-                            </ImageWrapper>
+                            />
                         )
                     }
+                    </ImageWrapper>
 
                     <Fab
                         onClick={() => setCurrent((current - 1 + slidesLength) % slidesLength)}

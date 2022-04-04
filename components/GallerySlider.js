@@ -3,16 +3,15 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Dialog from "@mui/material/Dialog";
 import React, {useState} from "react";
-import Image from "next/image";
 import CloseIcon from '@mui/icons-material/Close';
 import {styled} from "@mui/system";
-import {AWSLoader} from "../utils/ImageLoader";
 
 
-export const ImageWrapper = styled(Box)(({theme}) => ({
+export const ImageWrapper = styled(Box)(() => ({
     alignItems:'center',
     justifyContent: 'center',
     position: 'relative',
+
     '&.show': {
         display: 'flex',
     },
@@ -20,7 +19,21 @@ export const ImageWrapper = styled(Box)(({theme}) => ({
         display: 'none'
     },
     '& div': {
+        height: 'calc(100vh - 64px)'
+    },
+    '& img': {
+        display: 'block',
+        overflow: 'hidden',
+        transition: 'opacity 0.25s linear',
         maxHeight: 'calc(100vh - 64px)'
+    },
+    '& img.show': {
+        height: '100%',
+        opacity: 1,
+    },
+    '& img.hide': {
+        height: 0,
+        opacity: '0'
     }
 }));
 
@@ -34,15 +47,11 @@ export default function GallerySlider({gallery}) {
     return (
         <>
             <Box  sx={{position: 'relative', width: '100%', cursor:'pointer'}} onClick={() => setOpen(true)}>
-                <Image
-                    loader={AWSLoader}
+                <img
                     src={images[0].formats.small.url}
-                    height={images[0].height}
-                    width={images[0].width}
-                    objectFit='contain'
+                    className='image-contain'
+                    loading='lazy'
                     alt={images[0].alternativeText}
-                    blurDataURL={images[0].formats.small.url}
-                    placeholder='blur'
                 />
             </Box>
             <Dialog
@@ -64,25 +73,20 @@ export default function GallerySlider({gallery}) {
                             justifyContent: 'center',
                         }}
                     >
-
+                        <ImageWrapper>
                             {
                                 images.map((image, index) =>
-                                    <ImageWrapper className={index === current ? 'show' : 'hide'} key={index}>
-                                        <Image
-                                            loader={AWSLoader}
+
+                                        <img
+                                            key={image.id}
                                             src={image?.url}
                                             alt={image?.alternativeText}
-                                            height={image?.height}
-                                            width={image?.width}
-                                            objectFit='contain'
-                                            blurDataURL={image?.formats.small.url}
-                                            placeholder='blur'
+                                            className={`image-contain ${current === index ? 'show' : 'hide'}`}
+                                            loading='lazy'
                                         />
-                                    </ImageWrapper>
                                 )
                             }
-
-
+                        </ImageWrapper>
 
                         <Fab
                             onClick={() => setCurrent((current - 1 + imagesLength) % imagesLength)}

@@ -1,6 +1,5 @@
 import Layout from '../components/Layout';
 import '../styles/globals.css';
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import Head from 'next/head';
 import {ThemeProvider} from '@mui/material/styles';
 import theme from '../styles/theme.js';
@@ -15,8 +14,7 @@ function MyApp({Component, pageProps}) {
             <Head>
                 <title>Katedra dizajnu</title>
                 <meta name="description" content="webstranka pre katedru dizajnu"/>
-                <link rel="icon" href="/favicon-TUKE.ico"/>
-                {/* <link rel="stylesheet" href="../styles/fonts.css" /> */}
+                <link rel="icon" href={"/favicon-TUKE.ico"}/>
             </Head>
 
             <ThemeProvider theme={theme}>

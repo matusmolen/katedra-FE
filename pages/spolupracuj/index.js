@@ -2,7 +2,6 @@ import {Box, Breadcrumbs, Button, CardContent, Collapse, Container, Grid, Typogr
 
 import * as React from 'react';
 import KontaktnyFormular from '../../components/KontaktnyFormular';
-import Image from 'next/image';
 import AppLink from "../../utils/AppLink";
 
 export const getStaticProps = async () => {
@@ -36,7 +35,7 @@ export default function Spoluprace({spoluprace}) {
                     </p>
                 </Grid>
                 <Grid item md={6} sx={{position: 'relative'}} display={{sm: 'none', md: 'block'}}>
-                    <Image src='/images/Spolupraca_1-01.png' layout='fill' objectFit='contain' alt="spolupraca"/>
+                    <img src={'/images/Spolupraca_1-01.png'} className='image-contain' alt="spolupraca"/>
                 </Grid>
             </Grid>
 
@@ -65,7 +64,7 @@ export default function Spoluprace({spoluprace}) {
                                 md: 'block'
                             }}
                         >
-                            <Image src='/images/sipky.png' alt="backgroundimg" layout='fill' objectFit='contain'/>
+                            <img src={'/images/sipky.png'} alt="backgroundimg" className='image-contain'/>
                         </Box>
                     </Button>
                 </h2>

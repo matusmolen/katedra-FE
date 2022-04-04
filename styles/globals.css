@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: normal;
     src: local('Technik-200'),
-    url('~/assets/fonts/Technik-200.otf') format('opentype');
+    url('../assets/fonts/Technik-200.otf') format('opentype');
 }
 
 @font-face {
@@ -11,22 +11,22 @@
   font-style: italic;
   font-weight: normal;
   src: local('Technik-100'),
-   url('~/assets/fonts/Technik-100.otf') format("opentype");
+   url('../assets/fonts/Technik-100.otf') format("opentype");
 }
 
 @font-face {
   font-family: 'Technik';
-  font-style: bold;
+  font-style: normal;
   font-weight: normal;
   src: local('Technik-50'),
-   url('~/assets/fonts/Technik-50.otf') format("opentype");
+   url('../assets/fonts/Technik-50.otf') format("opentype");
 }
 @font-face {
     font-family: 'Technik';
     font-style: normal;
     font-weight: normal;
     src: local('Technik-25'),
-    url('~/assets/fonts/Technik-25.otf') format('opentype');
+    url('../assets/fonts/Technik-25.otf') format('opentype');
 }
 
 @font-face {
@@ -34,7 +34,7 @@
     font-style: normal;
     font-weight: 400;
     src: local('Normatica'),
-    url('~/assets/fonts/Normatica-Regular.otf') format('opentype');
+    url('../assets/fonts/Normatica-Regular.otf') format('opentype');
 }
 
 #__next {
@@ -45,7 +45,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Normatica';
+    font-family: 'Normatica', sans-serif;
     line-height: 31px;
     size: 18px;
     height: 100%;
@@ -53,13 +53,13 @@ body {
 }
 
 h1 {
-    font-family: 'Technik-200';
+    font-family: 'Technik-200', sans-serif;
     font-size: 5em;
     line-height: 104px;
 }
 
 p {
-    font-family: 'Normatica';
+    font-family: 'Normatica', sans-serif;
     font-size: 18px;
     font-weight: normal;
     letter-spacing: 0.5px;
@@ -67,33 +67,36 @@ p {
 }
 
 h2 {
-    font-family: 'Technik';
+    font-family: 'Technik', sans-serif;
     font-size: 60px;
     line-height: 60px;
 }
 
 h3 {
-    font-family: 'Technik-200';
+    font-family: 'Technik-200', sans-serif;
     font-size: 34px;
     line-height: 43.4px;
 }
 
 h4 {
-    font-family: 'Normatica';
+    font-family: 'Normatica', sans-serif;
     font-size: 32px;
     line-height: 42px;
 }
 
 h5 {
-    font-family: 'Technik-200';
+    font-family: 'Technik-200', sans-serif;
     font-weight: normal;
     font-size: 24px;
     line-height: 36px;
 }
 
+img {
+    height: auto;
+}
 
 .person-name {
-    font-family: 'Technik';
+    font-family: 'Technik', sans-serif;
     font-weight: 400;
     font-size: 60px;
     line-height: 66px;
@@ -167,8 +170,8 @@ h5 {
 
 .profilAbsolventa {
     background: linear-gradient(to top, #00ff0a 70%, transparent 10%);
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-bottom: 0;
+    margin-left: 0;
 }
 
 /* .mapka{
@@ -281,4 +284,22 @@ table {
 }
 td {
     padding: 0 0.2em;
+}
+
+.image-cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-fill {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.image-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
